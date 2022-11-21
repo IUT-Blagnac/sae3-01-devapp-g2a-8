@@ -55,9 +55,8 @@ Projet est réalisé par::
 - https://github.com/Sean0203[Sean Escassut]
 - https://github.com/hackerB200[Eva Tubia]
 - https://github.com/walaedinesekoub[Walaedine Sekoub]
-...
 
-Tuteur/tutrice enseignant(e) de l'équipe:: mailto:jean-michel.bruel@univ-tlse2.fr[JMB]
+Tuteur/tutrice enseignant(e) de l'équipe:: mailto:marie-francoise.canut@univ-tlse2.fr[MFC]
 
 == Contexte général
 
