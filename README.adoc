@@ -56,7 +56,8 @@ Projet est réalisé par::
 - https://github.com/hackerB200[Eva Tubia]
 - https://github.com/walaedinesekoub[Walaedine Sekoub]
 
-Tuteur/tutrice enseignant(e) de l'équipe:: mailto:marie-francoise.canut@univ-tlse2.fr[MFC]
+Tuteur/tutrice enseignant(e) de l'équipe:: 
+- mailto:marie-francoise.canut@univ-tlse2.fr[MFC]
 
 == Contexte général
 
