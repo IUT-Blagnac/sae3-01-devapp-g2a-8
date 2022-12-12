@@ -1,0 +1,83 @@
+= Documentation technique site web
+:toc:
+:toc-title: Sommaire
+
+Version du site : 1 +
+Date : 12/12/2022 +
+Client : VidéoFest +
+Projet : Site de e-commerce 
+
+<<<
+
+== 1. Description du Projet
+=== a) Equipe
+
+Product Owner : Walaedine +
+Scrum Master : Eva +
+Développeurs : Tobiasz et Sean +
+
+=== b) Contexte du projet
+
+copier ici DCE
+
+=== c) Objectifs du projet
+
+copier ici DCE
+
+== 2. Architecture
+
+=== a) Architecture Générale
+
+Le site sera accessible depuis l'adresse suivante : http://193.54.227.164/~SAESYS08/ +
+Il utilise HTML5, CSS, PHP et JavaScript, et la connexion à la base de données Oracle se fait en SQL. +
+
+=== b) Ressources externes
+
+Réferrez-vous à la documentation utilisateur (insérer lien) pour connaître les différentes fonctionnalités du point de vue de l'utilisateur.
+
+=== c) Structuration du code source
+
+Arborescence des fichiers :
+
+* include +
+(expliquer)
+** css +
+*** style.css +
+feuille de style pour tout le site
+
+* index.php + 
+
+=== d) Diagramme de classe des données
+
+Voici le diagramme de classe structurant la base de données :
+
+image:[]
+
+== 3. Fonctionnalités
+
+=== a) Sprint 2 (sem 50)
+
+Voici le Use Case général du sprint 2 :
+
+image:[]
+
+==== (nom de la fonctionalité)
+
+Use case : 
+
+image:[]
+
+Pages web concernées :
+
+* include :  
+** css +
+*** style.css
+
+* index.php
+
+Accessibilité : (utilisateur lambda ou client ou admin) +
+
+Action de (...) +
+Fonctionnement dans le code : (...) +
+
+=== b) Sprint 3 (sem 1)
