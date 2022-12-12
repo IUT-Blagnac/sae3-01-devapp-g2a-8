@@ -106,3 +106,20 @@ De plus ce fichier `README.adoc` devra être à jour des informations suivantes 
 - Tests unitaires et plans de test
 - Indicateurs de qualité du code (dette technique)
 - ... tout autre élément que vous jugerez utiles pour démontrer la qualité de votre application
+
+=== Évaluations hebdomadaires
+
+NOTE: Les notes ci-dessous sont mises à jour directement par les enseignants responsables de la compétence 5.
+
+ifdef::env-github[]
+image:https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=881427875&format=image[link=https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=881427875&format=image]
+endif::[]
+
+ifndef::env-github[]
+++++
+<iframe width="786" height="430" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=881427875&format=image"></iframe>
+++++
+endif::[]
+
+=Sprint 1 retour :
+Il manque les liens dans le readme. J'ai les tâches de sprint mais pas les backlogs produis (ils sont seulement en pdf, du coup impossible de lier les tâches aux US du backlog concerné, on perd l'esprit scrum). Les 2 appli sont gérées en même temps, il vaut mieux créer 2 projets distincts.Doc BD ok, il faut démarrer doc user et doc tech pour le site. Rien sur les tests. Release OK.
