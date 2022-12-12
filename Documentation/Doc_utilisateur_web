@@ -1,0 +1,47 @@
+= Documentation utilisateur site web
+:toc:
+:toc-title: Sommaire
+
+Version du site : 1 +
+Date : 12/12/2022 +
+Equipe : 2A-8 +
+Client : VidéoFest +
+Projet : Site web e-commerce + 
+
+<<<
+
+== 1. Description du Projet
+=== a) Equipe
+(copier contenu doc tech)
+=== b) Contexte du projet
+
+=== c) Objectifs du projet
+
+== 2. Consulter le site web
+=== a) Prérequis
+
+(connexion internet)
+
+=== b) Aller sur le site
+
+Cliquez sur http://193.54.227.164/~SAESYS08/[ce lien] pour accéder au site web de VidéoFest.
+
+== 3. Utiliser le site web
+
+=== a) Explications des rôles
+
+(admin ou client ou utilisateur)
+
+=== b) Client
+
+==== Se connecter
+
+(expliquer comment faire + screen)
+image:[]
+
+=== c) Administrateur
+
+==== Modifier un produit
+
+(expliquer comment faire + screen)
+image:[]
