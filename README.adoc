@@ -121,5 +121,5 @@ ifndef::env-github[]
 ++++
 endif::[]
 
-=Sprint 1 retour :
+=Sprint 3 retour :
 Il manque les liens dans le readme. J'ai les tâches de sprint mais pas les backlogs produis (ils sont seulement en pdf, du coup impossible de lier les tâches aux US du backlog concerné, on perd l'esprit scrum). Les 2 appli sont gérées en même temps, il vaut mieux créer 2 projets distincts.Doc BD ok, il faut démarrer doc user et doc tech pour le site. Rien sur les tests. Release OK.
