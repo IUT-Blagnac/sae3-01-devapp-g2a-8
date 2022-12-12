@@ -1,3 +1,4 @@
+/* Le header principal*/
 header{
 
   text-align: center;
@@ -6,18 +7,28 @@ header{
   padding-right: 1px;
   padding-bottom: 50px;
 
-
-
-
 }
+/* La partie header avec lee menu et le compte*/
+
 .header{
   background-color: #00576a;
+}
+
+/* Le slogan */
+h4{
+  margin-bottom: 0px;
+  margin-top: 10px;
+  padding: 3px;
+  color: white;
+
 }
 
 body{
   background: #d1eac6;
 
 }
+
+
 footer{
   background:  #00576a;
   text-align: center;
@@ -27,39 +38,41 @@ footer{
   height: 60px;
 
 }
-h4{
-  margin-bottom: 0px;
-  margin-top: 10px;
-  padding: 3px;
-  color: white;
-
-}
 
 
 
+
+/*Le menu deroulant lui meme*/
 .sidenav {
   background-color: #415053;
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
   left: 0;
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 0px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-
-
+  overflow-x: hidden;
+  padding-top: 0px;
+  transition: 0.5s;
 }
+/* Les sous categories*/
 .dropdown-container {
   display: none;
   background-color: #415053;
   padding-left: 8px;
 }
-/* The navigation menu links */
+
+
+
+
+
+
+
+
+
+/* Tout les elements de menu*/
  .sidenav a,.dropdown-btn{
   padding: 8px 8px 8px 32px;
-
   font-size: 16px;
   color: white;
   text-decoration: underline;
@@ -67,21 +80,12 @@ h4{
   transition: 0.3s;
   border: none;
   background: none;
-
-
-
 }
-
-
-
-
-/* When you mouse over the navigation links, change their color */
 .sidenav a:hover,.dropdown-btn:hover{
   color: #f1f1f1;
 }
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
+/*Le button (logo) menu pour le fermer*/
+ .closebtn {
   position: absolute;
   top: 0;
   right: 25px;
@@ -91,22 +95,13 @@ h4{
 
 
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-
 
 /*icon*/
 #logo{
   width: 70px;
   height: auto;
   overflow: auto;
-
   margin-top: 5px;
-
-
 }
 #hamburger {
   width: 50px;
@@ -117,16 +112,15 @@ h4{
 #account {
   width: 50px;
   height: auto;
-
   float: right;
 }
+
 
 #entreprise{
   float: left;
   margin-left: 50px;
   color: white;
   margin-top: 10px;
-
 }
 #contact{
   float: right;
@@ -135,6 +129,7 @@ h4{
   color: white;
   margin-top: 10px;
 }
+
 
 #closeMenu{
     padding-top: 50px;
