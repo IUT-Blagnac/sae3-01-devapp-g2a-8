@@ -91,7 +91,7 @@ Traitement du formulaire de modification du mot de passe
 
 Voici le diagramme de classe structurant la base de données :
 
-image::DCBD.png[]
+image::images/DCBD.png[]
 
 == 3. Fonctionnalités
 
