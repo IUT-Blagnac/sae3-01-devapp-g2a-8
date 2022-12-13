@@ -99,7 +99,9 @@ image::images/DCBD.png[]
 
 Voici le Use Case général du sprint 2 :
 
-image:[]
+plantuml::client.plantuml[png]
+plantuml::utilisateur.plantuml[png]
+plantuml::administrateur.plantuml[png]
 
 ==== (nom de la fonctionalité)
 
