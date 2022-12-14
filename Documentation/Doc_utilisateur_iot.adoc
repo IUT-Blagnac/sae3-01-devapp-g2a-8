@@ -1,0 +1,32 @@
+= Documentation utilisateur application IoT
+:toc:
+:toc-title: Sommaire
+
+Version du site : 0.1 +
+Date : 14/12/2022 +
+Equipe : 2A-8 +
+Client : VidéoFest +
+Projet : Gestion entrepôt + 
+
+<<<
+
+== 1. Description du Projet
+=== a) Equipe
+
+Product Owner : Walaedine +
+Scrum Master : Eva +
+Développeurs : Tobiasz et Sean +
+
+=== b) Contexte du projet
+
+=== c) Objectifs du projet
+
+== 2. Installer l'application
+=== a) Prérequis
+
+
+=== b) Installation
+
+== 3. Utiliser l'application
+
+image:[]
