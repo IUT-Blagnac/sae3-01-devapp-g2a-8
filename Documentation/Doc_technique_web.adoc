@@ -130,4 +130,72 @@ Fonctionnement dans le code : +
 Dans `formConnexion.php` il y a un lien "Créer un compte" qui renvoie vers le formulaire de création de compte `formCreation.php`.
 Le fichier `traitCreation.php` vérifie que le formulaire a été soumis avec tous les champs remplis, il teste la validité de l'adresse mail, du nom, du prénom, il vérifie que le mot de passe respecte la norme RGPD (https://www.donneespersonnelles.fr/generateur-de-mot-de-passe[lien générateur de mot de passe]) et que la vérification du mot de passe est valide. Ensuite il se connecte à la BD et teste si l'adresse mail rentrée n'est pas déjà utilisée. Si jamais une de ces conditions n'est pas remplie, on est redirigé vers `formCreation.php` avec une erreur dans l'url, qui sera récupérée à l'aide de la variable GET et sera affichée. Si toutes les conditions sont remplies, on fait l'insert dans la BD et on redirige vers la page `index.php`.
 
+==== Se connecter 
+
+User Story n°6 :
+
+En tant que client, je souhaite pouvoir me connecter, afin d’accéder à mes informations et de pouvoir commander. +
+
+Pages web concernées : +
+
+* formConnexion.php
+* traitConnexion.php
+
+Accessibilité : client non connecté +
+
+Action de se connecter +
+Fonctionnement dans le code : +
+`formConnexion.php` affiche le formulaire pour se connecter (demande l'adresse mail et le mdp). Le fichier `traitConnexion.php` vérifie que le formulaire a été soumis avec tous les champs remplis, il se connecte à la BD est vérifie que le compte existe (avec cette adresse mail) et que le mot de passe rentré correspond bien au mdp dans la BD. Si jamais une de ces conditions n'est pas remplie, on est redirigé vers `formConnexion.php` avec une erreur dans l'url, qui sera récupérée à l'aide de la variable GET et sera affichée. Si toutes les conditions sont remplies, alors on créer la variable session avec le mode (client ou administrateur) et l'identifiant (numU dans la BD). +
+
+==== Se déconnecter 
+
+User Story n°7 :
+
+En tant que client, je souhaite pouvoir me déconnecter, afin de fermer ma session. +
+
+Pages web concernées : +
+
+* compte.php
+* deconnexion.php
+
+Accessibilité : client connecté +
+
+Action de se déconnecter +
+Fonctionnement dans le code : +
+Sur la page `compte.php`, il y a un lien "Déconnexion" qui renvoie vers la page `deconnexion.php`, cette page détruit le contenu de la variable session et redirige vers l'index. +
+
+==== Voir ses informations
+
+User Story n°6 :
+
+En tant que client, je souhaite pouvoir me connecter, afin d’accéder à mes informations et de pouvoir commander. +
+
+Pages web concernées : +
+
+* compte.php
+
+Accessibilité : client connecté +
+
+Action de voir ses informations +
+Fonctionnement dans le code : +
+Sur la page `compte.php`, si le client est connecté, on se connecte à la BD pour récupérer les informations (select) et on les affiche.  +
+
+==== Modifier ses informations
+
+User Story :
+
+En tant que client, je souhaite pouvoir modifier mes informations, afin de les mettre à jour. +
+
+Pages web concernées : +
+
+* modificationCompte.php
+* traitModificationCompte.php
+
+Accessibilité : client connecté +
+
+Action de modifier ses informations +
+Fonctionnement dans le code : +
+Sur la page `compte.php`, il y a un lien "Modifier mes informations", qui renvoit vers le formulaire `modificationCompte.php`, dans lequel les champs sont préremplis (A FINIR)
+
+
 === b) Sprint 3 (sem 1)
