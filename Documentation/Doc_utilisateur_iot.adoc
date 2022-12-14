@@ -27,9 +27,17 @@ L'objectif de ce projet est de créer une application en Java et Python, qui per
 
 == 2. Installer l'application
 === a) Prérequis
-
+* Système d'exploitation Debian/Ubuntu
+* L'utilisateur qui effectue l'installation doit être sudoer
+* Python 3 Installé
+* Installer les applications dans un répertoir dans lequel on a les droit de créer des nouveaux fichiers
 
 === b) Installation
+Ouvrir un terminal et exécuter les commandes suivantes: +
+`sudo apt update` +
+`sudo apt install python3` +
+L'application python utilise le module paho-mqtt pour communiquer avec les capteurs, il faut donc l'installer +
+`pip install paho-mqtt` +
 
 == 3. Utiliser l'application
 
