@@ -194,6 +194,7 @@ En tant que client, je souhaite pouvoir modifier mes informations, afin de les m
 
 Pages web concernées : +
 
+* compte.php
 * modificationCompte.php
 * traitModificationCompte.php
 
@@ -201,7 +202,7 @@ Accessibilité : client connecté +
 
 Action de modifier ses informations +
 Fonctionnement dans le code : +
-Sur la page `compte.php`, il y a un lien "Modifier mes informations", qui renvoit vers le formulaire `modificationCompte.php`, dans lequel les champs sont préremplis (A FINIR)
+Sur la page `compte.php`, il y a un lien "Modifier mes informations", qui renvoit vers le formulaire `modificationCompte.php`, dans lequel les champs sont préremplis. L'utilisateur peut modifier toutes les valeurs, puis appuier sur le button "Continuer". Si il respecte pas le format des valeurs, pour exemple il met un chiffre dans le nom, alors les changemenets n'est pas effectué, on affiche un erreur en haut de page, et on la récharge avec les résultats de base. Si il respecte toutes les valeurs, alors il est retourne a la page `compte.php` ou il peut observer le changement des valeurs.
 
 ==== Modifier son mot de passe
 
@@ -218,7 +219,7 @@ Accessibilité : client connecté +
 
 Action de modifier son mot de passe +
 Fonctionnement dans : +
-Sur la page `compte.php`, il y a un lien "Modifier mon mot de passe", qui renvoi vers le formulaire `modificationMdp.php`, dans lequel l'utilisateur renseigne l'ancien mot de passe, puis le nouveau, on retape le nouveau mot de passe et on valide. Le fichier `traitModificationMdp.php` va ensuite vérifier, que tout les champs soumis sont remplis, il se connecte à la BD est vérifie que l'ancien mot de passe correspond au compte liée a cette session. Si jamais une de ces conditions n'est pas remplie, on est redirigé vers `modificationMdp.php` avec une erreur dans l'url, qui sera récupérée à l'aide de la variable GET et sera affichée. Si toutes les conditions sont remplies, alors on remplace l'ancien mot de passe par le nouveau et l'utilisateur reste connecté. +
+Sur la page `compte.php`, il y a un lien "Modifier mon mot de passe", qui renvoi vers le formulaire `modificationMdp.php`, dans lequel l'utilisateur renseigne l'ancien mot de passe, puis le nouveau. Le fichier `traitModificationMdp.php` va ensuite vérifier, que tout les champs soumis sont remplis, il se connecte à la BD est vérifie que l'ancien mot de passe correspond au compte liée a cette session. Si jamais une de ces conditions n'est pas remplie, on est redirigé vers `modificationMdp.php` avec une erreur dans l'url, qui sera récupérée à l'aide de la variable GET et sera affichée. Si toutes les conditions sont remplies, alors on remplace l'ancien mot de passe par le nouveau et l'utilisateur reste connecté. +
 
 ==== Supprimer son compte
 
