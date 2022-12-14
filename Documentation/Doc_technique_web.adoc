@@ -97,29 +97,37 @@ image::images/DCBD.png[]
 
 === a) Sprint 2 (sem 50)
 
-Voici le Use Case général du sprint 2 :
+Voici le Use Case général du sprint 2 : +
 
-plantuml::client.plantuml[png]
-plantuml::utilisateur.plantuml[png]
-plantuml::administrateur.plantuml[png]
+* Utilisateur +
 
-==== (nom de la fonctionalité)
+image::images/utilisateur.png[]
 
-Use case : 
+* Client +
 
-image:[]
+image::images/client.png[]
 
-Pages web concernées :
+* Administrateur (rien pour le moment) +
 
-* include :  
-** css +
-*** style.css
+image::images/administrateur.png[]
 
-* index.php
+==== Créer un compte
 
-Accessibilité : (utilisateur lambda ou client ou admin) +
+User Story n°5 : 
 
-Action de (...) +
-Fonctionnement dans le code : (...) +
+En tant qu’utilisateur, je souhaite créer un compte, afin de stocker mes informations.
+
+Pages web concernées : +
+
+* formConnexion.php
+* formCreation.php
+* traitCreation.php
+
+Accessibilité : tout utilisateur qui n'a pas de compte +
+
+Action de créer un compte +
+Fonctionnement dans le code : +
+Dans `formConnexion.php` il y a un lien "Créer un compte" qui renvoie vers le formulaire de création de compte `formCreation.php`.
+Le fichier `traitCreation.php` vérifie que le formulaire a été soumis avec tous les champs remplis, il teste la validité de l'adresse mail, du nom, du prénom, il vérifie que le mot de passe respecte la norme RGPD (https://www.donneespersonnelles.fr/generateur-de-mot-de-passe[lien générateur de mot de passe]) et que la vérification du mot de passe est valide. Ensuite il se connecte à la BD et teste si l'adresse mail rentrée n'est pas déjà utilisée. Si jamais une de ces conditions n'est pas remplie, on est redirigé vers `formCreation.php` avec une erreur dans l'url, qui sera récupérée à l'aide de la variable GET et sera affichée. Si toutes les conditions sont remplies, on fait l'insert dans la BD et on redirige vers la page `index.php`.
 
 === b) Sprint 3 (sem 1)
