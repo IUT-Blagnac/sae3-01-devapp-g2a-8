@@ -212,6 +212,7 @@ En tant que client, je souhaite modifier mon mot de passe, afin de mieux amélio
 
 Pages web concernées : +
 
+* compte.php
 * modificationMdp.php
 * traitModificationMdp.php
 
@@ -223,7 +224,7 @@ Sur la page `compte.php`, il y a un lien "Modifier mon mot de passe", qui renvoi
 
 ==== Supprimer son compte
 
-User Story n°X:
+User Story n°11:
 
 En tant que client, je souhaite pouvoir supprimer mon compte et enlever mes données de la base dé données. +
 
