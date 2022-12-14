@@ -57,9 +57,9 @@ image:[]
 === c) Client
 
 ==== Se connecter
-
-(expliquer comment faire + screen)
-image:[]
+Afin de se connecter a son compte, il faut accéder au formulaire de connexion en cliquant sur l'icone compte de la page d'accueil en haut à droite ou en cliquant sur le menu et en sélèctionnant
+Afin de se connecter a son compte, il faut remplir les champs mail et mot de passe puis validé avec continuer, vous avez la possibilité d'enregistrer les champs renseigné en cochant " se soouvenir de moi":
+image:images/formulaireConnexion.png[]
 
 === d) Administrateur
 
