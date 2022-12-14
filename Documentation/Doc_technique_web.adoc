@@ -93,6 +93,12 @@ Voici le diagramme de classe structurant la base de données :
 
 image::images/DCBD.png[]
 
+&nbsp; &nbsp; &nbsp; &nbsp; La table utilisateur sera la plus manipulée. Elle contient toutes les informations personnelles d'un utilisateur, avec son mot de passe hashé et la propriété administrateur pour indiquer si il est bien administrateur du site. +
+ +
+&nbsp; &nbsp; &nbsp; &nbsp; La table Article contient toutes les informations d'un article en vente et possède un catégorie qui peut avoir un catégorie parente. Un article se décline en différentes couleurs. Ces articles ont donc un stock différent pour chaque variante de couleur. +
+ +
+Lors de son ajout au 
+
 == 3. Fonctionnalités
 
 === a) Sprint 2 (sem 50)
