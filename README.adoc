@@ -69,7 +69,7 @@ Voir documentations utilisateurs
 - Version courante : https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/releases/tag/1.0[v1.0]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_technique_web.adoc[Documentation technique du site web]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_utilisateur_web.adoc[Documentation utilisateur du site web]
-- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_IoT.adoc[Documentation de l'application IoT]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_utilisateur_iot.adoc[Documentation utilisateur de l'application IoT]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/G2A08_ConceptionBD.pdf[Documentation conception de la BD]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/milestone/2[Milestone en cours]
 - https://github.com/orgs/IUT-Blagnac/projects/24[Projet du site web]
