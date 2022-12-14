@@ -7,7 +7,7 @@ def handler(num, frame):
     global old
     if Jmsg != old:
         for type in config['data']: #pour chaque type de données demandé
-            file=os.open(type+".txt", os.O_WRONLY | os.O_CREAT | os.O_APPEND) #on ouvre le fichier
+            file=os.open(type+".txt", os.O_WRONLY | os.O_CREAT | os.O_APPEND, mode=0o600) #on ouvre ou crée le fichier
             os.write(file, (str(Jmsg["object"][type])+" ").encode('UTF-8')) #on écrit la donnée, séparées par des espaces
             os.close(file) #on ferme le fichier
         old = Jmsg
