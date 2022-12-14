@@ -19,7 +19,11 @@ Développeurs : Tobiasz et Sean +
 
 === b) Contexte du projet
 
+VidéoFest est une entreprise qui s'est récemment reconvertie dans la vente de périphériques en ligne, elle possède plusieurs entrepôts dont certaines données doivent être contrôlées. Il existe déjà un réseau de capteurs dans les entrepôts, qui récupèrent plusieurs informations sur les caractéristiques de l'air, comme la température, l'humidité ou la concentration en CO². Un capteur envoit les informations au serveur toutes les 10 minutes, mais pour le moment ces données ne sont pas exploitées. 
+
 === c) Objectifs du projet
+
+L'objectif de ce projet est de créer une application en Java et Python, qui permettra de configurer les données que l'on veut consulter, qui se connectera au serveur et récupèrera les données voulues, et affichera ces données de façon lisible pour l'utilisateur. On aura donc une partie IHM en Java qui créera le fichier de configuration des données, puis la partie Python fera la connexion et écrira les données dans un autre fichier. Enfin, Java lira ces données et les affichera sur l'IHM.
 
 == 2. Installer l'application
 === a) Prérequis
