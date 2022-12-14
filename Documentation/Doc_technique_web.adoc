@@ -220,4 +220,23 @@ Action de modifier son mot de passe +
 Fonctionnement dans : +
 Sur la page `compte.php`, il y a un lien "Modifier mon mot de passe", qui renvoi vers le formulaire `modificationMdp.php`, dans lequel l'utilisateur renseigne l'ancien mot de passe, puis le nouveau, on retape le nouveau mot de passe et on valide. Le fichier `traitModificationMdp.php` va ensuite vérifier, que tout les champs soumis sont remplis, il se connecte à la BD est vérifie que l'ancien mot de passe correspond au compte liée a cette session. Si jamais une de ces conditions n'est pas remplie, on est redirigé vers `modificationMdp.php` avec une erreur dans l'url, qui sera récupérée à l'aide de la variable GET et sera affichée. Si toutes les conditions sont remplies, alors on remplace l'ancien mot de passe par le nouveau et l'utilisateur reste connecté. +
 
+==== Supprimer son compte
+
+User Story n°X:
+
+En tant que client, je souhaite pouvoir supprimer mon compte et enlever mes données de la base dé données. +
+
+Pages web concernées : +
+
+* compte.php
+* suppressionCompte.php
+
+
+Accessibilité : client connecté +
+
+Action de supprimer ses informations +
+Fonctionnement dans le code : +
+Sur la page `compte.php`, il y a un button "Supprimer mon compte", qui déclenche la fonction `suppressionCompte.php`. Cette fonction renvoie une alerte. Si on appuie sur cancel, on revient sur la page avec aucun changement. Si on appuie sur OK, le site se connecte a la BD, fait une suppression de la base de données, puis nous retourne a la page d’accueil avec un popup 'Suppression effectuée'
+
+
 === b) Sprint 3 (sem 1)
