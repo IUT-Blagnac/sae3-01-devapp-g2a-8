@@ -172,7 +172,7 @@ Sur la page `compte.php`, il y a un lien "Déconnexion" qui renvoie vers la page
 
 ==== Voir ses informations
 
-User Story n°8 :
+User Story n°6 :
 
 En tant que client, je souhaite pouvoir me connecter, afin d’accéder à mes informations et de pouvoir commander. +
 
@@ -188,7 +188,7 @@ Sur la page `compte.php`, si le client est connecté, on se connecte à la BD po
 
 ==== Modifier ses informations
 
-User Story n°9:
+User Story :
 
 En tant que client, je souhaite pouvoir modifier mes informations, afin de les mettre à jour. +
 
@@ -202,13 +202,14 @@ Accessibilité : client connecté +
 
 Action de modifier ses informations +
 Fonctionnement dans le code : +
-Sur la page `compte.php`, il y a un lien "Modifier mes informations", qui renvoit vers le formulaire `modificationCompte.php`, dans lequel les champs sont préremplis. L'utilisateur peut modifier toutes les valeurs, puis appuier sur le button "Continuer". Si il respecte pas le format des valeurs, pour exemple il met un chiffre dans le nom, alors les changemenets n'est pas effectué, on affiche un erreur en haut de page, et on la récharge avec les résultats de base. Si il respecte toutes les valeurs, alors il est retourne a la page `compte.php` ou il peut observer le changement des valeurs.
+Sur la page `compte.php`, il y a un lien "Modifier mes informations", qui renvoit vers le formulaire `modificationCompte.php`, dans lequel les champs sont préremplis. L'utilisateur peut modifier toutes les valeurs et ajouter son adresse s'il n'en avait pas d'enregistré. La page `traitModificationCompte.php` teste si le formulaire est bien soumis, si les champs nom, prénom et adresse mail sont bien remplis et valides, et si l'adresse mail n'est pas utilisée pour un autre compte.
+Si jamais une de ces conditions n'est pas remplie, on est redirigé vers `modificationCompte.php` avec une erreur dans l'url, qui sera récupérée à l'aide de la variable GET et sera affichée. Si toutes les conditions sont remplies, alors se connecte à la BD et on fait l'update, puis on redirige vers `compte.php`. +
 
 ==== Modifier son mot de passe
 
-User Story n°10 :
+User Story :
 
-En tant que client, je souhaite modifier mon mot de passe, afin de mieux améliorer la sécurité de mon compte. +
+En tant que client, je souhaite modifier mon mot de passe, afin d'améliorer la sécurité de mon compte. +
 
 Pages web concernées : +
 
@@ -219,26 +220,27 @@ Pages web concernées : +
 Accessibilité : client connecté +
 
 Action de modifier son mot de passe +
-Fonctionnement dans : +
-Sur la page `compte.php`, il y a un lien "Modifier mon mot de passe", qui renvoi vers le formulaire `modificationMdp.php`, dans lequel l'utilisateur renseigne l'ancien mot de passe, puis le nouveau. Le fichier `traitModificationMdp.php` va ensuite vérifier, que tout les champs soumis sont remplis, il se connecte à la BD est vérifie que l'ancien mot de passe correspond au compte liée a cette session. Si jamais une de ces conditions n'est pas remplie, on est redirigé vers `modificationMdp.php` avec une erreur dans l'url, qui sera récupérée à l'aide de la variable GET et sera affichée. Si toutes les conditions sont remplies, alors on remplace l'ancien mot de passe par le nouveau et l'utilisateur reste connecté. +
+Fonctionnement dans le code : +
+Sur la page `compte.php`, il y a un lien "Modifier mon mot de passe", qui renvoit vers le formulaire `modificationMdp.php`, dans lequel il faut rentrer l'ancier mot de passe, le nouveau, et la vérification du nouveau. La page `traitModificationMdp.php` teste si le formulaire est bien soumis, si les champs sont bien remplis, si l'ancien mot de passe correspond bien à celui dans la BD (select), si les deux champs pour le nouveau mot de passe sont égaux, et si le nouveau mot de passe respecte les normes RGPD.
+Si jamais une de ces conditions n'est pas remplie, on est redirigé vers `modificationMdp.php` avec une erreur dans l'url, qui sera récupérée à l'aide de la variable GET et sera affichée. Si toutes les conditions sont remplies, alors se connecte à la BD et on fait l'update, puis on redirige vers `compte.php`. +
+
 
 ==== Supprimer son compte
 
-User Story n°11:
+User Story :
 
-En tant que client, je souhaite pouvoir supprimer mon compte et enlever mes données de la base dé données. +
+En tant que client, je souhaite pouvoir supprimer mon compte et enlever mes données de la base dé données, afin de pouvoir exercer mon droit d'oubli. +
 
 Pages web concernées : +
 
 * compte.php
 * suppressionCompte.php
 
-
 Accessibilité : client connecté +
 
 Action de supprimer ses informations +
 Fonctionnement dans le code : +
-Sur la page `compte.php`, il y a un button "Supprimer mon compte", qui déclenche la fonction `suppressionCompte.php`. Cette fonction renvoie une alerte. Si on appuie sur cancel, on revient sur la page avec aucun changement. Si on appuie sur OK, le site se connecte a la BD, fait une suppression de la base de données, puis nous retourne a la page d’accueil avec un popup 'Suppression effectuée'
+Sur la page `compte.php`, il y a un button "Supprimer mon compte", qui lance un pop-up Javascript de confirmation de suppression, si l'utilisateur confirme alors on redirige vers la page `suppressionCompte.php`. Cette page vérifie que l'utilisateur est connecté, il se connecte à la BD pour supprimer l'utilisateur (delete) dont l'identifiant est dans la variable SESSION, puis on détruit la session et on redirige vers la page principale avec un pop-up Javascript qui confirme la suppression.
 
 
 === b) Sprint 3 (sem 1)
