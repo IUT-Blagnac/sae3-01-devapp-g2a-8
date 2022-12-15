@@ -8,6 +8,6 @@
 	</div>
 <!--La fonctionnalite de hamburger menu-->
 	<span onclick="openNav()"><img src="include/logos/menu.png" alt="Menu" id="hamburger"></span>
-<!--L'icone de compte. Pour instant sans utilite-->
+<!--L'icone de compte. -->
 	<a href="compte.php"><img src="include/logos/compte.png" alt="Compte" id="account"></a>
 </header>

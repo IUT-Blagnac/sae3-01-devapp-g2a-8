@@ -5,30 +5,28 @@
         
         //test format mail
         if (!preg_match("#^\\S+@\\S+\\.\\S+$#", $_POST['email'])) {
-            header("Location: formConnexion.php?error=format de l'email invalide");
+            header("Location: formConnexion.php?error=Format de l'email invalide");
             exit();
         }
 
         //connexion à la BD
-        $req="SELECT mail, mdp, administrateur FROM Utilisateur WHERE mail=:pMail";
+        $req="SELECT numU, mail, mdp, administrateur FROM Utilisateur WHERE mail=:pMail";
         $st=oci_parse($conn, $req);
         oci_bind_by_name($st, ":pMail", $_POST['email']);
         $result=oci_execute($st);
-        if (!$result) {
-            $e = oci_error($st);
-            print htmlentities($e['message'].' pour cette requete : '.$e['sqltext']);
-        }
         $compte=oci_fetch_assoc($st);
+        oci_free_statement($st);
+        oci_close($conn);
 
         // si aucun compte sélectionné
         if (!$compte) {
-            header("Location: formConnexion.php?error=compte inexistant");
+            header("Location: formConnexion.php?error=Compte inexistant");
             exit();
         }
 
         //comparaison du mdp avec password_verify()
         if (!password_verify($_POST['mdp'], $compte['MDP'])) {
-            header("Location: formConnexion.php?error=mot de passe incorrect");
+            header("Location: formConnexion.php?error=Mot de passe incorrect");
             exit();
         }
 
@@ -38,7 +36,14 @@
         } else {
             $_SESSION['connexion']='client';
         }
-        oci_free_statement($st);
+        $_SESSION['id']=$compte['NUMU']; //récupère l'identifiant qui sera utilisé dans d'autres pages (modifier, supprimer, etc)
+
+        //cookie
+        if (isset($_POST['memo'])) {
+            setcookie("connexion", htmlentities($_POST['email']), time()+60*20); //créer cookie 20min
+        } else {
+            setcookie("connexion", htmlentities($_POST['email']), time()-1); //détruire cookie
+        }
 
         //renvoie vers la page voulue ou l'index
         if (isset($_GET['connDest'])) {
@@ -47,13 +52,6 @@
         } else {
             header("Location: index");
             exit();
-        }
-
-        //cookie
-        if (isset($_POST['memo'])) {
-            setcookie("connexion", htmlentities($_POST['email']), time()+60*20); //créer cookie 20min
-        } else {
-            setcookie("connexion", htmlentities($_POST['email']), time()-1); //détruire cookie
         }
 
     }
