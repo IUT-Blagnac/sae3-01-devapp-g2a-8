@@ -31,12 +31,16 @@
 		document.getElementById("main").style.filter = "blur(4px)";
 		document.getElementById("end").style.filter = "blur(4px)";
 		document.getElementById("mySidenav").style.width = "250px";
+		document.getElementById("maindiv").style.filter = "blur(4px)";
+
 	}
 	/*Change la taille de menu, et le blur de la bage*/
 	function closeNav() {
 		document.getElementById("main").style.filter = "blur(0px)";
 		document.getElementById("end").style.filter = "blur(0px)";
 		document.getElementById("mySidenav").style.width = "0";
+		document.getElementById("maindiv").style.filter = "blur(0px)";
+
 	}
 	/*Si l'icone que on a dans le button est vers la droite, on la met vers le bas, et l'inverse*/
 	function changeIcon() {
