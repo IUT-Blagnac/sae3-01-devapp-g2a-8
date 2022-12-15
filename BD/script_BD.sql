@@ -1,8 +1,7 @@
 DROP TABLE Stock;
+DROP TABLE DetailCommande;
 DROP TABLE Couleur;
 DROP TABLE Commande;
-DROP TABLE DetailPanier;
-DROP TABLE Panier;
 DROP TABLE Produit;
 DROP TABLE Categorie;
 DROP TABLE Utilisateur;
@@ -43,36 +42,29 @@ CREATE TABLE Produit (
     CONSTRAINT fk_produit_categorie FOREIGN KEY(categorie) REFERENCES Categorie(nom)
 );
 
-CREATE TABLE Panier (
-    numP DECIMAL(10),
-    client DECIMAL(10),
-    CONSTRAINT pk_panier PRIMARY KEY(numP),
-    CONSTRAINT fk_panier_client FOREIGN KEY(client) REFERENCES Utilisateur(numU),
-    CONSTRAINT uk_panier_client UNIQUE(client)
-);
-
-CREATE TABLE DetailPanier (
-    panier DECIMAL,
-    produit DECIMAL,
-    qte DECIMAL NOT NULL,
-    CONSTRAINT pk_detailpanier PRIMARY KEY(panier, produit),
-    CONSTRAINT fk_detailpanier_panier FOREIGN KEY(panier) REFERENCES Panier(numP),
-    CONSTRAINT fk_detailpanier_produit FOREIGN KEY(produit) REFERENCES Produit(numP)
-);
-
 CREATE TABLE Commande (
     numC DECIMAL(10),
     montant DECIMAL(10,2),
     dateC DATE, -- DATE TO DATEC
-    panier DECIMAL(10),
+    utilisateur DECIMAL(10),
     CONSTRAINT pk_commande PRIMARY KEY(numC),
-    CONSTRAINT fk_commande_panier FOREIGN KEY(panier) REFERENCES Panier(numP),
-    CONSTRAINT uk_commande_panier UNIQUE(panier)
+    CONSTRAINT fk_commande_utilisateur FOREIGN KEY(utilisateur) REFERENCES Utilisateur(numU)
 );
 
 CREATE TABLE Couleur (
     nom VARCHAR(30),
     CONSTRAINT pk_couleur PRIMARY KEY(nom)
+);
+
+CREATE TABLE DetailCommande (
+    commande DECIMAL(10),
+    produit DECIMAL(10),
+    couleur VARCHAR(30),
+    qte DECIMAL NOT NULL,
+    CONSTRAINT pk_detailcommande PRIMARY KEY(commande, produit, couleur),
+    CONSTRAINT fk_detailcommande_commande FOREIGN KEY(commande) REFERENCES Commande(numC),
+    CONSTRAINT fk_detailcommande_produit FOREIGN KEY(produit) REFERENCES Produit(numP),
+    CONSTRAINT fk_detailcommande_couleur FOREIGN KEY(couleur) REFERENCES Couleur(nom)
 );
 
 CREATE TABLE Stock (
@@ -87,4 +79,3 @@ CREATE TABLE Stock (
 CREATE SEQUENCE utilisateur_id_seq;
 CREATE SEQUENCE produit_id_seq;
 CREATE SEQUENCE commande_id_seq;
-CREATE SEQUENCE panier_id_seq;
