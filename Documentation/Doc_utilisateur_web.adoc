@@ -49,21 +49,141 @@ Il y a 3 rôles différents pour les utilisateurs du site : +
 
 === b) Utilisateur non connecté
 
-==== Contacter l'entreprise
+==== Créer un compte 
 
-(expliquer comment faire + screen)
-image:[]
+Pour créer un compte, il faut d'abord tenter de se connecter, soit par l'icone en haut à gauche du site :
+
+image::images/iconeConnexion.png[]
+
+Soit par le menu :
+
+image::images/menu.png[]
+
+Ensuite sur la page de connexion, il faut cliquer sur "Créer un compte " :
+
+image::images/boutonCreerCompte.png[]
+
+Ce qui nous amène au formulaire de création de compte : 
+
+image::images/formCreation.png[]
+
+Tous les champs doivent être remplis, le nom et le prénom ne peuvent pas contenir de chiffres ou de caractères spéciaux, l'adresse mail doit avoir un format valide, le mot de passe doit respecter les normes RGPD (https://www.donneespersonnelles.fr/generateur-de-mot-de-passe[voici un générateur de mot de passe aux normes]), et la vérification du mot de passe doit être égale au mot de passe voulu. Ensuite il faut cliquer sur "Continuer" et si jamais une erreur est faite, un message explicatif s'affichera. S'il n'y a pas d'erreur le compte sera créé et on sera redirigé vers la page principale du site.
 
 === c) Client
 
 ==== Se connecter
-Afin de se connecter a son compte, il faut accéder au formulaire de connexion en cliquant sur l'icone compte de la page d'accueil en haut à droite ou en cliquant sur le menu et en sélèctionnant
-Afin de se connecter a son compte, il faut remplir les champs mail et mot de passe puis validé avec continuer, vous avez la possibilité d'enregistrer les champs renseigné en cochant " se soouvenir de moi":
-image:images/formulaireConnexion.png[]
+
+Pour se connecter, il faut d'abord aller sur la page de connexion, soit par l'icone en haut à gauche du site :
+
+image::images/iconeConnexion.png[]
+
+Soit par le menu :
+
+image::images/menu.png[]
+
+Ce qui nous amène au formulaire de connexion : 
+
+image::images/formulaireConnexion.png[]
+
+Tous les champs doivent être remplis, un compte avec cette adresse mail doit déjà exister, et le mot de passe doit être le même que celui enregistré précédemment. Il est possible de cocher la case "Se souvenir de moi", qui permettra à l'aide d'un cookie de stocker l'adresse mail pour se reconnecter plus tard. Ensuite il faut cliquer sur "Continuer" et si jamais une erreur est faite, un message explicatif s'affichera. S'il n'y a pas d'erreur le client sera connecté et redirigé vers la
+
+==== Se déconnecter
+
+Pour se déconnecter, il faut d'abord être connecté et être sur la page de visualisation de compte, soit par l'icone en haut à gauche :
+
+image::images/iconeConnexion.png[]
+
+Soit par le menu :
+
+image::images/menu.png[]
+
+Ce qui nous amène à la page de visualisation du compte, d'où il faut cliquer sur le bouton "Déconnexion" : 
+
+image::images/boutonDeconnexion.png[]
+
+Le client est alors déconnecté et redirigé vers la page principale.
+
+==== Voir ses informations
+
+Pour voir ses informations de compte, il faut d'abord être connecté et ensuite aller sur la page de visualisation de compte, soit par l'icone en haut à gauche :
+
+image::images/iconeConnexion.png[]
+
+Soit par le menu :
+
+image::images/menu.png[]
+
+Ce qui nous amène à la page de visualisation du compte : 
+
+image::images/compte.png[]
+
+Le client peut alors visualiser ses informations.
+
+==== Modifier ses informations
+
+Pour modifier ses informations de compte, il faut d'abord être connecté et être sur la page de visualisation de compte, soit par l'icone en haut à gauche :
+
+image::images/iconeConnexion.png[]
+
+Soit par le menu :
+
+image::images/menu.png[]
+
+Ce qui nous amène à la page de visualisation du compte, d'où il faut cliquer sur "Modifier mes informations" : 
+
+image::images/boutonModifInfos.png[]
+
+On arrive alors sur un formulaire dont les champs sont préremplis : 
+
+image::images/modificationCompte.png[]
+
+Il suffit de modifier les informations voulues, attention si l'adresse mail est modifié il se peut qu'un autre compte utilise déjà cette adresse mail, et les champs doivent être valides, l'adresse n'est pas obligatoire. Ensuite il faut cliquer sur "Continuer" et si jamais une erreur est faite, un message explicatif s'affichera. S'il n'y a pas d'erreur les informations seront mises à jour et le client sera redirigé vers la page de visualisation de son compte.
+
+==== Modifier son mot de passe
+
+Pour modifier son mot de passe, il faut d'abord être connecté et être sur la page de visualisation de compte, soit par l'icone en haut à gauche :
+
+image::images/iconeConnexion.png[]
+
+Soit par le menu :
+
+image::images/menu.png[]
+
+Ce qui nous amène à la page de visualisation du compte, d'où il faut cliquer sur "Modifier mon mot de passe" : 
+
+image::images/boutonModifMdp.png[]
+
+On arrive alors sur un formulaire pour faire la modification : 
+
+image::images/modificationMdp.png[]
+
+Il faut saisir l'ancien mot de passe, le nouveau et sa vérification, attention le mot de passe doit respecter les normes RGPD (https://www.donneespersonnelles.fr/generateur-de-mot-de-passe[générateur]). Ensuite il faut cliquer sur "Modifier" et si jamais une erreur est faite, un message explicatif s'affichera. S'il n'y a pas d'erreur les informations seront mises à jour et le client sera redirigé vers la page de visualisation de son compte.
+
+==== Supprimer son compte
+
+Pour supprimer son compte, il faut d'abord être connecté et être sur la page de visualisation de compte, soit par l'icone en haut à gauche :
+
+image::images/iconeConnexion.png[]
+
+Soit par le menu :
+
+image::images/menu.png[]
+
+Ce qui nous amène à la page de visualisation du compte, d'où il faut cliquer sur "Supprimer mon compte" : 
+
+image::images/boutonSupprimerCompte.png[]
+
+Un pop-up s'affichera : 
+
+image::images/popupConfirmation.png[]
+
+En cliquant sur "Annuler", alors la suppression ne sera pas faite, en revanche en cliquant sur "Ok", le compte et les données liées seront supprimées, le client sera déconnecté puis redirigé vers la page principale avec une popup informative :
+
+image::images/popupInformation.png[]
 
 === d) Administrateur
 
 ==== Modifier un produit
 
 (expliquer comment faire + screen)
-image:[]
+image::images/[]
