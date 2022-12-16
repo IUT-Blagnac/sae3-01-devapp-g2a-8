@@ -77,6 +77,7 @@ L'entreprise a donc décidé de se reconvertir vers la vente de périphériques 
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Produit.pdf[Backlog produit]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%201.pdf[Backlog sprint 1]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%202.pdf[Backlog sprint 2]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%203.pdf[Backlog sprint 3]
 
 === Évaluations hebdomadaires
 
