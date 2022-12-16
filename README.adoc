@@ -62,11 +62,10 @@ L'entreprise a donc décidé de se reconvertir vers la vente de périphériques 
 
 == Réalisations 
 
-Voir documentations utilisateurs
+- Version courante : https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/releases/tag/2.0[v2.0]
 
 == Gestion de projet & Qualité
 
-- Version courante : https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/releases/tag/1.0[v1.0]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_technique_web.adoc[Documentation technique du site web]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_utilisateur_web.adoc[Documentation utilisateur du site web]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_utilisateur_iot.adoc[Documentation utilisateur de l'application IoT]
