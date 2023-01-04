@@ -54,32 +54,45 @@ Projet réalisé par::
 Tutrice enseignante de l'équipe:: 
 - mailto:marie-francoise.canut@univ-tlse2.fr[MFC]
 
-== Contexte général
-
-VideoFest est une start-up française implantée à Toulouse et créée en 2021 par les cofondateurs Vignal Alexandre, Dourlent Maxime, Fernandez Mickael et Straputicari Luca. Anciennement tournée sur des gammes d’appareils-photos, VideoFest n’a jamais connu une croissance suffisante pour se démarquer et maintenir son existence dans un
-domaine devenu obsolète. Aujourd’hui, les objets technologiques tels que les smartphones ou encore les tablettes implémentent cette fonctionnalité pour une qualité au point. +
-L'entreprise a donc décidé de se reconvertir vers la vente de périphériques informatiques afin de répondre à une forte baisse de son chiffre d’affaires. Afin de faciliter cette vente, ils veulent avoir un nouveau site de e-commerce dédié, ce qui leur permettrait de redorer leur image, augmenter leur visibilité, et créer un avantage concurrentiel.
-
 == Réalisations 
 
 - Version courante : https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/releases/tag/2.0[v2.0]
-
-== Gestion de projet & Qualité
-
-- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_technique_web.adoc[Documentation technique du site web]
-- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_utilisateur_web.adoc[Documentation utilisateur du site web]
-- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_utilisateur_iot.adoc[Documentation utilisateur de l'application IoT]
-- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/BD/script_BD.sql[Script de création de la BD]
-- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/BD/insert_BD.sql[Script insertion des données dans la BD]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/milestone/2[Milestone en cours]
-- https://github.com/orgs/IUT-Blagnac/projects/24[Projet du site web]
-- https://github.com/orgs/IUT-Blagnac/projects/46[Projet de l'application IoT]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Produit.pdf[Backlog produit]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%201.pdf[Backlog sprint 1]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%202.pdf[Backlog sprint 2]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%203.pdf[Backlog sprint 3]
 
-=== Évaluations hebdomadaires
+== Projet Site Web
+
+=== Contexte général
+
+VideoFest est une start-up française implantée à Toulouse et créée en 2021 par les cofondateurs Vignal Alexandre, Dourlent Maxime, Fernandez Mickael et Straputicari Luca. Anciennement tournée sur des gammes d’appareils-photos, VideoFest n’a jamais connu une croissance suffisante pour se démarquer et maintenir son existence dans un
+domaine devenu obsolète. Aujourd’hui, les objets technologiques tels que les smartphones ou encore les tablettes implémentent cette fonctionnalité pour une qualité au point. +
+L'entreprise a donc décidé de se reconvertir vers la vente de périphériques informatiques afin de répondre à une forte baisse de son chiffre d’affaires. Afin de faciliter cette vente, ils veulent avoir un nouveau site de e-commerce dédié, ce qui leur permettrait de redorer leur image, augmenter leur visibilité, et créer un avantage concurrentiel.
+
+=== Gestion de projet & Qualité
+
+- https://github.com/orgs/IUT-Blagnac/projects/24[Projet]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_technique_web.adoc[Documentation technique]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_utilisateur_web.adoc[Documentation utilisateur]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/BD/script_BD.sql[Script de création de la BD]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/BD/insert_BD.sql[Script insertion des données dans la BD]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Cahier_de_tests_Site.adoc[Cahier de tests]
+
+== Projet IoT
+
+=== Contexte général
+
+VidéoFest possède plusieurs entrepôts dont certaines données doivent être contrôlées. Il existe déjà un réseau de capteurs dans les entrepôts, qui récupèrent plusieurs informations sur les caractéristiques de l'air, comme la température, l'humidité ou la concentration en CO². L'entreprise souhaite aussi pour des raisons de sécurité avoir accès aux données de détection de présence récupérées par les capteurs. Un capteur envoit les informations au serveur toutes les 10 minutes, mais pour le moment ces données ne sont pas exploitées.
+
+=== Gestion de projet & Qualité
+
+- https://github.com/orgs/IUT-Blagnac/projects/46[Projet]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_utilisateur_iot.adoc[Documentation utilisateur]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Cahier_de_tests_IoT.adoc[Cahier de tests]
+
+== Évaluations hebdomadaires
 
 NOTE: Les notes ci-dessous sont mises à jour directement par les enseignants responsables de la compétence 5.
 
