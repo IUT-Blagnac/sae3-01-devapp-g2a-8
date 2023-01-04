@@ -2,7 +2,7 @@
 :toc:
 :toc-title: Sommaire
 
-Version du site : 0.1 +
+Version de l'application : 0.1 +
 Date : 16/12/2022 +
 Equipe : 2A-8 +
 Client : VidéoFest +
