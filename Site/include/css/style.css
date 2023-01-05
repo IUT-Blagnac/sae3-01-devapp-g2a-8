@@ -33,6 +33,18 @@ body {
     color: rgb(244, 244, 250);
 }
 
+#messageContact {
+    color: black;
+    width: 50%;
+}
+
+#panier table,
+#panier th,
+#panier td {
+    border: 1px solid;
+    border-collapse: collapse;
+    color: black;
+}
 
 footer {
     background: #00576a;
@@ -41,7 +53,6 @@ footer {
     bottom: 0;
     width: 100%;
     height: 60px;
-
 }
 
 
@@ -68,7 +79,8 @@ footer {
 
 
 /* Tout les elements de menu*/
-.sidenav a, .dropdown-btn {
+.sidenav a,
+.dropdown-btn {
     padding: 8px 8px 8px 32px;
     font-size: 16px;
     color: white;
@@ -79,7 +91,8 @@ footer {
     background: none;
 }
 
-.sidenav a:hover, .dropdown-btn:hover {
+.sidenav a:hover,
+.dropdown-btn:hover {
     color: #f1f1f1;
 }
 
@@ -114,6 +127,27 @@ footer {
     float: right;
 }
 
+#panierLogo {
+    width: 50px;
+    height: auto;
+    float: right;
+}
+
+#modifier {
+    float: right;
+    width: 50%;
+}
+
+#qte {
+    max-width: 35%;
+}
+
+#supprimer {
+    width: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 #entreprise {
     float: left;
@@ -139,11 +173,10 @@ footer {
 }
 
 #hamburger2 {
-    margin-left: 63px;
+    display: block;
+    margin: -20% auto 5% auto;
     width: 50px;
     height: auto;
-
-
 }
 
 #logoMenu {
@@ -162,17 +195,17 @@ footer {
 }
 
 /* formulaires de connexion/création de compte/modification de compte */
-#maindiv{
+#maindiv {
     height: 100%;
     width: 100%;
     text-align: center;
     align-items: center;
     align-content: center;
-    color:rgb(240, 248, 255);
+    color: rgb(240, 248, 255);
 }
 
 
-.formulaire{
+.formulaire {
     padding: 5px;
     width: 30%;
     border-radius: 10px;
@@ -180,43 +213,117 @@ footer {
     margin: 50px auto auto auto;
 
 }
+
 /*Champ du formulaire*/
-input[type=submit]{
+input[type=submit] {
     width: 30%;
     border-radius: 10px;
-    border-style:hidden;
+    border-style: hidden;
     background-color: rgb(247, 242, 242);
     color: #0d0d0d;
     margin: auto;
     margin-bottom: 5px;
 }
 
-input[type=text]{
+input[type=text] {
     width: 50%;
     border-radius: 10px;
-    border-style:hidden;
+    border-style: hidden;
     background-color: #403c3c;
     margin: auto;
 }
 
-input[type=email]{
+input[type=email] {
     width: 50%;
     border-radius: 10px;
-    border-style:hidden;
+    border-style: hidden;
     background-color: #403c3c;
     margin: auto;
 }
 
-input[type=password]{
+input[type=password] {
     width: 50%;
     border-radius: 10px;
-    border-style:hidden;
+    border-style: hidden;
     background-color: #403c3c;
     margin: auto;
 }
-#error{
+
+#error {
     color: red;
 }
 
 /* Page de consultation du compte */
 
+#cptdiv {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    color: rgb(240, 248, 255);
+}
+
+
+.cpt {
+    padding: 10px;
+    width: 36%;
+    border-radius: 10px;
+    background-color: #302c2c;
+    margin: 50px auto auto auto;
+
+}
+
+div.bouton-aligne {
+    display:inline-block;
+    width:98%;
+}
+
+button {
+    color: black;
+    border-radius: 12px;
+    border-style: hidden;
+    padding: 10px;
+    width: 80%;
+    display:inline-block;
+    margin:10px 2.5% 10px 2.5%;
+    text-align:center;
+}
+
+.acpt {
+    color: black;
+}
+
+#recherche {
+    margin-top: 0.75%;
+    float: right;
+}
+
+#container {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+    row-gap: 50px;
+    column-gap: 20px;
+}
+
+.item {
+    background-color: #0d0d0d;
+    color: white;
+    width: 25%;
+    height: 50%;
+    border: white 1px solid;
+    text-align: center;
+}
+
+.item img {
+    width: 70%;
+    display: block;
+    margin: auto;
+}
+
+#promo {
+    color: #fee400;
+}
