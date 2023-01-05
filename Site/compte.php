@@ -1,53 +1,82 @@
 <?php
-    /* si connecté : visualisation compte
-    sinon : redirection vers formulaire de connexion */
-
+/* si connecté : visualisation compte
+        sinon : redirection vers formulaire de connexion */
+if (session_status() != PHP_SESSION_ACTIVE) {
     session_start();
+}
+if (isset($_SESSION['connexion'])) {
     if ($_SESSION['connexion'] != 'client' && $_SESSION['connexion'] != 'admin') {
-        header("Location: formConnexion.php?error=Veuillez vous connecter");
+        header("Location: formConnexion.php?erreur=Veuillez vous connecter");
         exit();
     }
+} else {
+    header("Location: formConnexion.php?erreur=Veuillez vous connecter");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 
-<html lang="fr"><head>
+<html lang="fr">
+
+<head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="include/css/style.css" type="text/css">
     <title>Mon compte</title>
-    <?php include_once('include/icon.php');?>
+    <?php include_once('include/icon.php'); ?>
 </head>
+
 <body>
 
-<?php
+    <?php
     include_once('include/header.php');
     include_once('include/menu.php');
-    require_once('include/connect.inc.php');
+    require('include/connect.inc.php');
 
-    $req="SELECT * FROM Utilisateur WHERE numU=:pNumU";
-    $st=oci_parse($conn, $req);
+    $req = "SELECT * FROM Utilisateur WHERE numU=:pNumU";
+    $st = oci_parse($conn, $req);
     oci_bind_by_name($st, ":pNumU", $_SESSION['id']);
-    $result=oci_execute($st);
-    $compte=oci_fetch_assoc($st);
+    $result = oci_execute($st);
+    $compte = oci_fetch_assoc($st);
     oci_free_statement($st);
     oci_close($conn);
-?>
+    ?>
+    <div id="maindiv">
+        <div id="cptdiv">
+            <div class="cpt">
+                <h3>Mon compte</h3>
+                <h1>
+                    <?php echo  $compte['NOM'] . " " . $compte['PRENOM']; ?>
+                </h1>
 
-    <h1>Mes Informations</h1>
-    <?php echo  $compte['NOM']." ".$compte['PRENOM']; ?>
-    <br>
+                <span>
+                    <h3>Mail : </h3>
+                </span>
+                <?php echo $compte["MAIL"]; ?>
+                <br>
 
-    <span>Mail : </span><br>
-    <?php echo $compte["MAIL"];?>
-    <br><br>
-
-    <span>Adresse :</span><br>
-    <?php echo $compte["NUMRUE"]." ".$compte["NOMRUE"]."<br>".$compte["CODEPOSTAL"]."".$compte["VILLE"]."<br>".$compte["PAYS"]; ?>
-    <br><br>
-    <button><a href="modificationCompte.php">Modifier mes informations</a></button><br>
-    <button><a href="modificationMdp.php">Modifier mon mot de passe</a></button><br>
-    <button><a href="deconnexion.php">Deconnexion</a></button> <br>
-    <button onclick="suppression()">Supprimer mon compte</button>
+                <?php
+                if ($compte["NUMRUE"] != NULL && $compte["NOMRUE"] != NULL && $compte["CODEPOSTAL"] != NULL && $compte["VILLE"] != NULL) {
+                    echo "<span><h3>Adresse :</h3></span>";
+                    echo $compte["NUMRUE"] . " " . $compte["NOMRUE"] . "<br>" . $compte["CODEPOSTAL"] . " " . $compte["VILLE"] . "<br>" . $compte["PAYS"];
+                    echo "<br><br>";
+                }
+                ?>
+                <div class="bouton-aligne">
+                    <a href="modificationCompte.php"><button>Modifier mes informations</button></a><br>
+                </div>
+                <a href="modificationMdp.php"><button>Modifier mon mot de passe</button></a><br>
+                <a href="deconnexion.php"><button>Deconnexion</button></a><br>
+                <button onclick="suppression()">Supprimer mon compte</button><br><br>
+                <?php
+                if ($_SESSION['connexion'] == 'admin') {
+                    echo "<a href='#' class='acpt'><button>Ajouter un produit</button></a><br>";
+                }
+                ?>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br>
 
     <script>
         function suppression() {
@@ -57,9 +86,9 @@
         }
     </script>
 
-<?php
+    <?php
     include_once('include/footer.php');
-?>
+    ?>
 
 </body>
 

@@ -1,7 +1,5 @@
 <?php
-/* si connecté : visualisation compte
-    sinon : redirection vers formulaire de connexion */
-
+//test variable session sinon redirige vers formConnexion avec erreur
 if (session_status() != PHP_SESSION_ACTIVE) {
     session_start();
 }
@@ -14,8 +12,8 @@ if (isset($_SESSION['connexion'])) {
     header("Location: formConnexion.php?erreur=Veuillez vous connecter");
     exit();
 }
-?>
 
+?>
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -24,9 +22,8 @@ if (isset($_SESSION['connexion'])) {
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="include/css/style.css" type="text/css">
-    <title>Mon compte</title>
+    <title>Paiement</title>
     <?php include_once('include/icon.php'); ?>
-</head>
 
 <body>
 
@@ -42,15 +39,9 @@ if (isset($_SESSION['connexion'])) {
                 echo "<span id='error'>" . htmlspecialchars($_GET['erreur']) . "</span>";
             }
             ?>
-            <h1>Modifier son mot de passe</h1>
-            <form action="traitModificationMdp.php" method="POST">
-                Ancien mot de passe : <br>
-                <input type='password' name='ancienMdp' required><br><br>
-                Nouveau mot de passe : <br>
-                <input type='password' name='nouveauMdp' required><br><br>
-                Vérifier le mot de passe : <br>
-                <input type='password' name='verifNouveauMdp' required><br><br>
-                <input type='submit' name='modifier' value='Modifier'> <br>
+            <h1>Paiement de la commande</h1>
+            <form action="confirmation.php" method="post">
+                <input type="submit" value="Payer" name="payer">
             </form>
         </div>
     </div>
