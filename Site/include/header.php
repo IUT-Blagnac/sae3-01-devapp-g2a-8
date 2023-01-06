@@ -20,9 +20,30 @@
 		}
 	}
 	?>
-	<form action="" method="get" id="recherche">
-		<input name="q" type="text" placeholder="Rechercher un produit" />
+	<form action="rechercheProduits.php" method="get" id="recherche">
+		<input type="text" name="nom" placeholder="Rechercher un produit" />
 		<input type="submit" value="Rechercher" />
 	</form>
+	<?php
+	if (isset($_GET['categorie'])) {
+		require('include/connect.inc.php');
+
+		$req = "SELECT * FROM Categorie WHERE categorieParente=:pCategorieParente";
+		$st = oci_parse($conn, $req);
+		oci_bind_by_name($st, ":pCategorieParente", $_GET['categorie']);
+		$result = oci_execute($st);
+		oci_fetch_all($st, $categories);
+		oci_free_statement($st);
+		oci_close($conn);
+		
+		if ($result) {
+			echo "<ul id='sousCategories'>";
+			for ($i=0; $i < count($categories['NOM']); $i++) { 
+				echo "<li class='sousCategories'><a href='rechercheProduits?categorie=".$categories['NOM'][$i]."'>".$categories['NOM'][$i]."</a></li>";
+			}
+			echo "</ul>";
+		}
+	}
+	?>
 
 </header>

@@ -18,11 +18,11 @@ oci_close($conn);
 		<?php
 		for ($i = 0; $i < count($categories['NOM']); $i++) {
 			if ($categories['CATEGORIEPARENTE'][$i] == NULL) {
-				echo "<a href='#'><i class='glyphicon glyphicon-triangle-right'></i>" . $categories['NOM'][$i] . "</a>";
+				echo "<a href='rechercheProduits?categorie=" . $categories['NOM'][$i] . "'><i class='glyphicon glyphicon-triangle-right'></i>" . $categories['NOM'][$i] . "</a>";
 			}
 		}
 		?>
-
+		<a href="rechercheProduits?categorie=Tous"><i class='glyphicon glyphicon-triangle-right'></i>Tous nos produits</a>
 	</div>
 	<img src="include/logos/logo.png" alt="Logo" id="logoMenu">
 </div>
