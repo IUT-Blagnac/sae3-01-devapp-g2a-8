@@ -85,6 +85,16 @@ Traitement du formulaire de modification de compte
 Formulaire de modification du mot de passe
 * *traitModificationMdp.php* +
 Traitement du formulaire de modification du mot de passe
+* *enregistrerQte.php* +
+Appel à la fonction pour modifier la quantité d'un produit dans le panier
+* *supprimerArticle.php* +
+Appel à la fonction pour supprimer un produit dans le panier
+* *gestionPanier.php* +
+Page qui contient toutes les fonctions du panier
+* *rechercheProduits.php* +
+Page qui recherche un produit par nom ou par catégorie
+* *listeProduits.php* +
+Page d'affichage des produits 
 
 
 === d) Diagramme de classe des données
@@ -101,9 +111,9 @@ image::images/DCBD.png[]
 
 == 3. Fonctionnalités
 
-=== a) Sprint 2 (sem 50)
+=== a) Sprint 4 (sem 50)
 
-Voici le Use Case général du sprint 2 : +
+Voici le Use Case général du sprint 4 : +
 
 * Utilisateur +
 
@@ -243,4 +253,143 @@ Fonctionnement dans le code : +
 Sur la page `compte.php`, il y a un button "Supprimer mon compte", qui lance un pop-up Javascript de confirmation de suppression, si l'utilisateur confirme alors on redirige vers la page `suppressionCompte.php`. Cette page vérifie que l'utilisateur est connecté, il se connecte à la BD pour supprimer l'utilisateur (delete) dont l'identifiant est dans la variable SESSION, puis on détruit la session et on redirige vers la page principale avec un pop-up Javascript qui confirme la suppression.
 
 
-=== b) Sprint 3 (sem 1)
+=== b) Sprint 5 (sem 1)
+
+Voici le Use Case général du sprint 5 : +
+
+* Utilisateur +
+
+image::images/utilisateur_5.png[]
+
+* Client +
+
+image::images/client_5.png[]
+
+* Administrateur (rien pour le moment) +
+
+==== Visualiser les produits par catégorie
+
+User Story n°2 :
+
+En tant qu’utilisateur, je cherche dans une catégorie, afin d’obtenir une liste générale de produits. +
+
+Pages web concernées : +
+
+* menu.php
+* rechercheProduits.php
+* listeProduits.php
+
+Accessibilité : tous les utilisateurs +
+
+Action de visualiser les produits par catégorie +
+Fonctionnement dans le code : +
+Dans le menu si on clique sur "Nos produits", un menu déroulant affiche les catégories de produits en vente sur le site. Chaque catégorie est un lien vers `rechercheProduits.php` avec le nom de la catégorie dans la variable GET. Cette page se connecte à la BD en fonction de la catégorie voulue, le résultat de la requête est mis dans une variable `SESSION['recherche']` puis on est redirigé vers la page `listeProduits.php` avec la catégorie recherchée dans la variable GET. La page `listeProduits.php` affiche un message s'il n'y a aucun produit, sinon elle affiche tous les produits en récupérant le résultat de la requête depuis la variable SESSION.
+
+==== Visualiser les produits par sous-catégorie
+
+User Story n°3 :
+
+En tant qu’utilisateur, je cherche dans une sous-catégorie, afin d’obtenir une liste précise de produits. +
+
+Pages web concernées : +
+
+* header.php
+* rechercheProduits.php
+* listeProduits.php
+
+Accessibilité : tous les utilisateurs +
+
+Action de visualiser les produits par sous catégorie +
+Fonctionnement dans le code : +
+Si une catégorie est passée en argument par l'url (variable GET), alors le `header.php` affiche les sous catégories s'il y en a en se connectant à la BD. Chaque sous catégorie est un lien vers `rechercheProduits.php` avec le nom de la sous catégorie dans la variable GET. Cette page se connecte à la BD en fonction de la catégorie voulue, le résultat de la requête est mis dans une variable `SESSION['recherche']` puis on est redirigé vers la page `listeProduits.php` avec la catégorie recherchée dans la variable GET. La page `listeProduits.php` affiche un message s'il n'y a aucun produit, sinon elle affiche tous les produits en récupérant le résultat de la requête depuis la variable SESSION.
+
+==== Rechercher un produit par nom
+
+User Story :
+
+En tant qu’utilisateur, je souhaite faire une recherche par nom de produit, afin de trouver plus facilement ce que je recherche. +
+
+Pages web concernées : +
+
+* header.php
+* rechercheProduits.php
+* listeProduits.php
+
+Accessibilité : tous les utilisateurs +
+
+Action de visualiser les produits par nom +
+Fonctionnement dans le code : +
+Lorsque l'utilisateur entre quelque chose dans la barre de recherche présente dans le `header.php`, l'entrée est envoyée dans l'url à la page `rechercheProduits.php`. Cette page se connecte à la BD en fonction du nom de produit voulu, le résultat de la requête est mis dans une variable `SESSION['recherche']` puis on est redirigé vers la page `listeProduits.php` avec le nom recherché dans la variable GET. La page `listeProduits.php` affiche un message s'il n'y a aucun produit, sinon elle affiche tous les produits en récupérant le résultat de la requête depuis la variable SESSION.
+
+==== Visualiser un produit
+
+User Story n°4 :
+
+En tant qu’utilisateur, je peux sélectionner un produit, afin de voir les détails. +
+
+Pages web concernées : +
+
+* listeProduits.php
+* produit.php
+
+
+Accessibilité : tous les utilisateurs +
+
+Action de visualiser les produits par nom +
+Fonctionnement dans le code : +
+Dans la page d'affichage des produits `listeProduits.php`, un lien "Voir plus" est présent en dessous de chaque produit qui renvoie vers la page `produit.php` avec l'identifiant du produit dans la variable GET. Cette page se connecte à la BD pour afficher toutes les informations du produit. +
+
+==== Mettre un article au panier
+
+User Story n°10 :
+
+En tant que client, je souhaite stocker les produits que je veux acheter dans un panier. +
+
+Pages web concernées : +
+
+* produit.php
+* gestionPanier.php
+* panier.php
+
+Accessibilité : client connecté +
+
+Action de mettre un article au panier +
+Fonctionnement dans le code : +
+Dans la page d'un produit `produit.php`, un bouton "Ajouter au panier" permet de vérifier les sotcks pour la quantité et la couleur voulue, puis elle appelle la fonction `ajouterAuPanier` qui ajoute le produit dans la variable `SESSION['panier']` s'il est en stock.
+Le panier est ensuite consultable à partir de la page `panier.php` qui récupère les produits de la variable session et les affiche s'il y en a, ou affiche un message explicite sinon. +
+
+==== Modifier la quantité d'un article dans le panier
+
+User Story :
+
+En tant que client, je souhaite modifier la quantité d'un produit dans mon panier, afin de faciliter ma gestion de ma commande. +
+
+Pages web concernées : +
+
+* gestionPanier.php
+* panier.php
+* enregistrerQte.php
+
+Accessibilité : client connecté +
+
+Action de modifier la quantité voulue +
+Fonctionnement dans le code : +
+Dans la page 'panier.php', il est possible de modifier le champ 'Quantité' et en cliquant sur "Modifier". Ce bouton est un lien vers la page `enregistrerQte.php` qui appelle la fonction `modifierQuantite` de la page `gestionPanier.php`. Cette fonction peut renvoyer une exception s'il n'y a pas assez de stock, dans ce cas l'exception est traitée par `enregistrerQte.php` qui renvoie vers `panier.php` avec une erreur dans la variable GET, qui sera affichée. +
+
+==== Supprimer un article dans le panier
+
+User Story :
+
+En tant que client, je souhaite supprimer un article de mon panier, afin d'éviter de commander un article que je ne veux pas'. +
+
+Pages web concernées : +
+
+* gestionPanier.php
+* panier.php
+* supprimerArticle.php
+
+Accessibilité : client connecté +
+
+Action de supprimer un article du panier +
+Fonctionnement dans le code : +
+Dans la page 'panier.php', une image pour supprimer renvoie vers le lien `supprimerArticle.php` qui appelle la fonction `supprimerProduit` de la page `gestionPanier.php` qui supprime le produit de la variable Session. Puis on est redirigé vers la page `panier.php` où on peut voir que le produit n'est plus présent. +
