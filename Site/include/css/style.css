@@ -1,12 +1,10 @@
 /* Le header principal*/
 header {
-
     text-align: center;
     background: #006b83;
     padding-left: 1px;
     padding-right: 1px;
     padding-bottom: 50px;
-
 }
 
 /* La partie header avec lee menu et le compte*/
@@ -15,13 +13,29 @@ header {
     background-color: #00576a;
 }
 
+#sousCategories {
+    position: absolute;
+    list-style-type: none;
+    display: flex;
+    margin-left: 20%;
+}
+
+#sousCategories li{
+    padding-right: 30%;
+    font-size: 120%;
+}
+
+#sousCategories li a{
+    display: block;
+    color: white;
+}
+
 /* Le slogan */
 h4 {
     margin-bottom: 0px;
     margin-top: 10px;
     padding: 3px;
     color: white;
-
 }
 
 body {
@@ -182,16 +196,13 @@ footer {
 #logoMenu {
     width: 250px;
     height: auto;
-
     position: absolute;
     bottom: 0;
     padding-left: 80px;
     padding-right: 80px;
     padding-top: 20px;
     padding-bottom: 20px;
-
     background-color: #2f4043;
-
 }
 
 /* formulaires de connexion/création de compte/modification de compte */
@@ -299,6 +310,10 @@ button {
     float: right;
 }
 
+#produits h1{
+    color: #302c2c;
+}
+
 #container {
     margin-top: 5%;
     margin-bottom: 5%;
@@ -310,20 +325,21 @@ button {
 }
 
 .item {
-    background-color: #0d0d0d;
+    border-radius: 10px;
+    background-color: #302c2c;
     color: white;
     width: 25%;
-    height: 50%;
-    border: white 1px solid;
     text-align: center;
 }
 
 .item img {
-    width: 70%;
+    max-width: 70%;
+    max-height: 50%;
     display: block;
     margin: auto;
 }
 
 #promo {
     color: #fee400;
+    font-size: 130%;
 }

@@ -16,21 +16,13 @@ oci_close($conn);
 	<span id="triangle" onclick="changeIcon()" class="dropdown-btn"><i class="glyphicon glyphicon-triangle-right"></i>Nos produits</span>
 	<div class="dropdown-container">
 		<?php
-		/* var_dump($categories); */
 		for ($i = 0; $i < count($categories['NOM']); $i++) {
 			if ($categories['CATEGORIEPARENTE'][$i] == NULL) {
-				echo "<a href='#'><i class='glyphicon glyphicon-triangle-right'></i>" . $categories['NOM'][$i] . "</a>
-				
-				<div class='dropdown-container'>";
-				for ($j = 0; $j < count($categories['NOM']); $j++) {
-					if ($categories['CATEGORIEPARENTE'][$j] != NULL) {
-						echo "<a href='#'><i class='glyphicon glyphicon-triangle-right'></i>" . $categories['NOM'][$j] . "</a>";
-					}
-				}
+				echo "<a href='rechercheProduits?categorie=" . $categories['NOM'][$i] . "'><i class='glyphicon glyphicon-triangle-right'></i>" . $categories['NOM'][$i] . "</a>";
 			}
 		}
 		?>
-
+		<a href="rechercheProduits?categorie=Tous"><i class='glyphicon glyphicon-triangle-right'></i>Tous nos produits</a>
 	</div>
 	<img src="include/logos/logo.png" alt="Logo" id="logoMenu">
 </div>
