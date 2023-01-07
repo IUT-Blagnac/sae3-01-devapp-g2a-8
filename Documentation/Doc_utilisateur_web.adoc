@@ -253,7 +253,7 @@ image::images/panier.png[]
 
 Il faut d'abord aller sur le panier en cliquant sur l'icone de panier : 
 
-image::images/boutonAjoutPanier.png[]
+image::images/boutonPanier.png[]
 
 Ensuite il faut sélectionner la quantité voulue sur un article et cliquer sur "Modifier" pour enregistrer les modifications : 
 
@@ -268,7 +268,7 @@ image::images/rupture.png[]
 
 Il faut d'abord aller sur le panier en cliquant sur l'icone de panier : 
 
-image::images/boutonAjoutPanier.png[]
+image::images/boutonPanier.png[]
 
 Ensuite il faut cliquer sur l'icone poubelle afin de supprimer l'article de votre panier : 
 
