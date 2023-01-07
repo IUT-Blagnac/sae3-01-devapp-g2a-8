@@ -2,8 +2,8 @@
 :toc:
 :toc-title: Sommaire
 
-Version du site : 1 +
-Date : 12/12/2022 +
+Version du site : 3 +
+Date : 07/01/2023 +
 Equipe : 2A-8 +
 Client : VidéoFest +
 Projet : Site web e-commerce + 
@@ -68,6 +68,58 @@ Ce qui nous amène au formulaire de création de compte :
 image::images/formCreation.png[]
 
 Tous les champs doivent être remplis, le nom et le prénom ne peuvent pas contenir de chiffres ou de caractères spéciaux, l'adresse mail doit avoir un format valide, le mot de passe doit respecter les normes RGPD (https://www.donneespersonnelles.fr/generateur-de-mot-de-passe[voici un générateur de mot de passe aux normes]), et la vérification du mot de passe doit être égale au mot de passe voulu. Ensuite il faut cliquer sur "Continuer" et si jamais une erreur est faite, un message explicatif s'affichera. S'il n'y a pas d'erreur le compte sera créé et on sera redirigé vers la page principale du site.
+
+==== Visualiser les produits par catégorie
+
+Pour choisir la catégorie de produits il faut ouvrir le menu :
+
+image::images/menu.png[]
+
+Puis cliquer sur "Nos produits" pour que les différentes catégories s'affichent
+
+image::images/menuCategorie.png[]
+
+Ensuite il faut cliquer sur la catégorie voulue pour arriver sur cette page d'affichage des produits :  
+
+image::images/produitsParCategorie.png[]
+
+
+==== Visualiser les produits par sous-catégorie
+
+Pour choisir la sous-catégorie de produits il faut d'abord avoir choisis une catégorie parente, puis cliquer sur la sous catégorie voulue : 
+
+image::images/boutonSousCategorie.png[]
+
+Ensuite, les produits s'affichent :  
+
+image::images/produitsParSousCategorie.png[]
+
+
+==== Rechercher un produit par nom
+
+Pour chercher un produit par son nom ou sa marque il faut taper la recherche dans la barre de recherche : 
+
+image::images/barreRecherche.png[]
+
+Ensuite il faut cliquer sur la touche "Entrée" ou sur l'icone de loupe afin d'afficher les produits correspondants : 
+
+image::images/produitsParNom.png[]
+
+Si jamais il n'y a pas de produits correspondants, un message explicite sera affiché :
+
+image::images/rechercheFail.png[]
+
+
+==== Visualiser un produit
+
+Pour voir un produit, il faut d'abord avoir fait une recherche (par nom ou par catégorie), puis il faut cliquer sur le bouton "Voir plus" du produit voulu. 
+
+image::images/boutonVoirPlus.png[]
+
+Ensuite le produit s'affiche ainsi que ses informations : 
+
+image::images/produit.png[]
+
 
 === c) Client
 
@@ -181,9 +233,48 @@ En cliquant sur "Annuler", alors la suppression ne sera pas faite, en revanche e
 
 image::images/popupInformation.png[]
 
+
+==== Mettre un article au panier
+
+Pour mettre un article au panier, il faut d'abord avoir fait une recherche de produits, puis avoir cliqué sur le lien "Voir plus" du produit voulu. Ensuite dans la partie droite de la page, il faut sélectionner la quantité et la couleur voulue, puis cliquer sur le bouton "Ajouter au panier"; 
+
+image::images/boutonAjoutPanier.png[]
+
+Ensuite pour visualiser le panier, il faut cliquer sur l'icone de panier en haut à droite de le page : 
+
+image::images/boutonPanier.png[]
+
+Puis le panier s'affiche : 
+
+image::images/panier.png[]
+
+
+==== Modifier la quantité d'un article du panier
+
+Il faut d'abord aller sur le panier en cliquant sur l'icone de panier : 
+
+image::images/boutonAjoutPanier.png[]
+
+Ensuite il faut sélectionner la quantité voulue sur un article et cliquer sur "Modifier" pour enregistrer les modifications : 
+
+image::images/boutonModifQte.png[]
+
+Si jamais il n'y a pas assez de stock il ne sera pas possible de modifier la quantité voulue :
+
+image::images/rupture.png[]
+
+
+==== Supprimer un article du panier
+
+Il faut d'abord aller sur le panier en cliquant sur l'icone de panier : 
+
+image::images/boutonAjoutPanier.png[]
+
+Ensuite il faut cliquer sur l'icone poubelle afin de supprimer l'article de votre panier : 
+
+image::images/boutonSupprimerPanier.png[]
+
+
 === d) Administrateur
 
-==== Modifier un produit
-
-(expliquer comment faire + screen)
-image::images/[]
+rien pour le moment
