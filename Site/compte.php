@@ -63,16 +63,19 @@ if (isset($_SESSION['connexion'])) {
                 }
                 ?>
                 <div class="bouton-aligne">
-                    <a href="modificationCompte.php"><button>Modifier mes informations</button></a><br>
+                    <a href="modificationCompte.php"><button class="buttonCpt">Modifier mes informations</button></a><br>
                 </div>
-                <a href="modificationMdp.php"><button>Modifier mon mot de passe</button></a><br>
-                <a href="deconnexion.php"><button>Deconnexion</button></a><br>
-                <button onclick="suppression()">Supprimer mon compte</button><br><br>
+                    <a href="modificationMdp.php"><button class="buttonCpt">Modifier mon mot de passe</button></a><br>
+                <div class="bouton-aligne">
+                    <a href="deconnexion.php"><button class="buttonCpt">Deconnexion</button></a><br>
+                </div>
+                    <button onclick="suppression()" class="buttonCpt">Supprimer mon compte</button><br><br>
                 <?php
                 if ($_SESSION['connexion'] == 'admin') {
-                    echo "<a href='#' class='acpt'><button>Ajouter un produit</button></a><br>";
+                    echo "<a href='#' class='acpt'><button class='buttonCpt'>Ajouter un produit</button></a><br>";
                 }
                 ?>
+
             </div>
         </div>
     </div>
