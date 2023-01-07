@@ -2,8 +2,8 @@
 :toc:
 :toc-title: Sommaire
 
-Version du site : 1 +
-Date : 12/12/2022 +
+Version du site : 3 +
+Date : 07/01/2023 +
 Client : VidéoFest +
 Projet : Site de e-commerce 
 
@@ -124,8 +124,6 @@ image::images/utilisateur.png[]
 image::images/client.png[]
 
 * Administrateur (rien pour le moment) +
-
-image::images/administrateur.png[]
 
 ==== Créer un compte
 
