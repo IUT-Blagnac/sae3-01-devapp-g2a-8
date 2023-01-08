@@ -35,11 +35,13 @@ L'objectif de ce projet est de créer une application en Java et Python, qui per
 Ouvrir un terminal et exécuter les commandes suivantes afin d'installer Python : +
 `sudo apt update` +
 `sudo apt install python3` +
+Garder le terminal ouvert pour installer Java 17 : +
+`sudo apt install openjdk-17-jdk openjdk-17-jre` +
 
 L'application python utilise le module paho-mqtt pour communiquer avec les capteurs, il faut donc l'installer avec : +
 `pip install paho-mqtt` +
 
-Pour récupérer l'application, cliquez sur ce lien (insérer lien quand projet sera fini), et téléchargez le fichier .jar . +
+Pour récupérer l'application, naviguez vers la dernière release (ou cliquez [ici](https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/releases/latest) ), et téléchargez le fichier .jar . +
 
 == 3. Utiliser l'application
 
