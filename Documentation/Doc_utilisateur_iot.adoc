@@ -41,8 +41,9 @@ Garder le terminal ouvert pour installer Java 17 : +
 L'application python utilise le module paho-mqtt pour communiquer avec les capteurs, il faut donc l'installer avec : +
 `pip install paho-mqtt` +
 
-Pour récupérer l'application, naviguez vers la dernière release (ou cliquez https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/releases/latest[ici]), et téléchargez le fichier .jar . +
+Pour récupérer l'application, naviguez vers la dernière release (ou cliquez https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/releases/latest[ici]), et téléchargez le fichier .jar et le fichier .py . +
+Placer ces deux fichiers dans le même répertoire. +
 
 == 3. Utiliser l'application
 
-image:[]
+Ouvrir un terminal et se placer dans le même répertoire que l'aplication java avec la commande `cd <chemin du répertoire>`. Lancer l'application Java avec la commande `java -jar [nom_du_jar].jar`.
