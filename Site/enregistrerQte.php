@@ -22,7 +22,7 @@ if ($_POST['qte'] < 1 || $_POST['qte'] > 999) {
 }
 include_once('gestionPanier.php');
 try {
-    modifierQuantite(htmlentities($_GET['id']), htmlentities($_POST['qte']));
+    modifierQuantite(htmlentities($_GET['id']), htmlentities($_POST['qte']), htmlentities($_GET['couleur']));
 } catch (Exception $e) {
     header("Location: panier.php?erreur=" . $e->getMessage());
     exit();

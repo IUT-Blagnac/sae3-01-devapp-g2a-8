@@ -14,19 +14,20 @@ header {
 }
 
 #sousCategories {
-    position: absolute;
     list-style-type: none;
+    position: absolute;
+    left: 5%;
     display: flex;
-    margin-left: 20%;
+    width: 50%;
 }
 
 #sousCategories li{
-    padding-right: 30%;
-    font-size: 120%;
+    margin-top: 2.1%;
+    padding-right: 10%;
+    font-size: 110%;
 }
 
 #sousCategories li a{
-    display: block;
     color: white;
 }
 
@@ -39,7 +40,7 @@ h4 {
 }
 
 body {
-    background: #d1eac6;
+    background: #c6e3ea;
 }
 
 #bodyDeFormulaire {
@@ -50,14 +51,6 @@ body {
 #messageContact {
     color: black;
     width: 50%;
-}
-
-#panier table,
-#panier th,
-#panier td {
-    border: 1px solid;
-    border-collapse: collapse;
-    color: black;
 }
 
 footer {
@@ -119,7 +112,6 @@ footer {
     margin-left: 50px;
 }
 
-
 /*icon*/
 #logo {
     width: 70px;
@@ -139,28 +131,14 @@ footer {
     width: 50px;
     height: auto;
     float: right;
+    margin-right: 0.5%;
 }
 
 #panierLogo {
     width: 50px;
     height: auto;
     float: right;
-}
-
-#modifier {
-    float: right;
-    width: 50%;
-}
-
-#qte {
-    max-width: 35%;
-}
-
-#supprimer {
-    width: 25px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin-right: 1%;
 }
 
 #entreprise {
@@ -177,7 +155,6 @@ footer {
     color: white;
     margin-top: 10px;
 }
-
 
 #closeMenu {
     padding-top: 50px;
@@ -205,7 +182,7 @@ footer {
     background-color: #2f4043;
 }
 
-/* formulaires de connexion/création de compte/modification de compte */
+/* formulaires */
 #maindiv {
     height: 100%;
     width: 100%;
@@ -227,19 +204,26 @@ footer {
 
 /*Champ du formulaire*/
 input[type=submit] {
-    width: 30%;
+    width: min-content;
     border-radius: 10px;
-    border-style: hidden;
+    border-style: none;
     background-color: rgb(247, 242, 242);
     color: #0d0d0d;
     margin: auto;
     margin-bottom: 5px;
+    transition-duration: 0.6s;
+    padding: 5px 15px;
+}
+
+input[type=submit]:hover {
+    background-color: #616161;
+    color: white;
 }
 
 input[type=text] {
     width: 50%;
     border-radius: 10px;
-    border-style: hidden;
+    border-style: none;
     background-color: #403c3c;
     margin: auto;
 }
@@ -247,7 +231,7 @@ input[type=text] {
 input[type=email] {
     width: 50%;
     border-radius: 10px;
-    border-style: hidden;
+    border-style: none;
     background-color: #403c3c;
     margin: auto;
 }
@@ -255,7 +239,7 @@ input[type=email] {
 input[type=password] {
     width: 50%;
     border-radius: 10px;
-    border-style: hidden;
+    border-style: none;
     background-color: #403c3c;
     margin: auto;
 }
@@ -273,6 +257,7 @@ input[type=password] {
     align-items: center;
     align-content: center;
     color: rgb(240, 248, 255);
+    display: block;
 }
 
 
@@ -282,7 +267,7 @@ input[type=password] {
     border-radius: 10px;
     background-color: #302c2c;
     margin: 50px auto auto auto;
-
+    box-sizing: content-box;
 }
 
 div.bouton-aligne {
@@ -294,11 +279,17 @@ div.bouton-aligne {
 
 .buttonCpt{
     color: black;
-    border-radius: 12px;
-    border-style:hidden;
+    border-radius: 10px;
+    border-style:none;
     padding: 10px;
     width: 190px;
     display:inline-block;
+    transition-duration: 0.6s;
+}
+
+.buttonCpt:hover {
+    background-color: #616161;
+    color: white;
 }
 
 .acpt {
@@ -322,8 +313,43 @@ div.bouton-aligne {
 /* Barre de recherche */
 
 #recherche {
-    margin-top: 0.75%;
-    float: right;
+    margin-top: 0.8%;
+    margin-right: 3%;
+    position: absolute;
+    right: 15%;
+    /* float: right; */
+    display: flex;
+    border-radius: 10px;
+}
+
+#barreRecherche {
+    width: 22%;
+    color: white;
+    margin-right: -1.5%;
+    padding: 0.5% 0 0.5% 1.5%;
+}
+
+#barreRecherche:focus {
+    outline: none;
+}
+
+#btnRecherche {
+    border-style: none;
+    width: 4%;
+    background-color: #403c3c;
+    border-radius: 0 10px 10px 0;
+}
+
+#btnRecherche img {
+    width: 100%;
+    padding: 0.5%;
+}
+
+
+/* Page liste produits */
+
+#fondVert {
+    background-color: #d1eac6;
 }
 
 #produits h1{
@@ -332,7 +358,7 @@ div.bouton-aligne {
 
 #container {
     margin-top: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
     display: flex;
     flex-wrap:wrap;
     justify-content: space-evenly;
@@ -346,6 +372,7 @@ div.bouton-aligne {
     color: white;
     width: 25%;
     text-align: center;
+    padding: 0.5%;
 }
 
 .item img {
@@ -355,7 +382,178 @@ div.bouton-aligne {
     margin: auto;
 }
 
+.lienVoirPlus {
+    background-color: white;
+    color : #302c2c;
+    border-radius: 10px;
+    border-style: none;
+    transition-duration: 0.6s;
+    padding: 5px 15px;
+}
+
+.lienVoirPlus:hover {
+    background-color: #616161;
+    color: white;
+}
+
+/* Page Panier */
+
+#panier {
+    color: white;
+    background-color: #302c2c;
+    display: flex;
+    flex-wrap:wrap;
+    margin: 4%;
+    border-radius: 10px;
+}
+
+#panier h1 {
+    padding: 1% 0 2% 3%;
+}
+
+#panier h2 {
+    padding: 1% 17% 2% 4%;
+}
+
+#panier h3 {
+    margin-top: 2%;
+}
+
+.itemPanier {
+    background-color: #49767f;
+    width: 70%;
+    margin: 0 4% 4% 4%;
+    padding: 1%;
+    text-align: left;
+    border-radius: 10px;
+    font-size: 130%;
+}
+
+.itemPanier h3 {
+    padding: 0 0 2% 2%;
+}
+
+.itemPanier img {
+    max-width: 20%;
+    max-height: 60%;
+    float: left;
+    margin: 0 5% -2% 2%;
+}
+
+#descriptionPanier {
+    display: block;
+    margin-left: 30%;
+}
+
 #promo {
     color: #fee400;
-    font-size: 130%;
+    font-size: 120%;
+}
+
+#recapPanier {
+    float: right;
+}
+
+#modifier {
+    width: 15%;
+    margin-left: 2%;
+    padding: 0.5%;
+}
+
+#qte {
+    width: 10%;
+    color: #302c2c;
+}
+
+#supprimer {
+    width: 7%;
+    float: right;
+    margin: -5% 2% 0 0;
+}
+
+#droitePanier{
+    float: right;
+    display: flex;
+    flex-direction: column;
+}
+
+#btnCommander {
+    border-style: none;
+    background-color: #403c3c;
+    color: white;
+    font-size: 135%;
+    width: max-content;
+    padding: 8% 15%;
+    border-radius: 10px;
+    transition-duration: 0.6s;
+}
+
+#btnCommander:hover {
+    background-color: #49767f;
+}
+
+/* Page Produit */
+#produit {
+    margin: 3%;
+}
+
+#produit img{
+    max-width: 60%;
+    max-height: 400px;
+    display: block;
+    margin: auto;
+}
+
+#produit p {
+    text-align: justify;
+}
+
+#gauche {
+    border-radius: 10px;
+    background-color: #e3e3e3;
+    color: #302c2c;
+    padding: 3%;
+    margin-bottom: 8%;
+    float: left;
+    width: 72%;
+}
+
+#droite {
+    border-radius: 10px;
+    background-color: #302c2c;
+    color: #e3e3e3;
+    padding: 0.5%;
+    float: right;
+    width: 25%;
+}
+
+#couleurs-select {
+    width: max-content;
+    color: #302c2c;
+}
+
+option:disabled {
+    background-color : #DBDBDB;
+    color: #677f84;
+}
+
+#qteProduit {
+    width: 20%;
+    color: #302c2c;
+}
+
+#btnAdmin {
+    width: max-content;
+    border-radius: 10px;
+    border-style: none;
+    background-color: rgb(247, 242, 242);
+    color: #0d0d0d;
+    transition-duration: 0.6s;
+    padding: 5px 15px;
+    margin-bottom: 5px;
+}
+
+#btnAdmin:hover {
+    background-color: #616161;
+    color: white;
 }
