@@ -2,8 +2,8 @@
 :toc:
 :toc-title: Sommaire
 
-Version du site : 1 +
-Date : 16/12/2022 +
+Version du site : 3 +
+Date : 08/01/2023 +
 Equipe : 2A-8 +
 Client : VidéoFest +
 Projet : Site web e-commerce + 
@@ -30,7 +30,7 @@ VideoFest et ses produits s’adressent à tout type de clients, aussi bien pour
 
 == 2. Test des fonctionnalités implémentées
 
-=== Sprint 2 (sem 50)
+=== Sprint 4 (sem 50)
 
 |===
 | Nom test | Préconditions | Conditions de satisfaction | Résultats du test
@@ -53,7 +53,7 @@ VideoFest et ses produits s’adressent à tout type de clients, aussi bien pour
 | Visualiser ses informations de compte
 | Être connecté, être sur la page de visualisation de compte
 | Select dans la BD avec l'identifiant de l'utilisateur qui est stocké dans la variable Session. Affichage clair des informations. Si adresse incomplète, pas d'affichage de l'adresse.
-| Fonctionnel mais CSS à refaire pour l'affichage des infos et les boutons
+| Test passé avec succès
 
 | Modifier ses informations 
 | Être connecté, être sur la page de visualisation de compte, cliquer sur "Modifier mes informations"
@@ -68,7 +68,7 @@ VideoFest et ses produits s’adressent à tout type de clients, aussi bien pour
 | Supprimer son compte
 | Être connecté, être sur la page de visualisation de compte, cliquer sur "Supprimer mon compte"
 | Pop-up de confirmation de suppression, si "Ok" alors suppression de toutes les informations de l'utilisateur (données personnelles et commandes) en faisant un Delete dans la BD, avec avec l'identifiant de l'utilisateur qui est stocké dans la variable Session. Destruction de la session. Redirection vers l'index avec un pop-up qui informe que la suppresion est bien effectuée.
-| Suppresion des données de l'utilisateur mais pas suppression des commandes
+| Test passé avec succès
 
 | Espace sécurisé
 | Tentative d'accès à une page interdite si pas connecté, ou pas administrateur
@@ -77,19 +77,56 @@ VideoFest et ses produits s’adressent à tout type de clients, aussi bien pour
 
 |===
 
-=== Sprint 3 (sem 1)
+=== Sprint 5 (sem 1)
 
 |===
 | Nom test | Préconditions | Conditions de satisfaction | Test passé ?
 
-|
-| 
-| 
-|
+| Visualiser produits par catégorie
+| Avoir cliqué sur le menu et sur "Nos produits"
+| Liens des catégories parentes affichées dans le menu. Affichage des produits correspondants. Bouton voir plus fonctionnel sous chaque produit. Lien vers sous catégories affichées dans le header.
+| Test passé avec succès
 
-|
+| Visualiser produits par sous-catégorie
+| Avoir cliqué sur une catégorie parente dans le menu
+| Lien vers sous catégories affichées dans le header. En cliquant sur un des liens : affichage des produits correspondants, bouton voir plus fonctionnel sous chaque produit.
+| Test passé avec succès
+
+| Rechercher un produit par nom
+| Aucune
+| Barre de recherche dans le header. Si clique sur loupe ou si touhce "Entrée" pressée : affichage des produits correspondants, bouton voir plus fonctionnel sous chaque produit. Si aucun produit correspondant : affichage message explicite.
+| Test passé avec succès
+
+| Visualiser un produit
+| Avoir fait une recherche (par nom ou par catégorie) puis cliqué sur le bouton "Voir plus"
+| Affichage des infos et de l'image du produit, quantité et couleur modifiable, quantité max possible en fonction du stock de la BD, affichage explicite si pas de produit en stock, ou si rupture sur une couleur, bouton "ajouter au panier" fonctionnel.
+| Test passé avec succès
+
+| Mettre un produit dans le panier
+| Avoir cliqué sur le bouton "Ajouter au panier" sur la fiche d'un produit
+| Si pas assez de stock pour l'ajouter au panier : erreur explicite. Sinon : ajoute au panier avec la quantité et la couleur voulue, si jamais le produit est déjà dans le panier, les quantités s'ajoutent.
+| Test passé avec succès
+
+| Modifier la quantité d'un produit dans le panier
+| Avoir cliqué sur le bouton "Ajouter au panier" sur la fiche d'un produit, puis cliqué sur l'icone de panier
+| Affichage des produits dans la variable session, champ quantité éditable, bouton modifier pour enregistrer les modifications, si pas assez de stock message explicie, sinon changement de la quantité. Le prix affiché doit être modifié en fonction de la quantité.
+| Test passé avec succès
+
+| Supprimer un produit dans le panier
+| Avoir cliqué sur le bouton "Ajouter au panier" sur la fiche d'un produit, puis cliqué sur l'icone de panier
+| Icone de poubelle qui supprime le produit de la variable session.
+| Test passé avec succès
+
+|===
+
+=== Sprint 6 (sem 2)
+
+|===
+| Nom test | Préconditions | Conditions de satisfaction | Test passé ?
+
 | 
 | 
-|
+| 
+| 
 
 |===
