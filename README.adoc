@@ -57,11 +57,12 @@ Tutrice enseignante de l'équipe::
 == Réalisations 
 
 - Version courante : https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/releases/tag/2.0[v2.0]
-- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/milestone/2[Milestone en cours]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/milestone/3[Milestone en cours]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Produit.pdf[Backlog produit]
-- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%201.pdf[Backlog sprint 1]
-- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%202.pdf[Backlog sprint 2]
-- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%203.pdf[Backlog sprint 3]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%201.pdf[Backlog sprint 3]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%202.pdf[Backlog sprint 4]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%203.pdf[Backlog sprint 5]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%206.pdf[Backlog sprint 6]
 
 == Projet Site Web
 
