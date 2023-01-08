@@ -21,8 +21,8 @@
 	}
 	?>
 	<form action="rechercheProduits.php" method="get" id="recherche">
-		<input type="text" name="nom" placeholder="Rechercher un produit" />
-		<input type="submit" value="Rechercher" />
+			<input type="text" name="nom" placeholder="Chercher un produit" id="barreRecherche"/>
+			<button type="submit" id="btnRecherche"><img src="include/logos/loupe.png" alt="Chercher"></button>
 	</form>
 	<?php
 	if (isset($_GET['categorie'])) {

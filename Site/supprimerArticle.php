@@ -17,6 +17,6 @@ if (!isset($_GET['id'])) {
     exit();
 }
 include_once('gestionPanier.php');
-supprimerProduit(htmlentities($_GET['id']));
+supprimerProduit(htmlentities($_GET['id']), htmlentities($_GET['couleur']));
 header("Location: panier.php");
 exit();

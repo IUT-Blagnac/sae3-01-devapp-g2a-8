@@ -25,61 +25,81 @@ if (isset($_SESSION['connexion'])) {
 </head>
 
 <body>
-    
-        <?php
-        include_once('include/header.php');
-        include_once('include/menu.php');
-        include_once('gestionPanier.php');
 
-        if (isset($_GET['erreur'])) {
-            echo "<span id='error'>" . htmlspecialchars($_GET['erreur']) . "</span>";
-        }
+    <?php
+    include_once('include/header.php');
+    include_once('include/menu.php');
+    include_once('gestionPanier.php');
+    //ajouterAuPanier(2, "noir", 3);
+    // ajouterAuPanier(18, "noir", 3);
+    // try {
+    //     ajouterAuPanier(19, "noir", 3);
+    //     ajouterAuPanier(19, "blanc", 3);
+    // } catch (Exception $e) {
+    //     echo $e->getMessage();
+    // }
+    //supprimerProduit(227);
+    ?>
+    <div id="maindiv">
 
-        //ajouterAuPanier(227, "blanc", 3);
-        //supprimerProduit(227);
-        if (estVide()) {
-            echo "Vous n'avez pas encore d'article dans votre panier";
-        } else {
-        ?>
-        <div id="maindiv">
-            <div id='panier'>
-                <table>
-                    <caption>Mon Panier</caption>
-                    <tr>
-                        <th>Produit</th>
-                        <th>Couleur</th>
-                        <th>Quantité</th>
-                        <th>Prix</th>
-                        <th>Supprimer</th>
-                    </tr>
+        <div id='panier'>
+            <?php
+            if (estVide()) {
+                echo "<h1>Vous n'avez pas encore d'article dans votre panier</h1>";
+            } else {
+            ?>
+                <h2>Mon panier &emsp;&emsp;&emsp;&emsp;&emsp;
                     <?php
-                    $produits = recupererProduits();
-                    for ($i = 0; $i < count($produits['id']); $i++) {
-                        echo "<tr>";
-                        $id = $produits['id'][$i];
-                        echo "<th>" . $produits['nom'][$i] . "</th>";
-                        echo "<th>" . $produits['couleur'][$i] . "</th>";
-                        echo "<th>
-                            <form action='enregistrerQte.php?id=$id' method='post'>
-                                <input type='number' name='qte' value='" . $produits['qte'][$i] . "' id='qte' min='1' max='999' step='1' required/>
-                                <input type='submit' value='Modifier' id='modifier'>
-                            </form>
-                        </th>";
-                        echo "<th>" . $produits['prix'][$i] . "</th>";
-                        echo "<th><a href='supprimerArticle.php?id=$id'><img src='include/logos/supprimer.png' alt='Supprimer' id='supprimer'></a></th>";
-                        echo "</tr>";
-                    }
-                    var_dump($_SESSION['panier']);
-                    ?>
-                </table>
-            </div>
-    </div>
-    <a href="commander.php"><button>Passer Commande</button></a>
+                    if (isset($_GET['erreur'])) {
+                        echo "<span id='error'>" . htmlspecialchars($_GET['erreur']) . "</span>";
+                    } ?>
+                </h2>
+                <?php
 
-<?php
-        }
-        include_once('include/footer.php');
-?>
+                $produits = recupererProduits();
+                for ($i = 0; $i < count($produits['id']); $i++) {
+                    echo "<div class='itemPanier'>";
+                    $id = $produits['id'][$i];
+                    $color = $produits['couleur'][$i];
+
+                    echo "<h3>" . $produits['nom'][$i] . "</h3>";
+                    echo "<img src='include/produits/" . $id . ".jpg' alt='" . $produits['nom'][$i] . "'>";
+                    echo "<div id='descriptionPanier'>";
+                    echo "Couleur : " . $color;
+                    echo "
+                            <form action='enregistrerQte.php?id=$id&couleur=$color' method='post'>
+                                Quantité :
+                                <input type='number' name='qte' value='" . $produits['qte'][$i] . "' id='qte' min='1' max='999' step='1' required/>
+                                <input type='submit' value='Modifier' id='modifier'><br>
+                            </form>
+                        ";
+
+                    if ($produits['promo'][$i] > 0) {
+                        echo "<span id='promo'>PROMO -" . ($produits['promo'][$i] * 100) . "%</span>";
+                        echo "<del> Prix : " . $produits['prix'][$i] . "€ </del><span id='promo'> " . round($produits['prixPromo'][$i], 2, PHP_ROUND_HALF_UP) . " €</span>";
+                    } else {
+                        echo "Prix : " . $produits['prix'][$i] . " €";
+                    }
+                    echo "</div>";
+
+                    echo "<br><a href='supprimerArticle.php?id=$id&couleur=$color'><img src='include/logos/supprimer.png' alt='Supprimer' id='supprimer'></a>";
+                    echo "</div>";
+                }
+                ?>
+                <div id="droitePanier">
+                    <h3>Prix total : <?php echo round(array_sum($produits['prixPromo']), 2, PHP_ROUND_HALF_UP)." €"; ?></h3>
+                    <a href="commander.php"><button id="btnCommander">Passer commande</button></a>
+                </div>
+            <?php
+            }
+            ?>
+        </div>
+    </div>
+    <br><br><br><br><br>
+
+    <?php
+    include_once('include/footer.php');
+    ?>
 
 </body>
 
