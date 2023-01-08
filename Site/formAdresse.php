@@ -1,3 +1,28 @@
+<?php
+if (session_status() != PHP_SESSION_ACTIVE) {
+    session_start();
+}
+if (isset($_SESSION['connexion'])) {
+
+    if ($_SESSION['connexion'] != 'client' && $_SESSION['connexion'] != 'admin') {
+        header("Location: formConnexion.php?erreur=Veuillez vous connecter");
+        exit();
+    }
+
+    require('include/connect.inc.php');
+
+    $req = "SELECT * FROM Utilisateur WHERE numU=:pNumU";
+    $st = oci_parse($conn, $req);
+    oci_bind_by_name($st, ":pNumU", $_SESSION['id']);
+    $result = oci_execute($st);
+    $compte = oci_fetch_assoc($st);
+    oci_free_statement($st);
+    oci_close($conn);
+} else {
+    header("Location: formConnexion.php?erreur=Veuillez vous connecter");
+    exit();
+}
+?>
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -10,34 +35,9 @@
     <?php include_once('include/icon.php'); ?>
 
 <body>
-
     <?php
     include_once('include/header.php');
     include_once('include/menu.php');
-
-    if (session_status() != PHP_SESSION_ACTIVE) {
-        session_start();
-    }
-    if (isset($_SESSION['connexion'])) {
-
-        if ($_SESSION['connexion'] != 'client' && $_SESSION['connexion'] != 'admin') {
-            header("Location: formConnexion.php?erreur=Veuillez vous connecter");
-            exit();
-        }
-
-        require('include/connect.inc.php');
-
-        $req = "SELECT * FROM Utilisateur WHERE numU=:pNumU";
-        $st = oci_parse($conn, $req);
-        oci_bind_by_name($st, ":pNumU", $_SESSION['id']);
-        $result = oci_execute($st);
-        $compte = oci_fetch_assoc($st);
-        oci_free_statement($st);
-        oci_close($conn);
-    } else {
-        header("Location: formConnexion.php?erreur=Veuillez vous connecter");
-        exit();
-    }
     ?>
 
     <div id="maindiv">
