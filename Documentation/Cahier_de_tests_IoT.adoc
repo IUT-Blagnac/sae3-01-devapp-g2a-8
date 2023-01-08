@@ -2,8 +2,8 @@
 :toc:
 :toc-title: Sommaire
 
-Version de l'application : 0.1 +
-Date : 16/12/2022 +
+Version de l'application : 3 +
+Date : 08/01/2023 +
 Equipe : 2A-8 +
 Client : VidéoFest +
 Projet : Gestion entrepôt + 
@@ -27,7 +27,7 @@ L'objectif de ce projet est de créer une application en Java et Python, qui per
 
 == 2. Test des fonctionnalités techniques
 
-=== Sprint 2 (sem 50)
+=== Sprint 4 (sem 50)
 
 |===
 | Nom test | Préconditions | Conditions de satisfaction | Résultats du test
@@ -59,19 +59,24 @@ L'objectif de ce projet est de créer une application en Java et Python, qui per
 
 |===
 
-=== Sprint 3 (sem 1)
+=== Sprint 5 (sem 1)
 
 |===
 | Nom test | Préconditions | Conditions de satisfaction | Test passé ?
 
-|
-| 
-| 
-|
+| Lecture fichier de configuration (en Json)
+| Droit de création de fichier dans le répertoire
+| Création ou ouverture du fichier, puis lecture des informations
+| Test passé avec succès
 
-|
-| 
-| 
-|
+| Interface de l'application 
+| Avoir lancé l'application
+| Affichage des valeurs du fichier json, tous les champs sont éditables et vérifiés avant modification
+| Test passé avec succès
+
+| Ecriture fichier de configuration (en Json)
+| Avoir modifier les données avec l'interface
+| Ecriture dans le fichier json des informations de l'interface
+| Test passé avec succès
 
 |===
