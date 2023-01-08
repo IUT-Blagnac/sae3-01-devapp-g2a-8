@@ -16,11 +16,11 @@ if (!isset($_SESSION['recherche']) || (!isset($_GET['categorie']) && !isset($_GE
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="include/css/style.css" type="text/css">
-    <title>Mon compte</title>
+    <title>Produits</title>
     <?php include_once('include/icon.php'); ?>
 </head>
 
-<body>
+<body id='fondVert'>
     <?php
     include_once('include/header.php');
     include_once('include/menu.php');
@@ -56,7 +56,7 @@ if (!isset($_SESSION['recherche']) || (!isset($_GET['categorie']) && !isset($_GE
             } else {
                 echo "<h4>Prix : " . $produits['PRIX'][$i] . " €</h4>";
             }
-            echo "<a href='produit.php?id=" . $produits['NUMP'][$i] . "'><button>Voir plus</button></a>";
+            echo "<a href='produit.php?id=" . $produits['NUMP'][$i] . "'><button class='lienVoirPlus'>Voir plus</button></a>";
             echo "<br>";
             echo "<br>";
             echo "</div>";
