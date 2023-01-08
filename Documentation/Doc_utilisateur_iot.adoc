@@ -2,8 +2,8 @@
 :toc:
 :toc-title: Sommaire
 
-Version de l'application : 0.1 +
-Date : 14/12/2022 +
+Version de l'application : 3 +
+Date : 08/01/2023 +
 Equipe : 2A-8 +
 Client : VidéoFest +
 Projet : Gestion entrepôt + 
