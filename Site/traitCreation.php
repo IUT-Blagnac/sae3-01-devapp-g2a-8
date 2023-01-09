@@ -14,13 +14,13 @@ if (
     }
 
     //test format prenom
-    if (!preg_match("#[a-z]+#i", $_POST['prenom'])) {
+    if (!preg_match("#^[a-z]+$#i", $_POST['prenom'])) {
         header("Location: formCreation.php?erreur=Format du prénom invalide");
         exit();
     }
 
     //test format nom
-    if (!preg_match("#[a-z]+#i", $_POST['nom'])) {
+    if (!preg_match("#^[a-z]+$#i", $_POST['nom'])) {
         header("Location: formCreation.php?erreur=Format du nom invalide");
         exit();
     }
