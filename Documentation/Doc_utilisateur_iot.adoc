@@ -70,5 +70,5 @@ Si une des contraintes n'est pas respecté alors le programme affiche une popup 
 
 image::images/javaError.png[]
 
-Si tout est bon, l'utilisateur peut cliquer sur le button 'CONFIRMER' qui sauvegarde la nouvelle config dans le fichier.
+Si tout est bon, l'utilisateur peut cliquer sur le button 'CONFIRMER' qui sauvegarde la nouvelle config dans le fichier, et les données vont être sauvegardé dans le fichier config.json
 
