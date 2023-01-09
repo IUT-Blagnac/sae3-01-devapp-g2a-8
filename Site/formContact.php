@@ -37,12 +37,12 @@
 
     <div id="maindiv">
         <div class="formulaire">
-            <h1>Contact</h1>
             <?php
             if (isset($_GET['erreur'])) {
                 echo "<span id='error'>" . htmlspecialchars($_GET['erreur']) . "</span>";
             }
             ?>
+            <h1>Contact</h1>
             <form action="traitContact.php" method="POST">
                 Nom : <br>
                 <input type="text" name="nom" <?php echo "value='" . $compte['NOM'] . "'" ?> required><br><br>
