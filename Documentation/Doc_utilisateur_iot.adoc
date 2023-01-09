@@ -51,18 +51,18 @@ Ouvrir un terminal et se placer dans le même répertoire que l'aplication java 
 
 image::images/javaConfig.png[]
 
-Le jar recherche un fichier config.json existant. Si jamais celui n'existe pas, il en créera un dans le même répertoire que le jar. +
-Le fichier config est composé de: +
+L'application recherche un fichier contenant des données. Si jamais celui n'existe pas, il en créera un dans le même répertoire que l'application. +
+Le fichier de configuartion est composé de: +
 
- * un String "server" qui correspond a l'adresse de serveur sur lequel on veut se connecter(Par défaut: chirpstack.iut-blagnac.fr). +
+ * un String "server" qui correspond a l'adresse de serveur sur lequel on veut se connecter (Par défaut: chirpstack.iut-blagnac.fr). +
 
- * un Array de Strings "data" qui correspond aux données que on veut afficher(Par défaut: ["temperature","humidity","co2"]). +
+ * un Array de Strings "data" qui correspond aux données que on veut afficher (Par défaut: ["temperature","humidity","co2"]). +
 
- * un String "appID" qui correspond a l'identifiant de l'application(Par défaut: 1).
+ * un String "appID" qui correspond a l'identifiant de l'application (Par défaut: 1).
 
- * un String "deviceID" qui correspond au capteur au quel on veut se connecter(Par défaut: +).
+ * un String "deviceID" qui correspond au capteur au quel on veut se connecter (Par défaut: +).
 
- * un Long "refresh" qui correspond au a la fréquence de rafraîchissement des données dans notre application(Par défaut: 1).
+ * un Long "refresh" qui correspond au a la fréquence de rafraîchissement des données dans notre application (Par défaut: 1).
 
 Lorsque les données sont charges, on permet a l'utilisateur de les modifier, avant de confirmer son choix. La seule contrainte pour les données est que le refresh doit être un chiffre, et aucune des casses peut être nulle. +
 
@@ -70,5 +70,5 @@ Si une des contraintes n'est pas respecté alors le programme affiche une popup 
 
 image::images/javaError.png[]
 
-Si tout est bon, l'utilisateur peut cliquer sur le button 'CONFIRMER' qui sauvegarde la nouvelle config dans le fichier, et les données vont être sauvegardé dans le fichier config.json
+Si tout est bon, l'utilisateur peut cliquer sur le button 'CONFIRMER' qui sauvegarde les nouveaux données dans le fichier.
 
