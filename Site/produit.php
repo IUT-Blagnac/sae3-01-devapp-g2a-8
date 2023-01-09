@@ -108,7 +108,8 @@ if (isset($_POST['ajouter'])) {
                 if (isset($_SESSION['connexion'])) {
                     if ($_SESSION['connexion'] == 'admin') {
                         echo "<a href='#'><button id='btnAdmin'>Modifier le produit</button></a><br>";
-                        echo "<a href='#'><button id='btnAdmin'>Supprimer le produit</button></a><br>";
+                        echo "<button id='btnAdmin' onclick='suppression()'>Supprimer le produit</button><br>";
+                        $urlSuppr="supprimerProduit.php?id=".$produit['NUMP'];
                     }
                 }
                 ?>
@@ -121,6 +122,12 @@ if (isset($_POST['ajouter'])) {
     ?>
 
     <script>
+        function suppression() {
+            if (window.confirm("Voulez vous vraiment supprimer ce produit ?")) {
+                window.open("<?php echo $urlSuppr ?>", "_self");
+            }
+        }
+
         // récupération des éléments de sélection de quantité et de couleur
         const inputQte = document.getElementById("qteProduit");
         const selectCouleur = document.getElementById("couleurs-select");
