@@ -80,6 +80,7 @@ L'entreprise a donc décidé de se reconvertir vers la vente de périphériques 
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/BD/script_BD.sql[Script de création de la BD]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/BD/insert_BD.sql[Script insertion des données dans la BD]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Cahier_de_tests_Site.adoc[Cahier de tests]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/tree/master/Site[Répertoire code du site]
 
 == Projet IoT
 
@@ -92,6 +93,7 @@ VidéoFest possède plusieurs entrepôts dont certaines données doivent être c
 - https://github.com/orgs/IUT-Blagnac/projects/46[Projet]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_utilisateur_iot.adoc[Documentation utilisateur]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Cahier_de_tests_IoT.adoc[Cahier de tests]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/tree/master/IoT/Java/ApplicationEntrepot/src/application[Répertoire du code de l'appli]
 
 == Évaluations hebdomadaires
 
