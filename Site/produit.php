@@ -28,7 +28,7 @@ oci_close($conn);
 
 include_once('gestionPanier.php');
 
-$erreur="";
+$erreur = "";
 //Ajout du produit au panier si le formulaire à été validé
 if (isset($_POST['ajouter'])) {
     $idP = htmlentities($_GET['id']);
@@ -73,7 +73,7 @@ if (isset($_POST['ajouter'])) {
                 <p><?php echo str_replace("- ", "<br><br> - ", $produit['DESCRIPTIF'], $count) ?></p>
             </div>
             <div id="droite">
-                <?php echo "<span id='error'>".$erreur."</span>" ?>
+                <?php echo "<span id='error'>" . $erreur . "</span>" ?>
                 <h3><?php echo $produit["NOM"] ?></h3>
                 <form method="post">
                     Quantité : <input type='number' name='qte' value='1' id='qteProduit' min='1' max='999' step='1' required /><br>
@@ -142,7 +142,7 @@ if (isset($_POST['ajouter'])) {
             inputQte.setAttribute("max", couleurs["QTE"][indiceCouleur]);
 
             //si une qte déjà entrée est supérieure à la nouvelle qte max, on la met eu nouveau max
-            if (inputQte.value > couleurs["QTE"][indiceCouleur]) {
+            if (parseInt(inputQte.value) > parseInt(couleurs["QTE"][indiceCouleur])) {
                 inputQte.value = couleurs["QTE"][indiceCouleur];
             }
         });
@@ -153,8 +153,10 @@ if (isset($_POST['ajouter'])) {
             qteMax = inputQte.getAttribute("max");
             //si une qte déjà entrée est supérieure à la qte max, on la met au max
             console.log(inputQte.value);
+            console.log("is a " + typeof(parseInt(inputQte.value)));
             console.log(qteMax);
-            if (inputQte.value > qteMax) {
+            console.log("is a " + typeof(parseInt(qteMax)));
+            if (parseInt(inputQte.value) > parseInt(qteMax)) {
                 console.log(inputQte.value + ">" + qteMax);
                 inputQte.value = qteMax;
             }

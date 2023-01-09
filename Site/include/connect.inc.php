@@ -8,7 +8,10 @@ $db = "(DESCRIPTION =
 			    (SID = db11g)
 			)
 		  )";
-$conn = oci_connect($user, $mdp, $db);
+//changement de la connexion pour spécifier l'encodage (AL32UTF8, comme utf 8 mais mieux)
+//$conn = oci_connect($user, $mdp, $db);
+$conn = oci_connect($user, $mdp, $db, $character_set = 'AL32UTF8');
+
 
 // si la connexion a échoué, on affiche le message d'erreur
 if (!$conn) {

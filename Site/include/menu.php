@@ -23,11 +23,13 @@ oci_close($conn);
 		}
 		?>
 		<a href="rechercheProduits?categorie=Tous"><i class='glyphicon glyphicon-triangle-right'></i>Tous nos produits</a>
+		<a href="rechercheProduits?categorie=Promo"><i class='glyphicon glyphicon-triangle-right'></i>Promotions</a>
 	</div>
 	<img src="include/logos/logo.png" alt="Logo" id="logoMenu">
 </div>
 
 <script>
+	
 	/* Prend tout les élements de dropdown menu, et les affiche un par*/
 	var dropdown = document.getElementsByClassName("dropdown-btn");
 	var i;
@@ -49,7 +51,7 @@ oci_close($conn);
 		document.getElementById("end").style.filter = "blur(4px)";
 		document.getElementById("mySidenav").style.width = "250px";
 		document.getElementById("maindiv").style.filter = "blur(4px)";
-
+		document.getElementById("logoMenu").style.display = "block";
 	}
 	/*Change la taille de menu, et le blur de la bage*/
 	function closeNav() {
@@ -57,7 +59,7 @@ oci_close($conn);
 		document.getElementById("end").style.filter = "blur(0px)";
 		document.getElementById("mySidenav").style.width = "0";
 		document.getElementById("maindiv").style.filter = "blur(0px)";
-
+		document.getElementById("logoMenu").style.display = "none";
 	}
 	/*Si l'icone que on a dans le button est vers la droite, on la met vers le bas, et l'inverse*/
 	function changeIcon() {

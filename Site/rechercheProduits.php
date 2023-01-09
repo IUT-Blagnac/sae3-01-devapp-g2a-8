@@ -27,6 +27,17 @@ if (isset($_GET['categorie'])) {
         header("Location: listeProduits.php?categorie=Tous les produits");
         exit();
 
+    } elseif ($_GET['categorie'] == 'Promo') { //promotions
+
+        $req = "SELECT * FROM Produit WHERE promo>0";
+        $st = oci_parse($conn, $req);
+        $result = oci_execute($st);
+        oci_fetch_all($st, $produits);
+        oci_free_statement($st);
+        oci_close($conn);
+        $_SESSION['recherche'] = $produits;
+        header("Location: listeProduits.php?categorie=Promotions");
+        exit();
     } else { //une catégorie en particulier
 
         $req = "SELECT DISTINCT * FROM Produit
