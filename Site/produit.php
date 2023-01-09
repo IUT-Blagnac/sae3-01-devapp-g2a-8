@@ -107,7 +107,7 @@ if (isset($_POST['ajouter'])) {
                 }
                 if (isset($_SESSION['connexion'])) {
                     if ($_SESSION['connexion'] == 'admin') {
-                        echo "<a href='#'><button id='btnAdmin'>Modifier le produit</button></a><br>";
+                        echo "<a href='formModificationProduit.php?id=".$produit['NUMP']."'><button id='btnAdmin'>Modifier le produit</button></a><br>";
                         echo "<button id='btnAdmin' onclick='suppression()'>Supprimer le produit</button><br>";
                         $urlSuppr="supprimerProduit.php?id=".$produit['NUMP'];
                     }
