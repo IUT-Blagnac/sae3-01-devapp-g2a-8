@@ -559,3 +559,39 @@ option:disabled {
     background-color: #616161;
     color: white;
 }
+
+#imageFormulaire {
+    width: 50%;
+    height: 50%;
+}
+
+/* Page modifier produit */
+#modifPorudit input {
+    margin: 10% ;
+}
+
+#modifProduit input[type="number"] {
+    color: white;
+    background-color: #403c3c;
+    border-style: none;
+    width: 20%;
+}
+
+#modifProduit input[type="file"] {
+    color: white;
+    background-color: #403c3c;
+    display: block;
+    margin: auto;
+}
+
+#modifProduit select {
+    color: white;
+    background-color: #403c3c;
+    border-style: none;
+}
+
+#modifProduit textarea {
+    color: white;
+    background-color: #403c3c;
+    border-style: none;
+}

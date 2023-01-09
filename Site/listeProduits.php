@@ -32,7 +32,7 @@ if (!isset($_SESSION['recherche']) || (!isset($_GET['categorie']) && !isset($_GE
 
     if (empty($produits['NUMP'])) {
         if (isset($_GET['categorie'])) {
-            echo "<h1>Pas de produits correspondant à la catégorie " . htmlentities($_GET['categorie']) . "</h1>";
+            echo "<h1>Pas de produits correspondant à la catégorie  : " . htmlentities($_GET['categorie']) . "</h1>";
         } else {
             echo "<h1>Pas de produits correspondant à : " . htmlentities($_GET['nom']) . "</h1>";
         }

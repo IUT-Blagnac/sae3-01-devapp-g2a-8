@@ -11,6 +11,10 @@ if (isset($_SESSION['connexion'])) {
     header("Location: index.php");
     exit();
 }
+if (!isset($_GET['id'])) {
+    header("Location: index.php");
+    exit();
+}
 
 require('include/connect.inc.php');
 
