@@ -118,6 +118,12 @@ public class ConfigurationController
 			confirmation = false;
 		}
 
+		if (!this.temperature.isSelected() && !this.humidity.isSelected() && !this.co2.isSelected()) {
+			Alert alert = new Alert(Alert.AlertType.ERROR, "Veuillez choisir au moins un type de données \n (température, humidité, co²)", ButtonType.OK);
+			alert.showAndWait();
+			confirmation = false;
+		}
+
 		if (confirmation) {
 			
 			String[] data = new String[3];
@@ -140,6 +146,9 @@ public class ConfigurationController
 			
 			//enregistre les infos dans le fichier json
 			this.fichier.writeJson();
+
+			//appelle la seconde fenetre
+			this.fenetre.setScene(this.app.showFenetreVisualisation());
 		}
 	}
 }

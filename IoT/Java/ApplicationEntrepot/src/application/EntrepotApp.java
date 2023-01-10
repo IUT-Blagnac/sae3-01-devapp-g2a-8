@@ -1,12 +1,14 @@
 package application;
 
+import application.view.VisualisationController;
+import application.model.GestionJson;
+import application.view.ConfigurationController;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import application.model.GestionJson;
-import application.view.ConfigurationController;
 
 import java.io.IOException;
 
@@ -18,17 +20,15 @@ public class EntrepotApp extends Application {
 	/** Fonction de lancement de l'application <BR>
 	 * 
 	 * Cette méthode est appelée lors du démarrage de l'application. <BR>
-	 * Elle permet d'appeler la méthode qui lance la page d'accueil.
+	 * Elle permet d'appeler la méthode qui lance la page de configuration.
 	 * 
 	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception { 
 		this.primaryStage=primaryStage;
-		
-		
-		primaryStage.setScene(showFenetreConfiguration());
-		primaryStage.setTitle("Entrepot App");
-		primaryStage.show();
+		this.primaryStage.setScene(showFenetreConfiguration());
+		this.primaryStage.setTitle("Entrepot App");
+		this.primaryStage.show();
 	}
 
 
@@ -53,6 +53,26 @@ public class EntrepotApp extends Application {
 			System.exit(1);
 		}
 		return null;	
+	}
+
+	public Scene showFenetreVisualisation() {
+		try {
+			FXMLLoader loader=new FXMLLoader();
+			loader.setLocation(EntrepotApp.class.getResource("view/Visualisation.fxml"));
+
+			GridPane root=loader.load();
+
+			VisualisationController ctrl=loader.getController();
+			ctrl.setApp(this);
+			ctrl.setFenetrePrincipale(primaryStage);
+			return new Scene(root);
+
+		} catch (IOException e) {
+			System.out.println("Ressource FXML non disponible : Visualisation");
+			e.printStackTrace();
+			System.exit(1);
+		}
+		return null;
 	}
 	
 	public static void main(String[] args) {
