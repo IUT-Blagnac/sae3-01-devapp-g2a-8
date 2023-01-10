@@ -109,8 +109,10 @@ public class GestionJson {
 		String [] result = new String [3];
 		int i=0;
 		for (Object o : this.data) {
-			result[i]=o.toString();
-			i++;
+			if (o!=null) {
+				result[i] = o.toString();
+				i++;
+			}
 		}
 		return result;
 	}
