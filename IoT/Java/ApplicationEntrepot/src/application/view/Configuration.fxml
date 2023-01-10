@@ -36,6 +36,6 @@
       <CheckBox fx:id="temperature" mnemonicParsing="false" text="Température" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
       <CheckBox fx:id="humidity" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Humidité" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
       <CheckBox fx:id="co2" mnemonicParsing="false" text="Taux de CO²" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-      <Button fx:id="submit" mnemonicParsing="false" onAction="#newValues" text="Confirmer" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+      <Button fx:id="submit" mnemonicParsing="false" onAction="#actionConfirmer" text="Confirmer" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
    </children>
 </GridPane>
