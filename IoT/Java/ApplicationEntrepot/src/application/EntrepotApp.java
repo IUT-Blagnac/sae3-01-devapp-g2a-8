@@ -1,5 +1,6 @@
 package application;
 
+import application.model.GestionDonnees;
 import application.view.VisualisationController;
 import application.model.GestionJson;
 import application.view.ConfigurationController;
@@ -55,7 +56,7 @@ public class EntrepotApp extends Application {
 		return null;	
 	}
 
-	public Scene showFenetreVisualisation() {
+	public Scene showFenetreVisualisation(int refresh, String[] choix) {
 		try {
 			FXMLLoader loader=new FXMLLoader();
 			loader.setLocation(EntrepotApp.class.getResource("view/Visualisation.fxml"));
@@ -63,6 +64,8 @@ public class EntrepotApp extends Application {
 			GridPane root=loader.load();
 
 			VisualisationController ctrl=loader.getController();
+			ctrl.setData(new GestionDonnees(choix));
+			ctrl.setTimer(refresh);
 			ctrl.setApp(this);
 			ctrl.setFenetrePrincipale(primaryStage);
 			return new Scene(root);

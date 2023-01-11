@@ -148,7 +148,7 @@ public class ConfigurationController
 			this.fichier.writeJson();
 
 			//appelle la seconde fenetre
-			this.fenetre.setScene(this.app.showFenetreVisualisation());
+			this.fenetre.setScene(this.app.showFenetreVisualisation((int)this.refresh.getValue(), this.fichier.getData()));
 		}
 	}
 }
