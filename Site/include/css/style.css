@@ -595,3 +595,57 @@ option:disabled {
     background-color: #403c3c;
     border-style: none;
 }
+
+#stockCouleurs td {
+    
+}
+
+/* Page de consultation de l'entreprise */
+
+#entdiv {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    color:rgb(13, 14, 15);
+    display: block;
+}
+
+
+.ent {
+    padding: 40px;
+    width: 50%;
+    border-radius: 10px;
+    background-color: #E3E3E3;
+    margin: 50px auto auto auto;
+    box-sizing: content-box;
+    border: 2px solid #000;
+
+}
+
+.underline {
+    text-decoration: underline;
+    text-align: center;  
+}
+
+
+#Blacklogo {
+    width: 50px;
+    height: 50px;
+    float:right;
+    margin-top:0px;
+}
+
+#equipe {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+.left{
+    text-align: left;
+}
+.font1{
+    font-size: 40px;
+}
