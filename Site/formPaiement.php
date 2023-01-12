@@ -13,6 +13,12 @@ if (isset($_SESSION['connexion'])) {
     exit();
 }
 
+// calcul du montant total
+$montantTot = 0;
+for ($i = 0; $i < count($_SESSION['panier']['prixPromo']); $i++) {
+    $montantTot = $montantTot + $_SESSION['panier']['prixPromo'][$i];
+}
+
 ?>
 <!DOCTYPE html>
 
@@ -40,6 +46,8 @@ if (isset($_SESSION['connexion'])) {
             }
             ?>
             <h1>Paiement de la commande</h1>
+
+            <h3>Montant total : <?php echo round($montantTot, 2, PHP_ROUND_HALF_UP)." €" ?></h3>
             <form action="confirmation.php" method="post">
                 <input type="submit" value="Payer" name="payer">
             </form>
