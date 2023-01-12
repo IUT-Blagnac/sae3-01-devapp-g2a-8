@@ -24,8 +24,8 @@ public class GestionJson {
 		this.server=(String)this.config.get("server");
 		this.appID=(String)this.config.get("appID");
 		this.deviceID=(String)this.config.get("deviceID");
-		this.refresh=((Long)config.get("refresh")).intValue();
-		this.data=(JSONArray)config.get("data");
+		this.refresh=Integer.parseInt(this.config.get("refresh").toString());
+		this.data=(JSONArray)this.config.get("data");
 	}
 
 	/** Cette fonction prend le fichier config.json, le lit, et si elle le trouve pas elle cree un nouveaux, puis retourne les donnes.
@@ -109,8 +109,10 @@ public class GestionJson {
 		String [] result = new String [3];
 		int i=0;
 		for (Object o : this.data) {
-			result[i]=o.toString();
-			i++;
+			if (o!=null) {
+				result[i] = o.toString();
+				i++;
+			}
 		}
 		return result;
 	}
