@@ -27,6 +27,22 @@ if (isset($_GET['categorie'])) {
         header("Location: listeProduits.php?categorie=Tous les produits");
         exit();
 
+    } elseif ($_GET['categorie']=='Populaires') {
+
+        $req = "SELECT p.nump, p.nom, p.prix, p.promo, p.descriptif, SUM(qte)
+                FROM Produit p, DetailCommande d
+                WHERE p.nump=d.produit
+                GROUP BY p.nump, p.nom, p.prix, p.promo, p.descriptif
+                HAVING SUM(qte) > AVG(qte)";
+        $st = oci_parse($conn, $req);
+        $result = oci_execute($st);
+        oci_fetch_all($st, $produits);
+        oci_free_statement($st);
+        oci_close($conn);
+        $_SESSION['recherche'] = $produits;
+        header("Location: listeProduits.php?categorie=Populaires");
+        exit();
+
     } elseif ($_GET['categorie'] == 'Promo') { //promotions
 
         $req = "SELECT * FROM Produit WHERE promo>0";

@@ -31,6 +31,18 @@ include_once('gestionPanier.php');
 $erreur = "";
 //Ajout du produit au panier si le formulaire à été validé
 if (isset($_POST['ajouter'])) {
+    if (session_status() != PHP_SESSION_ACTIVE) {
+        session_start();
+    }
+    if (isset($_SESSION['connexion'])) {
+        if ($_SESSION['connexion'] != 'client' && $_SESSION['connexion'] != 'admin') {
+            header("Location: formConnexion.php?erreur=Veuillez vous connecter");
+            exit();
+        }
+    } else {
+        header("Location: formConnexion.php?erreur=Veuillez vous connecter");
+        exit();
+    }
     $idP = htmlentities($_GET['id']);
     $coulP = htmlentities($_POST['couleurs']);
     $qteP = htmlentities($_POST['qte']);
