@@ -21,13 +21,13 @@ header {
     width: 50%;
 }
 
-#sousCategories li{
+#sousCategories li {
     margin-top: 2.1%;
     padding-right: 10%;
     font-size: 110%;
 }
 
-#sousCategories li a{
+#sousCategories li a {
     color: white;
 }
 
@@ -49,8 +49,13 @@ body {
 }
 
 #messageContact {
-    color: black;
+    color: white;
+    background-color: #403c3c;
+    border-style: none;
+    border-radius: 10px;
     width: 50%;
+    height: 200px;
+    resize: none;
 }
 
 footer {
@@ -273,19 +278,19 @@ input[type=password] {
 }
 
 div.bouton-aligne {
-    display:inline-block;
-    width:40%;
-    margin:10px 2.5% 10px 2.5%;
-    text-align:center;
+    display: inline-block;
+    width: 40%;
+    margin: 10px 2.5% 10px 2.5%;
+    text-align: center;
 }
 
-.buttonCpt{
+.buttonCpt {
     color: black;
     border-radius: 10px;
-    border-style:none;
+    border-style: none;
     padding: 10px;
     width: 190px;
-    display:inline-block;
+    display: inline-block;
     transition-duration: 0.6s;
 }
 
@@ -298,17 +303,18 @@ div.bouton-aligne {
     color: black;
 }
 
-@media only screen  and (max-width:1200px){
-    .buttonCpt{
+@media only screen and (max-width:1200px) {
+    .buttonCpt {
         width: 80%;
-        display:inline-block;
-        margin:10px 2.5% 10px 2.5%;
-        text-align:center;   
+        display: inline-block;
+        margin: 10px 2.5% 10px 2.5%;
+        text-align: center;
     }
-    div.bouton-aligne{
-        display:inline-block;
-        width:98%;
-        
+
+    div.bouton-aligne {
+        display: inline-block;
+        width: 98%;
+
     }
 }
 
@@ -354,7 +360,7 @@ div.bouton-aligne {
     background-color: #d1eac6;
 }
 
-#produits h1{
+#produits h1 {
     color: #302c2c;
 }
 
@@ -362,7 +368,7 @@ div.bouton-aligne {
     margin-top: 5%;
     margin-bottom: 10%;
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     row-gap: 50px;
     column-gap: 20px;
@@ -386,7 +392,7 @@ div.bouton-aligne {
 
 .lienVoirPlus {
     background-color: white;
-    color : #302c2c;
+    color: #302c2c;
     border-radius: 10px;
     border-style: none;
     transition-duration: 0.6s;
@@ -404,7 +410,7 @@ div.bouton-aligne {
     color: white;
     background-color: #302c2c;
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     margin: 4%;
     border-radius: 10px;
 }
@@ -473,7 +479,7 @@ div.bouton-aligne {
     margin: -5% 2% 0 0;
 }
 
-#droitePanier{
+#droitePanier {
     float: right;
     display: flex;
     flex-direction: column;
@@ -499,7 +505,7 @@ div.bouton-aligne {
     margin: 3%;
 }
 
-#produit img{
+#produit img {
     max-width: 60%;
     max-height: 400px;
     display: block;
@@ -535,7 +541,7 @@ div.bouton-aligne {
 }
 
 option:disabled {
-    background-color : #DBDBDB;
+    background-color: #DBDBDB;
     color: #677f84;
 }
 
@@ -566,15 +572,13 @@ option:disabled {
 }
 
 /* Page modifier produit */
-#modifPorudit input {
-    margin: 10% ;
-}
 
 #modifProduit input[type="number"] {
     color: white;
     background-color: #403c3c;
     border-style: none;
-    width: 20%;
+    width: 15%;
+    border-radius: 10px;
 }
 
 #modifProduit input[type="file"] {
@@ -582,22 +586,79 @@ option:disabled {
     background-color: #403c3c;
     display: block;
     margin: auto;
-}
-
-#modifProduit select {
-    color: white;
-    background-color: #403c3c;
-    border-style: none;
+    border-radius: 10px;
 }
 
 #modifProduit textarea {
     color: white;
     background-color: #403c3c;
     border-style: none;
+    resize: none;
+    width: 50%;
+    height: 150px;
+    border-radius: 10px;
 }
 
-#stockCouleurs td {
-    
+/* Page ajouter produit */
+
+#ajoutProduit input[type="number"] {
+    color: white;
+    background-color: #403c3c;
+    border-style: none;
+}
+
+#ajoutProduit input[type="file"] {
+    color: white;
+    background-color: #403c3c;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+}
+
+#ajoutProduit select {
+    color: white;
+    background-color: #403c3c;
+    border-style: none;
+    border-radius: 10px;
+}
+
+#ajoutProduit textarea {
+    color: white;
+    background-color: #403c3c;
+    border-style: none;
+    border-radius: 10px;
+    width: 50%;
+    height: 150px;
+    resize: none;
+}
+
+#stockCouleurs {
+    text-align: left;
+    width: 60%;
+    margin-left: 35%;
+}
+
+#stockCouleurs caption{
+    color: white;
+    margin-top: 3%;
+    margin-left: 18%;
+}
+
+.txtCouleur {
+    text-align: center;
+}
+
+.classQteCouleur {
+    text-align: left;
+}
+
+.classQteCouleur input {
+    width: 30%;
+}
+
+.prix {
+    width: 13%;
+    border-radius: 10px;
 }
 
 /* Page de consultation de l'entreprise */
@@ -608,7 +669,7 @@ option:disabled {
     text-align: center;
     align-items: center;
     align-content: center;
-    color:rgb(13, 14, 15);
+    color: rgb(13, 14, 15);
     display: block;
 }
 
@@ -626,15 +687,15 @@ option:disabled {
 
 .underline {
     text-decoration: underline;
-    text-align: center;  
+    text-align: center;
 }
 
 
 #Blacklogo {
     width: 50px;
     height: 50px;
-    float:right;
-    margin-top:0px;
+    float: right;
+    margin-top: 0px;
 }
 
 #equipe {
@@ -643,9 +704,10 @@ option:disabled {
     height: auto;
 }
 
-.left{
-    text-align: left;
+.left {
+    text-align: justify;
 }
-.font1{
+
+.font1 {
     font-size: 40px;
 }
