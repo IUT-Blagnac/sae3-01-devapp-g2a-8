@@ -30,15 +30,6 @@ if (isset($_SESSION['connexion'])) {
     include_once('include/header.php');
     include_once('include/menu.php');
     include_once('gestionPanier.php');
-    //ajouterAuPanier(2, "noir", 3);
-    // ajouterAuPanier(18, "noir", 3);
-    // try {
-    //     ajouterAuPanier(19, "noir", 3);
-    //     ajouterAuPanier(19, "blanc", 3);
-    // } catch (Exception $e) {
-    //     echo $e->getMessage();
-    // }
-    //supprimerProduit(227);
     ?>
     <div id="maindiv">
 

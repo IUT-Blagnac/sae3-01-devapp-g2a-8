@@ -12,7 +12,7 @@ if (isset($_SESSION['connexion'])) {
     exit();
 }
 if (!isset($_POST['nom']) || !isset($_POST['prix']) || !isset($_POST['descriptif']) || !isset($_POST['marque']) || !isset($_POST['promo'])) {
-    header("Location: formModification.php?erreur=Veuillez remplir tous les champs");
+    header("Location: formModificationProduit.php?erreur=Veuillez remplir tous les champs");
     exit();
 }
 

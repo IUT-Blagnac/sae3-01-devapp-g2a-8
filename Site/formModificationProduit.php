@@ -76,7 +76,7 @@ if (!$produit) { // Si le produit n'existe pas
                 <br>Image actuelle : <br>
                 <img id="imageFormulaire" src="include/produits/<?php echo $produit['NUMP'] ?>" alt="<?php echo $produit['NOM'] ?>"><br>
                 <br>Changer l'image : 
-                <!-- <input type="file" name="image" id="image" accept="image/.jpg"><br> -->
+                <input type="file" name="image" id="image" accept="image/.jpg"><br>
                 <input type="submit" value="Modifier" name="modifier">
             </form>
         </div>

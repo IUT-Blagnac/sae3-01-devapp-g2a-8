@@ -47,14 +47,10 @@ if (isset($_POST['email']) && isset($_POST['mdp']) && isset($_POST['continuer'])
         setcookie("connexion", htmlentities($_POST['email']), time() - 1); //détruire cookie
     }
 
-    //renvoie vers la page voulue ou l'index
-    if (isset($_GET['connDest'])) {
-        header("Location: " . htmlentities($_GET['connDest']));
-        exit();
-    } else {
-        header("Location: index");
-        exit();
-    }
+    //renvoie vers l'index
+    header("Location: index.php");
+    exit();
+
 } else {
     header("Location: formConnexion.php?erreur=Veuillez vous connecter");
     exit();
