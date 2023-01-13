@@ -27,16 +27,15 @@
                         <h3 class="underline left">Qui sommes-nous ?</h3>
                         <p>VideoFest est une start-up française implantée à Toulouse et créée en 2021 par les
                             cofondateurs Vignal Alexandre, Dourlent Maxime, Fernandez Mickael et Straputicari
-                            Luca.<br>
+                            Luca.
                             Anciennement tournée sur des gammes d’appareils-photos, VideoFest s'est
-                            ensuite tournée vers les périphériques informatiques.<br>
+                            ensuite tournée vers les périphériques informatiques.
                             Nos produits sont universels et accessibles pour tous, notre objectif : proposer des
-                            produits avec un prix légèrement inférieur à la concurrence.<br>
+                            produits avec un prix légèrement inférieur à la concurrence.
                             VideoFest et ses produits s’adressent à tout type de clients, aussi bien pour des usages
                             professionnels ou particuliers ou bien même pour des clients à l’aise en technologie mais aussi des
                             novices dans le domaine.
                         </p>
-                        <br>
                     </span>
                     <span class="left">
                         <h3 class="underline left">Coordonnées/Hébergement</h3>
@@ -44,7 +43,6 @@
                             <li>Sièges social à Toulouse.</li>
                             <li>Site web hébergé sur des serveur SSH de l'iut de Blagnac.</li>
                         </ul>
-                        <br>
                     </span>
             </div>
         </div>

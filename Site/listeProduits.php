@@ -39,7 +39,11 @@ if (!isset($_SESSION['recherche']) || (!isset($_GET['categorie']) && !isset($_GE
     } else {
 
         if (isset($_GET['categorie'])) {
-            echo "<h1>Catégorie : " . htmlentities($_GET['categorie']) . "</h1>";
+            if ($_GET['categorie'] == "Populaires") {
+                echo "<h1>Nos articles les plus vendus</h1>";
+            } else {
+                echo "<h1>Catégorie : " . htmlentities($_GET['categorie']) . "</h1>";
+            }
         } else {
             echo "<h1>Votre recherche : " . htmlentities($_GET['nom']) . "</h1>";
         }
