@@ -2,8 +2,8 @@
 :toc:
 :toc-title: Sommaire
 
-Version de l'application : 3 +
-Date : 08/01/2023 +
+Version de l'application : 4 +
+Date : 13/01/2023 +
 Equipe : 2A-8 +
 Client : VidéoFest +
 Projet : Gestion entrepôt + 
@@ -75,8 +75,37 @@ L'objectif de ce projet est de créer une application en Java et Python, qui per
 | Test passé avec succès
 
 | Ecriture fichier de configuration (en Json)
-| Avoir modifier les données avec l'interface
+| Avoir modifier les données avec l'interface et cliqué sur "Confirmer"
 | Ecriture dans le fichier json des informations de l'interface
 | Test passé avec succès
+
+|===
+
+=== Sprint 6 (sem 2)
+
+|===
+| Nom test | Préconditions | Conditions de satisfaction | Test passé ?
+
+| Affichage de la page de visualisation
+| Avoir bien remplis les champs et cliqué sur "Confirmer"
+| Page visible avec pour l'instant seulement 3 champs non éditables
+| Test passé
+
+| Lecture des données de l'application python
+| Avoir lancé l'application python après avoir cliqué sur "Confirmer"
+| L'affichage de l'interface se met à jour en fonction du temps de rafraichissement voulu, la dernière valeur reçue des capteurs est visible.
+| Test passé
+
+|===
+
+=== Sprint 7 (sem 3)
+
+|===
+| Nom test | Préconditions | Conditions de satisfaction | Test passé ?
+
+| 
+| 
+| 
+| 
 
 |===
