@@ -46,30 +46,31 @@ oci_free_statement($st);
 oci_commit($conn);
 oci_close($conn);
 
-// if (!empty($_FILES['image']) && $_FILES['image']['error'] == 0) { // Testons si l'extension est autorisée
-//     $infosfichier = pathinfo($_FILES['image']['name']);
-//     $extension_upload = $infosfichier['extension'];
-//     $extensions_autorisees = array('jpg', 'jpeg', 'gif', 'png');
-//     if (in_array($extension_upload, $extensions_autorisees)) {
-//     // On peut valider le fichier et le stocker définitivement 
-//     move_uploaded_file($_FILES['image']['tmp_name'],'include/produits/'.basename($_FILES['image']['name'])); 
-//     echo "L\'envoi a bien été effectué ! <br>"; 
+// A ajouter quand le problème de serveur sera résolu
+// // if (!empty($_FILES['image']) && $_FILES['image']['error'] == 0) { // Testons si l'extension est autorisée
+// //     $infosfichier = pathinfo($_FILES['image']['name']);
+// //     $extension_upload = $infosfichier['extension'];
+// //     $extensions_autorisees = array('jpg', 'jpeg', 'gif', 'png');
+// //     if (in_array($extension_upload, $extensions_autorisees)) {
+// //     // On peut valider le fichier et le stocker définitivement 
+// //     move_uploaded_file($_FILES['image']['tmp_name'],'include/produits/'.basename($_FILES['image']['name'])); 
+// //     echo "L\'envoi a bien été effectué ! <br>"; 
+// //     }
+// //     else {
+// //     echo "Le fichier n'est pas du bon type !<br>";
+// //     }
+// // }
+
+// if (!empty($_FILES['image']['name'])) {
+//     $uploadfile = './include/produits/'.htmlentities($_POST['id']).'.jpg';
+
+//     if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
+//         echo "Image upload\n";
+//     } else {
+//         echo "Problème\n";
 //     }
-//     else {
-//     echo "Le fichier n'est pas du bon type !<br>";
-//     }
+
+//      echo exec('whoami'); 
 // }
-
-if (!empty($_FILES['image']['name'])) {
-    $uploadfile = './include/produits/'.htmlentities($_POST['id']).'.jpg';
-
-    if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
-        echo "Image upload\n";
-    } else {
-        echo "Problème\n";
-    }
-
-     echo exec('whoami'); 
-}
 
 

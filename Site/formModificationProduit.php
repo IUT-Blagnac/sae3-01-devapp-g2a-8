@@ -75,8 +75,9 @@ if (!$produit) { // Si le produit n'existe pas
                 <input type="number" name="promo" min="0" max="100" <?php echo "value='" . $produit['PROMO']*100 . "'" ?> step="1" required>%<br>
                 <br>Image actuelle : <br>
                 <img id="imageFormulaire" src="include/produits/<?php echo $produit['NUMP'] ?>" alt="<?php echo $produit['NOM'] ?>"><br>
+                <!-- A ajouter quand le problème de serveur sera résolu
                 <br>Changer l'image : 
-                <input type="file" name="image" id="image" accept="image/.jpg"><br>
+                <input type="file" name="image" id="image" accept="image/.jpg"><br> -->
                 <input type="submit" value="Modifier" name="modifier">
             </form>
         </div>

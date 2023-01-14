@@ -94,8 +94,9 @@ oci_free_statement($st);
                 <input type="number" name="prix" value="1" min="0" step=".01" class="prix" required>€<br>
                 <br>Promo :
                 <input type="number" name="promo" value="0" min="0" max="100" step="1" class="prix" required>%<br>
+                <!-- A ajouter quand le problème de serveur sera résolu
                 <br>Ajouter une image :
-                <input type="file" name="image" accept="image/.jpg"><br>
+                <input type="file" name="image" accept="image/.jpg"><br> -->
                 <input type="submit" value="Ajouter" name="ajouter">
             </form>
         </div>

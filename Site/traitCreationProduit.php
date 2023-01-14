@@ -76,6 +76,7 @@ for ($i=0; $i < count($_POST['couleur']); $i++) {
 
 oci_close($conn);
 
+// Ajouter la gestion de l'image quand le problème de serveur sera résolu
 
 ?>
     <script>

@@ -44,6 +44,8 @@ if (!$produit) { // Si le produit n'existe pas
 }
 ?>
 
+<!-- Ajouter la gestion de l'image quand le problème de serveur sera résolu -->
+
 <script>
     alert("Suppression du produit effectuée !");
     window.location.replace("index.php");
