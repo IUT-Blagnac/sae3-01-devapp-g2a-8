@@ -56,13 +56,14 @@ Tutrice enseignante de l'équipe::
 
 == Réalisations 
 
-- Version courante : https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/releases/tag/3.0[v3.0]
-- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/milestone/3[Milestone en cours]
+- Version courante : [v4]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/milestone/5[Milestone sprint 7]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Produit.pdf[Backlog produit]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%201.pdf[Backlog sprint 3]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%202.pdf[Backlog sprint 4]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%203.pdf[Backlog sprint 5]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%206.pdf[Backlog sprint 6]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%207.pdf[Backlog sprint 7]
 
 == Projet Site Web
 
@@ -81,6 +82,7 @@ L'entreprise a donc décidé de se reconvertir vers la vente de périphériques 
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/BD/insert_BD.sql[Script insertion des données dans la BD]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Cahier_de_tests_Site.adoc[Cahier de tests]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/tree/master/Site[Répertoire code du site]
+- http://193.54.227.164/~SAESYS08/[Lien du site web]
 
 == Projet IoT
 
@@ -91,6 +93,7 @@ VidéoFest possède plusieurs entrepôts dont certaines données doivent être c
 === Gestion de projet & Qualité
 
 - https://github.com/orgs/IUT-Blagnac/projects/46[Projet]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_technique_iot.adoc[Documentation technique]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_utilisateur_iot.adoc[Documentation utilisateur]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Cahier_de_tests_IoT.adoc[Cahier de tests]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/tree/master/IoT/Java/ApplicationEntrepot/src/application[Répertoire du code de l'appli]
@@ -109,5 +112,5 @@ ifndef::env-github[]
 ++++
 endif::[]
 
-=Sprint 3 retour :
+=== Sprint 3 retour :
 Il manque les liens dans le readme. J'ai les tâches de sprint mais pas les backlogs produis (ils sont seulement en pdf, du coup impossible de lier les tâches aux US du backlog concerné, on perd l'esprit scrum). Les 2 appli sont gérées en même temps, il vaut mieux créer 2 projets distincts.Doc BD ok, il faut démarrer doc user et doc tech pour le site. Rien sur les tests. Release OK.
