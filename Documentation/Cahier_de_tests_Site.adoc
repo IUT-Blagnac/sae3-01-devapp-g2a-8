@@ -2,8 +2,8 @@
 :toc:
 :toc-title: Sommaire
 
-Version du site : 3 +
-Date : 08/01/2023 +
+Version du site : 4 +
+Date : 14/01/2023 +
 Equipe : 2A-8 +
 Client : VidéoFest +
 Projet : Site web e-commerce + 
@@ -103,17 +103,17 @@ VideoFest et ses produits s’adressent à tout type de clients, aussi bien pour
 | Test passé avec succès
 
 | Mettre un produit dans le panier
-| Avoir cliqué sur le bouton "Ajouter au panier" sur la fiche d'un produit
+| Etre connecté, avoir cliqué sur le bouton "Ajouter au panier" sur la fiche d'un produit
 | Si pas assez de stock pour l'ajouter au panier : erreur explicite. Sinon : ajoute au panier avec la quantité et la couleur voulue, si jamais le produit est déjà dans le panier, les quantités s'ajoutent.
 | Test passé avec succès
 
 | Modifier la quantité d'un produit dans le panier
-| Avoir cliqué sur le bouton "Ajouter au panier" sur la fiche d'un produit, puis cliqué sur l'icone de panier
+| Etre connecté, avoir cliqué sur le bouton "Ajouter au panier" sur la fiche d'un produit, puis cliqué sur l'icone de panier
 | Affichage des produits dans la variable session, champ quantité éditable, bouton modifier pour enregistrer les modifications, si pas assez de stock message explicie, sinon changement de la quantité. Le prix affiché doit être modifié en fonction de la quantité.
 | Test passé avec succès
 
 | Supprimer un produit dans le panier
-| Avoir cliqué sur le bouton "Ajouter au panier" sur la fiche d'un produit, puis cliqué sur l'icone de panier
+| Etre connecté, avoir cliqué sur le bouton "Ajouter au panier" sur la fiche d'un produit, puis cliqué sur l'icone de panier
 | Icone de poubelle qui supprime le produit de la variable session.
 | Test passé avec succès
 
@@ -124,9 +124,49 @@ VideoFest et ses produits s’adressent à tout type de clients, aussi bien pour
 |===
 | Nom test | Préconditions | Conditions de satisfaction | Test passé ?
 
-| 
-| 
-| 
-| 
+| Contacter l'entreprise
+| Avoir cliqué sur "Nous contacter" dans le bas de page
+| Formulaire avec nom, prénom, e-mail et message, si formulaire soumis et tous les champs remplis, affichage d'une pop-up qui confirme l'envoi du message
+| Test passé avec succès
+
+| Voir les informations de l'entreprise
+| Avoir cliqué sur "Notre entreprise" dans le bas de page
+| Page avec informations de l'entreprise et photo de l'équipe.
+| Test passé avec succès
+
+| Voir les articles en promotion
+| Avoir cliqué sur le menu, puis sur "Nos produits"
+| Affichage de la catégorie "Promotions" dans le menu, si cliqué affiche seulement les produits en promotions (promotion > 0 dans la BD)
+| Test passé avec succès
+
+| Voir les articles populaires (les plus vendus)
+| Etre sur la page principale du site
+| Affichage des produits les plus vendus : la somme des quantités commandées est supérieure à la moyenne 
+| Test passé avec succès
+
+| Entrer l'adresse de livraison
+| Etre connecté, avoir mis des articles dans le panier, être sur la page panier et avoir cliqué sur "Passer commande"
+| Formulaire d'adresse pré-remplis avec les informations dans la BD, si formulaire soumis update dans la BD des informations. 
+| Test passé avec succès
+
+| Payer et confirmer la commande
+| Etre connecté, avoir cliqué sur "Passer commande" et remplis correctement le formulaire d'adresse de livraison
+| Affichage du montant total de la commande, bouton "Payer" qui renvoie vers une page qui se connecte à la BD et fait les insertions (insertion de la commande et insertion de chaque produit dans la commande). ALert qui confirme l'enregistrement de la commande.
+| Test passé avec succès
+
+| Ajouter un nouveau produit
+| Etre connecté et administrateur, avoir cliqué sur "Ajouter un produit" sur la page de compte
+| Formulaire pour remplir toutes les informations d'un produit et de son stock. Lorsqu'une couleur est cochée, le champ quantité correspondant à cette couleur est éditable. L'insertion du produit et du stock dans la BD est faite si le formulaire est soumis. Une alerte affiche s'il y a eu une erreur ou si le produit est bien ajouté.
+| Attention l'ajout d'une image ne fonctionne pas pour le moment : problème sur le serveur
+
+| Modifier un produit
+| Etre connecté et administrateur, avoir cliqué sur un produit puis sur "Modifier le produit"
+| Formulaire pré-remplis avec toutes les informations d'un produit. La mise à jour du produit dans la BD est faite si le formulaire est soumis.
+| Attention l'ajout d'une image ne fonctionne pas pour le moment : problème sur le serveur
+
+| Supprimer un produit
+| Etre connecté et administrateur, avoir cliqué sur un produit puis sur "Supprimer le produit"
+| Alerte qui demande la confirmation de la suppression à l'utilisateur, puis suppression dans la BD et alerte d'enregistrement de la suppression
+| Attention la suppression ne supprime pas l'image : problème sur le serveur
 
 |===
