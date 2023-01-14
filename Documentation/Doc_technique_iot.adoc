@@ -1,0 +1,82 @@
+= Documentation technique application IoT
+:toc:
+:toc-title: Sommaire
+
+Version de l'application : 4 +
+Date : 14/01/2023 +
+Equipe : 2A-8 +
+Client : VidéoFest +
+Projet : Gestion entrepôt +
+
+<<<
+
+== 1. Description du Projet
+=== a) Equipe
+
+Product Owner : Walaedine +
+Scrum Master : Eva +
+Développeurs : Tobiasz et Sean +
+
+=== b) Contexte du projet
+
+VidéoFest est une entreprise qui s'est récemment reconvertie dans la vente de périphériques en ligne, elle possède plusieurs entrepôts dont certaines données doivent être contrôlées. Il existe déjà un réseau de capteurs dans les entrepôts, qui récupèrent plusieurs informations sur les caractéristiques de l'air, comme la température, l'humidité ou la concentration en CO². L'entreprise souhaite aussi pour des raisons de sécurité avoir accès aux données de détection de présence récupérées par les capteurs. Un capteur envoit les informations au serveur toutes les 10 minutes, mais pour le moment ces données ne sont pas exploitées.
+
+=== c) Objectifs du projet
+
+L'objectif de ce projet est de créer une application en Java et Python, qui permettra de configurer les données que l'on veut consulter, qui se connectera au serveur et récupèrera les données voulues, et affichera ces données de façon lisible pour l'utilisateur. On aura donc une partie IHM en Java qui créera le fichier de configuration des données, puis la partie Python fera la connexion et écrira les données dans un autre fichier. Enfin, Java lira ces données et les affichera sur l'IHM.
+
+== 2. Architecture
+
+=== a) Architecture Générale
+
+L’application sera déployée sur la machine du responsable de l'entrepot. L'application se divise en deux sous applications : la partie affichage des données dans l'interface, et la partie récupération des données des capteurs. +
+La partie affichage des données utilise Oracle Java 1.8, JavaFX pour l’interface et la librairie org.json pour gérer le fichier de configuration json. La seconde partie de l'application utilise Python 3 et le module paho-mqtt pour communiquer avec les capteurs qui sont disponibles sur un serveur. +
+
+L'application est disponible en installant le fichier "Application.zip" dans la https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/releases/latest[dernière release] +
+
+=== b) Ressources externes
+
+Réferrez-vous à la https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_utilisateur_iot.adoc[documentation utilisateur] pour connaître les différentes fonctionnalités du point de vue de l'utilisateur.
+
+=== c) Structuration du code source
+
+Arborescence des fichiers :
+
+* *src* +
+Dossier contenant le code source
+** *class.java* +
+Telle classe qui fait ...
+* *appli.py* +
+Application python
+* *config.json* +
+Fichier de configuration des données
+
+=== d) Diagramme de l'architecture
+
+Voici le diagramme correspondant à l'architecture de l'application :
+
+image::images/architecture.png[]
+
+
+== 3. Fonctionnalités
+
+Voici le Use Case général de l'application : +
+
+image::images/application.png[]
+
+=== a) Partie Python
+
+==== Fonctionnalité 1
+
+User Story n° : 
+
+En tant que ... je souhaite ... afin de ... . +
+
+Code concerné : +
+
+* appli.py
+
+Fonctionnement dans le code : +
+expliquer le fonctionnement
+
+
