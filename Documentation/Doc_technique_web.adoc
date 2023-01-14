@@ -2,8 +2,8 @@
 :toc:
 :toc-title: Sommaire
 
-Version du site : 3 +
-Date : 07/01/2023 +
+Version du site : 4 +
+Date : 14/01/2023 +
 Client : VidéoFest +
 Projet : Site de e-commerce 
 
@@ -48,6 +48,8 @@ Ce dossier contient les ressources qui seront inclues dans différentes pages du
 Feuille de style pour tout le site
 ** *logos* +
 Ce dossier contient les images utilisées pour les icônes et le logo
+** *produits* +
+Ce dossier contient les images des produits
 ** *connect.inc.php* +
 Permet d'établir la connexion à la BD
 ** *header.php* +
@@ -61,10 +63,24 @@ Permet l'affichage d'une icône d'onglet
 
 * *index.php* +
 Page principale
+* *commander.php* +
+Page qui permet de commander
 * *compte.php* +
 Page de visualisation de compte
+* *formPaiement.php* +
+Formulaire de paiement
+* *confirmation.php* +
+Page qui permet d'ajouter la commande dans la BD après le paiement
 * *deconnexion.php* +
 Page de déconnexion
+* *suppressionCompte.php* +
+Page de suppression d'un compte client
+* *entreprise.php* +
+Page d'informations sur l'entreprise
+* *formAdresse.php* +
+Formulaire d'adresse de livraison
+* *traitAdresse.php* +
+Traitement du formulaire d'adresse
 * *formConnexion.php* +
 Formulaire de connexion
 * *traitConnexion.php* +
@@ -73,6 +89,16 @@ Traitement du formulaire de connexion
 Formulaire de creation
 * *traitCreation.php* +
 Traitement du formulaire de creation
+* *formCreationProduit.php* +
+Formulaire de creation d'un produit
+* *traitCreationProduit.php* +
+Traitement du formulaire de creation de produit
+* *formModificationProduit.php* +
+Formulaire de modification d'un produit
+* *traitModificationProduit.php* +
+Traitement du formulaire de modification de produit
+* *supprimerProduit.php* +
+Page de suppression d'un produit dans la BD
 * *formContact.php* +
 Formulaire de contact
 * *traitContact.php* +
@@ -94,7 +120,9 @@ Page qui contient toutes les fonctions du panier
 * *rechercheProduits.php* +
 Page qui recherche un produit par nom ou par catégorie
 * *listeProduits.php* +
-Page d'affichage des produits 
+Page d'affichage des produits
+* *produit.php* +
+Page d'affichage d'un produit
 
 
 === d) Diagramme de classe des données
@@ -391,3 +419,180 @@ Accessibilité : client connecté +
 Action de supprimer un article du panier +
 Fonctionnement dans le code : +
 Dans la page 'panier.php', une image pour supprimer renvoie vers le lien `supprimerArticle.php` qui appelle la fonction `supprimerProduit` de la page `gestionPanier.php` qui supprime le produit de la variable Session. Puis on est redirigé vers la page `panier.php` où on peut voir que le produit n'est plus présent. +
+
+=== b) Sprint 6 (sem 2)
+
+Voici le Use Case général du sprint 6 : +
+
+* Utilisateur +
+
+image::images/utilisateur_6.png[]
+
+* Client +
+
+image::images/client_6.png[]
+
+* Administrateur +
+
+image::images/administrateur.png[]
+
+==== Contacter l'entreprise 
+
+User Story :
+
+En tant qu’utilisateur, je souhaite contacter l’entreprise par mail ou téléphone, afin de résoudre un problème ou poser des questions +
+
+Pages web concernées : +
+
+* footer.php
+* formContact.php
+* traitContact.php
+
+Accessibilité : tous les utilisateurs +
+
+Action de contacter l'entreprise +
+Fonctionnement dans le code : +
+Il y a un lien dans le `footer.php` qui se nomme "Nous contacter" et qui renvoie vers `formContact.php` qui affiche le formulaire de connexion. Si le formulaire est soumis, la page `traitContact.php` vérifie que tous les champs soient remplis (nom, prénom, e-mail et message) et corrects. S'il y a une erreur on est redirigé vers `formContact.php` qui affiche le message d'erreur dans l'url à l'aide de la variable GET. Sinon, un pop-up JavaScript indique que le message est envoyé et redirige vers l'index. +
+
+==== Consulter les informations sur l'entreprise 
+
+User Story :
+
+En tant qu’utilisateur, je souhaite pouvoir consulter les informations sur l’entreprise. +
+
+Pages web concernées : +
+
+* footer.php
+* entreprise.php
+
+Accessibilité : tous les utilisateurs +
+
+Action de voir les informations sur VidéoFest +
+Fonctionnement dans le code : +
+Il y a un lien dans le `footer.php` qui se nomme "Notre entreprise" et qui renvoie vers `entreprise.php`. Cette page affiche une image de l'équipe ainsi que les informations de l'entreprise. +
+
+==== Voir les articles en promotions 
+
+User Story :
+
+En tant qu’utilisateur, je souhaite avoir accès aux promotions que le site propose. +
+
+Pages web concernées : +
+
+* menu.php
+* rechercheProduits.php
+* listeProduits.php
+
+Accessibilité : tous les utilisateurs +
+
+Action de voir uniquement les articles en promotions +
+Fonctionnement dans le code : +
+Dans le menu si on clique sur "Nos produits", un menu déroulant affiche les catégories de produits en vente sur le site, ainsi que la catégorie "Promotions". C'est un lien vers `rechercheProduits.php` avec comme nom de catégorie "Promotions" dans la variable GET. Cette page se connecte à la BD et récupère les produits ayant une promotion, le résultat de la requête est mis dans une variable `SESSION['recherche']` puis on est redirigé vers la page `listeProduits.php`. La page `listeProduits.php` affiche un message s'il n'y a aucun produit, sinon elle affiche tous les produits en récupérant le résultat de la requête depuis la variable SESSION.
+
+==== Voir les articles populaires 
+
+User Story :
+
+En tant qu'utiliateur, je souhaite voir les produits les plus populaires (les plus vendus). +
+
+Pages web concernées : +
+
+* index.php
+* rechercheProduits.php
+* listeProduits.php
+
+Accessibilité : tous les utilisateurs +
+
+Action de voir les artciles les plus vendus +
+Fonctionnement dans le code : +
+La page principale `index.php` renvoie vers `rechercheProduits.php` avec comme nom de catégorie "Populaires" dans la variable GET. Cette page se connecte à la BD et récupère les produits les plus vendus (somme de quantités vendues supérieure à la moyenne), le résultat de la requête est mis dans une variable `SESSION['recherche']` puis on est redirigé vers la page `listeProduits.php`. La page `listeProduits.php` affiche un message s'il n'y a aucun produit, sinon elle affiche tous les produits en récupérant le résultat de la requête depuis la variable SESSION.
+
+==== Entrer mon adresse de livraison
+
+User Story :
+
+En tant que client, je souhaite entrer mon adresse, afin de commander les articles de mon panier. +
+
+Pages web concernées : +
+
+* panier.php
+* commander.php
+* formAdresse.php
+* traitAdresse.php
+
+Accessibilité : client connecté  +
+
+Action de commander les articles d'un panier +
+Fonctionnement dans le code : +
+Dans la page `panier.php`, s'il y a au moins un article présent, un bouton "Passer commande" permet de procéder à la commande des articles. Le bouton renvoie vers la page `commander.php` qui vérifie que le panier n'est pas vide est renvoie vers `formAdresse.php`. Cette page affiche un formulaire d'adresse pré-remplis avec les informations dans la BD, si le formulaire est soumis alors `traitAdresse.php` vérifie que tous les champs sont remplis et fait l'update dans la BD.
+
+==== Payer et confirmer ma commande
+
+User Story :
+
+En tant que client, je souhaite payer ma commande, afin de la finaliser. +
+
+Pages web concernées : +
+
+* traitAdresse.php
+* formPaiement.php
+* confirmation.php
+
+Accessibilité : client connecté  +
+
+Action de payer et confirmer une commande +
+Fonctionnement dans le code : +
+Une fois l'adresse enregistrée dans la BD, `traitAdresse.php` redirige vers `formPaiement.php`. Cette page affiche le montant total de la commande et un bouton "Payer" renvoie vers `confirmation.php` qui vérifie que le paiement a été effectué (bouton submit cliqué) et fait les insertions dans la BD. Ensuite une pop-up JavaScript indique que la commande a bien été enregistrée.
+
+==== Ajouter un nouveau produit 
+
+User Story :
+
+En tant qu’administrateur, je souhaite pouvoir ajouter un nouveau produit, afin de le mettre en vente.  +
+
+Pages web concernées : +
+
+* compte.php
+* formCreationProduit.php
+* traitCreationProduit.php
+
+Accessibilité : administrateur connecté +
+
+Action d'ajouter un nouveau produit en vente +
+Fonctionnement dans le code : +
+Dans la page de visualisation de compte (`compte.php`) un bouton "Ajouter un produit" renvoie vers `formCreationProduit.php`. Cette page affiche un formulaire où toutes les informations d'un produit et de son stock doivent être remplis (nom, marque, catégorie, descriptif, couleurs et stock disponible, prix, pourcentage de la promo). Si le formulaire est soumis, la page `traitCreationProduit.php` se connecte à la BD pour faire l'insertion du produit, puis l'insertion des stocks par couleur. Une pop-up JavaScript indique s'il y a eu une erreur dans l'insertion ou si le produit a bien été enregistré.
+
+==== Modifier un produit 
+
+User Story :
+
+En tant qu’administrateur, je souhaite pouvoir modifier un produit, afin d’éditer ses détails ou le mettre en promo. +
+
+Pages web concernées : +
+
+* produit.php
+* formModificationProduit.php
+* traitModificationProduit.php
+
+Accessibilité : administrateur connecté +
+
+Action de modifier un produit existant +
+Fonctionnement dans le code : +
+Dans la page de visualisation d'un produit (`produit.php`), un bouton "Modifier le produit" renvoie vers `formModificationProduit.php`. Cette page affiche un formulaire pré-remplis avec toutes les informations d'un produit. Si le formulaire est soumis, la page `traitModificationProduit.php` se connecte à la BD pour faire l'update des informations du produit, et renvoie vers la page du produit en question afin de visualiser le changement effectué.
+
+==== Supprimer un produit 
+
+User Story :
+
+En tant qu’administrateur, je souhaite pouvoir supprimer un produit, afin qu’il ne soit plus mis en vente. +
+
+Pages web concernées : +
+
+* produit.php
+* supprimerProduit.php
+
+Accessibilité : administrateur connecté +
+
+Action de supprimer un produit existant +
+Fonctionnement dans le code : +
+Dans la page de visualisation d'un produit (`produit.php`), un bouton "Supprimer le produit" affiche un pop-up JavaScript qui demande la confirmation de la suppression, si on clique sur "OK" alors on est renvoyé vers `supprimerProduit.php` qui appelle ala procédure de suppression d'un produit si le produit existe, puis affiche un pop-up qui indique que la suppression a bien été enregistrée. 
