@@ -2,8 +2,8 @@
 :toc:
 :toc-title: Sommaire
 
-Version du site : 3 +
-Date : 07/01/2023 +
+Version du site : 4 +
+Date : 14/01/2023 +
 Equipe : 2A-8 +
 Client : VidéoFest +
 Projet : Site web e-commerce + 
@@ -118,7 +118,48 @@ image::images/boutonVoirPlus.png[]
 
 Ensuite le produit s'affiche ainsi que ses informations : 
 
-image::images/produit.png[]
+image::images/produit.png[
+
+
+==== Contacter l'entreprise
+
+Pour contacter l'entreprise, il faut cliquer sur le lien "Nous contacter" en bas de page :
+
+image::images/lienContact.png[]
+
+Ensuite un formulaire s'affiche et il faut remplir tous les champs puis cliquer sur le bouton "Envoyer" pour valider votre message : 
+
+image::images/contact.png[]
+
+Si le message s'est bien envoyé, une alerte le confirme : 
+
+image::images/popupContact.png[]
+
+
+==== Consulter les informations sur l'entreprise
+
+Pour consulter les informations sur l'entreprise, il faut cliquer sur le lien "Notre entreprise" en bas de page :
+
+image::images/lienEntreprise.png[]
+
+Une page d'informations sur l'entrerise s'affiche : 
+
+image::images/entreprise.png[]
+
+
+==== Voir les articles populaires (les plus vendus)
+
+Pour voir les articles populaires, il faut aller sur la page principale du site, soit en cliquant sur le logo  :
+
+image::images/logo.png[]
+
+Soit par le menu en cliquant sur "Accueil" :
+
+image::images/menu.png[]
+
+Ensuite les produits les plus vendus s'affichent : 
+
+image::images/populaires.png[]
 
 
 === c) Client
@@ -275,6 +316,81 @@ Ensuite il faut cliquer sur l'icone poubelle afin de supprimer l'article de votr
 image::images/boutonSupprimerPanier.png[]
 
 
+==== Entrer l'adresse de livraison
+
+Il faut d'abord aller sur le panier et cliquer sur le bouton "Passer commande" : 
+
+image::images/lienCommander.png[]
+
+Ensuite il faudra rentrer l'adresse de livraison dans un formulaire, puis cliquer sur "Continuer" :
+
+image::images/adresse.png[]
+
+
+==== Payer la commande
+
+Il faut d'abord avoir entré son adresse et cliqué sur "Continuer" : 
+
+image::images/adresse.png[]
+
+Ensuite, il faut cliquer sur le bouton "Payer"
+
+image::images/paiement.png[]
+
+Si la commande s'est enregistrée avec succès, alors une alerte le confirme : 
+
+image::images/popupCommande.png[]
+
+
 === d) Administrateur
 
-rien pour le moment
+==== Ajouter un nouveau produit
+
+Pour ajouter un nouveau produit, il faut d'abord être connecté et ensuite aller sur la page de visualisation de compte, soit par l'icone en haut à gauche :
+
+image::images/iconeConnexion.png[]
+
+Soit par le menu :
+
+image::images/menu.png[]
+
+Puis il faut cliquer sur le bouton "Ajouter un produit" : 
+
+image::images/boutonAjoutProduit.png[]
+
+Ensuite un formulaire doit être entièrement remplis avec les informations d'un produit, ainsi que son stock. Il faut cocher sur les couleurs disponibles pour l'article puis ensuite ajouter la quantité en stock. :
+
+image::images/ajoutStock.png[]
+
+Une fois que tout est bien remplis, il faut cliquer sur le bouton "Ajouter", puis une alerte confirmera l'ajout du produit : 
+
+image::images/popupAjoutProduit.png[]
+
+
+==== Modifier un produit
+
+Pour modifier un produit existant , il faut d'abord aller sur la page du produit à modifier, puis cliquer sur le bouton "Modifier le produit" :
+
+image::images/boutonModifProduit.png[]
+
+Ensuite un formulaire pré-remplis s'affiche et chaque information est modifiable : 
+
+image::images/modifProduit.png[]
+
+En cliquant sur "Modifier", cela valide les changements.
+
+
+==== Supprimer un produit
+
+Pour supprimer un produit existant , il faut d'abord aller sur la page du produit à supprimer, puis cliquer sur le bouton "Supprimer le produit" :
+
+image::images/boutonSupprimerProduit.png[]
+
+Ensuite une alerte demande à l'utilisateur la confirmation de la suppression : 
+
+image::images/popupSupprimerProduit.png[]
+
+En cliquant sur "OK", cela confirme la suppression et une alerte précise si la transaction a bien été enregistrée : 
+
+image::images/popupSuppressionFaite.png[]
+
