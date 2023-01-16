@@ -1,27 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.VisualisationController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.VisualisationController">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="176.0" minWidth="10.0" prefWidth="121.66665649414062" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="10.0" prefWidth="103.66668701171875" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="452.3333740234375" minWidth="10.0" prefWidth="445.33331298828125" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="34.99999237060547" minHeight="21.666671752929688" prefHeight="34.99999237060547" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="150.3333282470703" minHeight="10.0" prefHeight="143.00000762939453" vgrow="SOMETIMES" />
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Label text="Température : " textAlignment="RIGHT" GridPane.halignment="RIGHT" />
-      <Label text="Humidité : " textAlignment="RIGHT" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-      <Label text="Taux de CO² : " textAlignment="RIGHT" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
-      <TextField fx:id="temperature" editable="false" GridPane.columnIndex="1" />
-      <TextField fx:id="humidity" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <TextField fx:id="co2" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label text="Dernière valeur " GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
+      <Label fx:id="tempLabel" text="Température : " textAlignment="RIGHT" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+      <Label fx:id="humLabel" text="Humidité : " textAlignment="RIGHT" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+      <Label fx:id="coLabel" text="Taux de CO² : " textAlignment="RIGHT" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+      <TextField fx:id="temperature" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <TextField fx:id="humidity" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <TextField fx:id="co2" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label text="Historisation" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
+      <AreaChart fx:id="tempChart" GridPane.columnIndex="2" GridPane.rowIndex="1">
+        <xAxis>
+          <CategoryAxis endMargin="2.0" side="BOTTOM" startMargin="2.0" tickLabelGap="2.0" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis autoRanging="false" label="°C" lowerBound="-5.0" prefHeight="93.0" prefWidth="39.0" side="LEFT" tickLabelGap="2.0" upperBound="35.0" />
+        </yAxis>
+      </AreaChart>
+      <LineChart fx:id="humChart" prefHeight="172.0" prefWidth="335.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis autoRanging="false" label="\%" minorTickCount="4" prefHeight="125.0" prefWidth="41.0" side="LEFT" tickLabelGap="2.0" tickUnit="10.0" />
+        </yAxis>
+      </LineChart>
+      <BarChart fx:id="coChart" GridPane.columnIndex="2" GridPane.rowIndex="3">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis autoRanging="false" minorTickCount="2" side="LEFT" tickLabelGap="2.0" tickUnit="500.0" upperBound="2000.0" />
+        </yAxis>
+      </BarChart>
    </children>
 </GridPane>
