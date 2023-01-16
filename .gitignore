@@ -15,6 +15,7 @@
 
 # Intellij
 .idea/
+.settings/
 *.iml
 *.iws
 *.MF
