@@ -122,7 +122,8 @@ public class VisualisationController {
         this.co2.setText(this.data.getLastCO2());
 
         loadTemperature(this.data.getTemperature());
-
+        loadHumidity(this.data.getHumidity());
+        loadC02(this.data.getCo2());
     }
 
     /**
@@ -136,8 +137,30 @@ public class VisualisationController {
             int size = temp.length;
             for (int i = 0; i < size; i++) {
                 this.tempSeries.getData().add(new XYChart.Data<>("" + i, Double.parseDouble(temp[i])));
-                System.out.println(this.tempSeries.getData());
             }
+            System.out.println(this.tempSeries.getData());
+        }
+    }
+
+    private void loadHumidity(String[] hum) {
+        if (hum != null && !hum[0].equals("")) {
+            this.humSeries.getData().clear();
+            int size = hum.length;
+            for (int i = 0; i < size; i++) {
+                this.humSeries.getData().add(new XYChart.Data<>("" + i, Double.parseDouble(hum[i])));
+            }
+            System.out.println(this.humSeries.getData());
+        }
+    }
+
+    private void loadC02(String[] co2) {
+        if (co2 != null && !co2[0].equals("")) {
+            this.coSeries.getData().clear();
+            int size = co2.length;
+            for (int i = 0; i < size; i++) {
+                this.coSeries.getData().add(new XYChart.Data<>("" + i, Double.parseDouble(co2[i])));
+            }
+            System.out.println(this.coSeries.getData());
         }
     }
 
