@@ -2,7 +2,7 @@
 :toc:
 :toc-title: Sommaire
 
-Version de l'application : 4 +
+Version de l'application : 5 +
 Date : 12/01/2023 +
 Equipe : 2A-8 +
 Client : VidéoFest +
@@ -33,46 +33,56 @@ L'objectif de ce projet est de créer une application en Java et Python, qui per
 * Avoir installé et mis par défaut Java Oracle 1.8 : https://docs.datastax.com/en/jdk-install/doc/jdk-install/installOracleJdkDeb.html[Tutoriel]
 
 === b) Installation
-Ouvrir un terminal et exécuter les commandes suivantes afin d'installer Python : +
+Ouvrir un terminal et exécuter les commandes suivantes afin d'installer Python3.6 : +
 `sudo apt update` +
-`sudo apt install python3` +
+`sudo apt install python3.6` +
+
+Ou vous pouvez installer une version plus récente avec la commande, mais attention pour que l'application fonctionne la version ne peut pas être antérieure à 3.6 : +
+`sudo apt install python3.X`
 
 L'application python utilise le module paho-mqtt pour communiquer avec les capteurs, il faut donc l'installer avec : +
 `pip install paho-mqtt` +
 
-Pour récupérer l'application, naviguez vers la dernière release (ou cliquez https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/releases/latest[ici]), et téléchargez le fichier Application.zip . +
-Dézipper le dans un dossier de votre répertoire. +
+Pour récupérer l'application, naviguez vers la dernière release (ou cliquez https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/releases/latest[ici]), téléchargez le fichier Application.zip et dézipper-le. +
 
 Ensuite, ouvrez un terminal dans ce répertoire et lancez la commande suivante : +
 `java -jar ApplicationEntrepot.jar` +
-Cette commande va lancer l'application Java, ensuite avant de l'utiliser vous devez ouvrir l'application Python avec la commande suivante : +
-`python3 appli.py` +
+Cette commande va lancer l'application Java, l'application python devra être lancée plus tard. +
 
-Maintenant vous pouvez utilisez l'application.
 
 == 3. Utiliser l'application
 
-=== a) Fenêtre Configuration
+=== a) Configuration
+
+Avant de récupérer les données, il faut configurer plusieurs choses sur l'interface afin de définir les capteurs et le type de données concernés. En lançant l'application une interface de configuration va donc s'afficher : +
 
 image::images/javaConfig.png[]
 
-L'application recherche un fichier contenant des données. Si jamais celui n'existe pas, il en créera un dans le même répertoire que l'application. +
-Le fichier de configuartion est composé de: +
+ * le champ *serveur* correspond à l'adresse du serveur sur lequel on veut se connecter (Par défaut: chirpstack.iut-blagnac.fr). +
 
- * un String "server" qui correspond a l'adresse de serveur sur lequel on veut se connecter (Par défaut: chirpstack.iut-blagnac.fr). +
-
- * un Array de Strings "data" qui correspond aux données que on veut afficher (Par défaut: ["temperature","humidity","co2"]). +
-
- * un String "appID" qui correspond a l'identifiant de l'application (Par défaut: 1).
-
- * un String "deviceID" qui correspond au capteur au quel on veut se connecter (Par défaut: +).
-
- * un Long "refresh" qui correspond au a la fréquence de rafraîchissement des données dans notre application (Par défaut: 1).
-
-Lorsque les données sont charges, on permet a l'utilisateur de les modifier, avant de confirmer son choix. La seule contrainte pour les données est que le refresh doit être un chiffre, et aucune des casses peut être nulle. +
-
-Si une des contraintes n'est pas respecté alors le programme affiche une popup "erreur", et ne sauvegarde pas les données tant que ils ne sont pas modifié pour respecter les contrainte
+ * le champ *application* correspond à l'identifiant de l'application sur laquelle se trouve les capteurs (Par défaut: 1)
+ 
+ * le champ *capteur* correspond à l'identifiant du capteur dont on veut récupérer les données, si on veut tous les capteurs de l'application il faut mettre + (Par défaut : + )
+ 
+ * le *taux de rafraichissement* en minutes correspond au temps qu'il se découlera au minimum entre chaque affichage de nouvelles données
+ 
+ * le *type de données* correspond aux données que vous souhaitez récupérer, vous devez en choisir au moins une parmis température, humidité ou CO2 
+ 
+Aucun champ ne doit être vide et au moins un type de données doit être sélectionné pour passer à la suite, sinon une alerte vous affichera une erreur :  +
 
 image::images/javaError.png[]
 
-Si tout est bon, l'utilisateur peut cliquer sur le button 'CONFIRMER' qui sauvegarde les nouveaux données dans le fichier.
+Si tout est valide, l'utilisateur peut cliquer sur le button "Confirmer" qui sauvegarde les configurations et affiche la seconde page.
+
+
+=== b) Visualisation
+
+Arrivé à ce stade, il faut lancer l'autre partie de l'application qui va se connecter aux capteurs et récupérer les données. Pour cela il faut donc ouvrir un nouveau terminal dans le répertoire dézippé et lancer la commande suivante : + 
+`python3.6 appli.py` +
+ou `python3.X appli.py` si une version plus récente est utilisée.
+
+Ensuite les données apparaitront au fur et à mesure (selon le taux de rafraichissement précédemment saisi) dans cette page : 
+
+image::images/javaVisualisation.png[]
+
+Comme indiqué, il est possible de visualiser à la fois la dernière valeur obtenue, ainsi que l'historisation des valeurs à l'aide des graphiques.
