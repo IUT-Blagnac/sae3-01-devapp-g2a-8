@@ -6,10 +6,10 @@
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.VisualisationController">
   <columnConstraints>
@@ -24,37 +24,49 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Label text="Dernière valeur " GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
+      <Label text="Dernière valeur " wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
       <Label fx:id="tempLabel" text="Température : " textAlignment="RIGHT" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
       <Label fx:id="humLabel" text="Humidité : " textAlignment="RIGHT" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
       <Label fx:id="coLabel" text="Taux de CO² : " textAlignment="RIGHT" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
-      <TextField fx:id="temperature" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <TextField fx:id="humidity" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <TextField fx:id="co2" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
       <Label text="Historisation" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
-      <AreaChart fx:id="tempChart" GridPane.columnIndex="2" GridPane.rowIndex="1">
+      <AreaChart fx:id="tempChart" legendVisible="false" GridPane.columnIndex="2" GridPane.rowIndex="1">
         <xAxis>
-          <CategoryAxis endMargin="2.0" side="BOTTOM" startMargin="2.0" tickLabelGap="2.0" />
+          <CategoryAxis endMargin="2.0" side="BOTTOM" startMargin="2.0" tickLabelGap="2.0" tickLabelsVisible="false" tickMarkVisible="false" />
         </xAxis>
         <yAxis>
           <NumberAxis autoRanging="false" label="°C" lowerBound="-5.0" prefHeight="93.0" prefWidth="39.0" side="LEFT" tickLabelGap="2.0" upperBound="35.0" />
         </yAxis>
       </AreaChart>
-      <LineChart fx:id="humChart" prefHeight="172.0" prefWidth="335.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+      <LineChart fx:id="humChart" legendVisible="false" prefHeight="172.0" prefWidth="335.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
         <xAxis>
-          <CategoryAxis side="BOTTOM" />
+          <CategoryAxis side="BOTTOM" tickLabelsVisible="false" tickMarkVisible="false" />
         </xAxis>
         <yAxis>
           <NumberAxis autoRanging="false" label="\%" minorTickCount="4" prefHeight="125.0" prefWidth="41.0" side="LEFT" tickLabelGap="2.0" tickUnit="10.0" />
         </yAxis>
       </LineChart>
-      <BarChart fx:id="coChart" GridPane.columnIndex="2" GridPane.rowIndex="3">
+      <BarChart fx:id="coChart" legendVisible="false" GridPane.columnIndex="2" GridPane.rowIndex="3">
         <xAxis>
-          <CategoryAxis side="BOTTOM" />
+          <CategoryAxis side="BOTTOM" tickLabelsVisible="false" tickMarkVisible="false" />
         </xAxis>
         <yAxis>
-          <NumberAxis autoRanging="false" minorTickCount="2" side="LEFT" tickLabelGap="2.0" tickUnit="500.0" upperBound="2000.0" />
+          <NumberAxis autoRanging="false" label="ppm" minorTickCount="2" prefHeight="124.0" prefWidth="53.0" side="LEFT" tickLabelGap="2.0" tickUnit="500.0" upperBound="2000.0" />
         </yAxis>
       </BarChart>
+      <Label fx:id="temperature" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="humidity" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="co2" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
    </children>
 </GridPane>
