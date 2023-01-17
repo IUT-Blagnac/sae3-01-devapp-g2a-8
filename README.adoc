@@ -96,7 +96,7 @@ VidéoFest possède plusieurs entrepôts dont certaines données doivent être c
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_technique_iot.adoc[Documentation technique]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_utilisateur_iot.adoc[Documentation utilisateur]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Cahier_de_tests_IoT.adoc[Cahier de tests]
-- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/tree/master/IoT/Java/ApplicationEntrepot/src/application[Répertoire du code de l'appli]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/tree/master/ApplicationEntrepot/src/application[Répertoire du code de l'appli]
 
 == Évaluations hebdomadaires
 

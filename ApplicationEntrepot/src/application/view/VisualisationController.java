@@ -12,7 +12,6 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.util.Optional;
@@ -39,11 +38,11 @@ public class VisualisationController {
     @FXML
     private Label coLabel; //label CO2
     @FXML
-    private TextField temperature; //champ température (contenant la dernière valeur)
+    private Label temperature; //champ température (contenant la dernière valeur)
     @FXML
-    private TextField humidity; //champ humidité
+    private Label humidity; //champ humidité
     @FXML
-    private TextField co2; //champ CO2
+    private Label co2; //champ CO2
     @FXML
     private AreaChart tempChart; //graphique température
     @FXML
@@ -117,12 +116,19 @@ public class VisualisationController {
      * Permet le rafraichissement de l'interface
      */
     public void loadValues() {
-        this.temperature.setText(this.data.getLastTemperature());
-        this.humidity.setText(this.data.getLastHumidity());
-        this.co2.setText(this.data.getLastCO2());
+        if (!this.data.getLastTemperature().equals("")) {
+            this.temperature.setText(this.data.getLastTemperature()+" °C");
+        }
+        if (!this.data.getLastHumidity().equals("")) {
+            this.humidity.setText(this.data.getLastHumidity()+" %");
+        }
+        if (!this.data.getLastCO2().equals("")) {
+            this.co2.setText(this.data.getLastCO2()+" ppm");
+        }
 
         loadTemperature(this.data.getTemperature());
-
+        loadHumidity(this.data.getHumidity());
+        loadC02(this.data.getCo2());
     }
 
     /**
@@ -132,11 +138,30 @@ public class VisualisationController {
      */
     private void loadTemperature(String[] temp) {
         if (temp != null && !temp[0].equals("")) {
-            this.tempSeries.getData().clear();
+            int debut = this.tempSeries.getData().size();
             int size = temp.length;
-            for (int i = 0; i < size; i++) {
+            for (int i = debut; i < size; i++) {
                 this.tempSeries.getData().add(new XYChart.Data<>("" + i, Double.parseDouble(temp[i])));
-                System.out.println(this.tempSeries.getData());
+            }
+        }
+    }
+
+    private void loadHumidity(String[] hum) {
+        if (hum != null && !hum[0].equals("")) {
+            int debut = this.humSeries.getData().size();
+            int size = hum.length;
+            for (int i = debut; i < size; i++) {
+                this.humSeries.getData().add(new XYChart.Data<>("" + i, Double.parseDouble(hum[i])));
+            }
+        }
+    }
+
+    private void loadC02(String[] co2) {
+        if (co2 != null && !co2[0].equals("")) {
+            int debut = this.coSeries.getData().size();
+            int size = co2.length;
+            for (int i = debut; i < size; i++) {
+                this.coSeries.getData().add(new XYChart.Data<>("" + i, Double.parseDouble(co2[i])));
             }
         }
     }
