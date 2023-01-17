@@ -146,6 +146,11 @@ public class VisualisationController {
         }
     }
 
+    /**
+     * Permet de récupérer les taux d'humidité et de les ajouter au graphique
+     *
+     * @param hum le tableau des taux d'humidité
+     */
     private void loadHumidity(String[] hum) {
         if (hum != null && !hum[0].equals("")) {
             int debut = this.humSeries.getData().size();
@@ -156,6 +161,11 @@ public class VisualisationController {
         }
     }
 
+    /**
+     * Permet de récupérer les taux de co2 et de les ajouter au graphique
+     *
+     * @param co2 le tableau des taux de co2
+     */
     private void loadC02(String[] co2) {
         if (co2 != null && !co2[0].equals("")) {
             int debut = this.coSeries.getData().size();
