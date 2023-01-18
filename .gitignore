@@ -19,6 +19,7 @@
 *.iml
 *.iws
 *.MF
+ApplicationEntrepot\out"
 
 # Mac
 .DS_Store
