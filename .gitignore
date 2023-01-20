@@ -36,7 +36,6 @@ bin/
 build/
 /bin1/
 java/build/**
-lib/
 
 #other
 *.txt
