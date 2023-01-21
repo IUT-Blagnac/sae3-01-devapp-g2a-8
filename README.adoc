@@ -75,6 +75,7 @@ L'entreprise a donc décidé de se reconvertir vers la vente de périphériques 
 
 === Gestion de projet & Qualité
 
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Analyse%20d'Impact.pdf[Droit : Analyse d'impact]
 - https://github.com/orgs/IUT-Blagnac/projects/24[Projet]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_technique_web.adoc[Documentation technique]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_utilisateur_web.adoc[Documentation utilisateur]
