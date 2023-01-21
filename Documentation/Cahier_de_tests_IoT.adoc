@@ -2,8 +2,8 @@
 :toc:
 :toc-title: Sommaire
 
-Version de l'application : 4 +
-Date : 13/01/2023 +
+Version de l'application : 5 +
+Date : 21/01/2023 +
 Equipe : 2A-8 +
 Client : VidéoFest +
 Projet : Gestion entrepôt + 
@@ -103,9 +103,24 @@ L'objectif de ce projet est de créer une application en Java et Python, qui per
 |===
 | Nom test | Préconditions | Conditions de satisfaction | Test passé ?
 
-| 
-| 
-| 
-| 
+| Historisation des données
+| Avoir lancé l'application python après avoir cliqué sur "Confirmer"
+| Les données déjà présentes s'affichent sous forme de graphique, et à chaque nouvelle donnée reçue celle ci s'ajoute au graphique.
+| Test passé avec succès
+
+| Affichage en fonction du choix du type de données
+| Avoir cliqué sur "Confirmer"
+| Seul les champs correspondants au type de données choisis sont affichés. Les autres ne sont pas visibles.
+| Test passé avec succès
+
+| Rafraichissement des données
+| Avoir lancé l'application python après avoir cliqué sur "Confirmer"
+| L'application python récupère les données selon le temps de rafraichissement choisi, et l'interface s'actualise avec la même durée.
+| Test passé avec succès
+
+| Attente de données
+| Avoir lancé l'application python après avoir cliqué sur "Confirmer"
+| Les champs et le graphique sont visibles mais vides s'il n'y a aucune données récupérées.
+| Test passé avec succès
 
 |===
