@@ -1,0 +1,713 @@
+/* Le header principal*/
+header {
+    text-align: center;
+    background: #006b83;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-bottom: 50px;
+}
+
+/* La partie header avec lee menu et le compte*/
+
+.header {
+    background-color: #00576a;
+}
+
+#sousCategories {
+    list-style-type: none;
+    position: absolute;
+    left: 5%;
+    display: flex;
+    width: 50%;
+}
+
+#sousCategories li {
+    margin-top: 2.1%;
+    padding-right: 10%;
+    font-size: 110%;
+}
+
+#sousCategories li a {
+    color: white;
+}
+
+/* Le slogan */
+h4 {
+    margin-bottom: 0px;
+    margin-top: 10px;
+    padding: 3px;
+    color: white;
+}
+
+body {
+    background: #c6e3ea;
+}
+
+#bodyDeFormulaire {
+    background: #c6e3ea;
+    color: rgb(244, 244, 250);
+}
+
+#messageContact {
+    color: white;
+    background-color: #403c3c;
+    border-style: none;
+    border-radius: 10px;
+    width: 50%;
+    height: 200px;
+    resize: none;
+}
+
+footer {
+    background: #00576a;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+}
+
+
+/*Le menu deroulant lui meme*/
+.sidenav {
+    background-color: #415053;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-bottom: 15%;
+    padding-top: 0px;
+    transition: 0.5s;
+}
+
+/* Les sous categories*/
+.dropdown-container {
+    display: none;
+    background-color: #415053;
+    padding-left: 8px;
+}
+
+
+/* Tout les elements de menu*/
+.sidenav a,
+.dropdown-btn {
+    padding: 8px 8px 8px 32px;
+    font-size: 16px;
+    color: white;
+    text-decoration: underline;
+    display: block;
+    transition: 0.3s;
+    border: none;
+    background: none;
+}
+
+.sidenav a:hover,
+.dropdown-btn:hover {
+    color: #f1f1f1;
+}
+
+/*Le button (logo) menu pour le fermer*/
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/*icon*/
+#logo {
+    width: 70px;
+    height: auto;
+    overflow: auto;
+    margin-top: 5px;
+}
+
+#hamburger {
+    width: 50px;
+    height: auto;
+    background-color: #415053;
+    float: left;
+}
+
+#account {
+    width: 50px;
+    height: auto;
+    float: right;
+    margin-right: 0.5%;
+}
+
+#panierLogo {
+    width: 50px;
+    height: auto;
+    float: right;
+    margin-right: 1%;
+}
+
+#entreprise {
+    float: left;
+    margin-left: 50px;
+    color: white;
+    margin-top: 10px;
+}
+
+#contact {
+    float: right;
+    margin-right: 50px;
+    float: right;
+    color: white;
+    margin-top: 10px;
+}
+
+#closeMenu {
+    padding-top: 50px;
+    padding-right: 50px;
+    background-color: #677f84;
+
+}
+
+#hamburger2 {
+    display: block;
+    margin: -20% auto 5% auto;
+    width: 50px;
+    height: auto;
+}
+
+#logoMenu {
+    display: none;
+    width: 250px;
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #2f4043;
+}
+
+/* formulaires */
+#maindiv {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    color: rgb(240, 248, 255);
+}
+
+
+.formulaire {
+    padding: 5px;
+    width: 30%;
+    border-radius: 10px;
+    background-color: #302c2c;
+    margin: 50px auto auto auto;
+
+}
+
+/*Champ du formulaire*/
+input[type=submit] {
+    width: min-content;
+    border-radius: 10px;
+    border-style: none;
+    background-color: rgb(247, 242, 242);
+    color: #0d0d0d;
+    margin: auto;
+    margin-bottom: 5px;
+    transition-duration: 0.6s;
+    padding: 5px 15px;
+}
+
+input[type=submit]:hover {
+    background-color: #616161;
+    color: white;
+}
+
+input[type=text] {
+    width: 50%;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #403c3c;
+    margin: auto;
+}
+
+input[type=email] {
+    width: 50%;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #403c3c;
+    margin: auto;
+}
+
+input[type=password] {
+    width: 50%;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #403c3c;
+    margin: auto;
+}
+
+#error {
+    color: red;
+}
+
+/* Page de consultation du compte */
+
+#cptdiv {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    color: rgb(240, 248, 255);
+    display: block;
+}
+
+
+.cpt {
+    padding: 10px;
+    width: 36%;
+    border-radius: 10px;
+    background-color: #302c2c;
+    margin: 50px auto auto auto;
+    box-sizing: content-box;
+}
+
+div.bouton-aligne {
+    display: inline-block;
+    width: 40%;
+    margin: 10px 2.5% 10px 2.5%;
+    text-align: center;
+}
+
+.buttonCpt {
+    color: black;
+    border-radius: 10px;
+    border-style: none;
+    padding: 10px;
+    width: 190px;
+    display: inline-block;
+    transition-duration: 0.6s;
+}
+
+.buttonCpt:hover {
+    background-color: #616161;
+    color: white;
+}
+
+.acpt {
+    color: black;
+}
+
+@media only screen and (max-width:1200px) {
+    .buttonCpt {
+        width: 80%;
+        display: inline-block;
+        margin: 10px 2.5% 10px 2.5%;
+        text-align: center;
+    }
+
+    div.bouton-aligne {
+        display: inline-block;
+        width: 98%;
+
+    }
+}
+
+/* Barre de recherche */
+
+#recherche {
+    margin-top: 0.8%;
+    margin-right: 3%;
+    position: absolute;
+    right: 15%;
+    /* float: right; */
+    display: flex;
+    border-radius: 10px;
+}
+
+#barreRecherche {
+    width: 22%;
+    color: white;
+    margin-right: -1.5%;
+    padding: 0.5% 0 0.5% 1.5%;
+}
+
+#barreRecherche:focus {
+    outline: none;
+}
+
+#btnRecherche {
+    border-style: none;
+    width: 4%;
+    background-color: #403c3c;
+    border-radius: 0 10px 10px 0;
+}
+
+#btnRecherche img {
+    width: 100%;
+    padding: 0.5%;
+}
+
+
+/* Page liste produits */
+
+#fondVert {
+    background-color: #d1eac6;
+}
+
+#produits h1 {
+    color: #302c2c;
+}
+
+#container {
+    margin-top: 5%;
+    margin-bottom: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 50px;
+    column-gap: 20px;
+}
+
+.item {
+    border-radius: 10px;
+    background-color: #302c2c;
+    color: white;
+    width: 25%;
+    text-align: center;
+    padding: 0.5%;
+}
+
+.item img {
+    max-width: 70%;
+    max-height: 50%;
+    display: block;
+    margin: auto;
+}
+
+.lienVoirPlus {
+    background-color: white;
+    color: #302c2c;
+    border-radius: 10px;
+    border-style: none;
+    transition-duration: 0.6s;
+    padding: 5px 15px;
+}
+
+.lienVoirPlus:hover {
+    background-color: #616161;
+    color: white;
+}
+
+/* Page Panier */
+
+#panier {
+    color: white;
+    background-color: #302c2c;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 4%;
+    border-radius: 10px;
+}
+
+#panier h1 {
+    padding: 1% 0 2% 3%;
+}
+
+#panier h2 {
+    padding: 1% 17% 2% 4%;
+}
+
+#panier h3 {
+    margin-top: 2%;
+}
+
+.itemPanier {
+    background-color: #49767f;
+    width: 70%;
+    margin: 0 4% 4% 4%;
+    padding: 1%;
+    text-align: left;
+    border-radius: 10px;
+    font-size: 130%;
+}
+
+.itemPanier h3 {
+    padding: 0 0 2% 2%;
+}
+
+.itemPanier img {
+    max-width: 20%;
+    max-height: 60%;
+    float: left;
+    margin: 0 5% -2% 2%;
+}
+
+#descriptionPanier {
+    display: block;
+    margin-left: 30%;
+}
+
+#promo {
+    color: #fee400;
+    font-size: 120%;
+}
+
+#recapPanier {
+    float: right;
+}
+
+#modifier {
+    width: 15%;
+    margin-left: 2%;
+    padding: 0.5%;
+}
+
+#qte {
+    width: 10%;
+    color: #302c2c;
+}
+
+#supprimer {
+    width: 7%;
+    float: right;
+    margin: -5% 2% 0 0;
+}
+
+#droitePanier {
+    float: right;
+    display: flex;
+    flex-direction: column;
+}
+
+#btnCommander {
+    border-style: none;
+    background-color: #403c3c;
+    color: white;
+    font-size: 135%;
+    width: max-content;
+    padding: 8% 15%;
+    border-radius: 10px;
+    transition-duration: 0.6s;
+}
+
+#btnCommander:hover {
+    background-color: #49767f;
+}
+
+/* Page Produit */
+#produit {
+    margin: 3%;
+}
+
+#produit img {
+    max-width: 60%;
+    max-height: 400px;
+    display: block;
+    margin: auto;
+}
+
+#produit p {
+    text-align: justify;
+}
+
+#gauche {
+    border-radius: 10px;
+    background-color: #e3e3e3;
+    color: #302c2c;
+    padding: 3%;
+    margin-bottom: 8%;
+    float: left;
+    width: 72%;
+}
+
+#droite {
+    border-radius: 10px;
+    background-color: #302c2c;
+    color: #e3e3e3;
+    padding: 0.5%;
+    float: right;
+    width: 25%;
+}
+
+#couleurs-select {
+    width: max-content;
+    color: #302c2c;
+}
+
+option:disabled {
+    background-color: #DBDBDB;
+    color: #677f84;
+}
+
+#qteProduit {
+    width: 20%;
+    color: #302c2c;
+}
+
+#btnAdmin {
+    width: max-content;
+    border-radius: 10px;
+    border-style: none;
+    background-color: rgb(247, 242, 242);
+    color: #0d0d0d;
+    transition-duration: 0.6s;
+    padding: 5px 15px;
+    margin-bottom: 5px;
+}
+
+#btnAdmin:hover {
+    background-color: #616161;
+    color: white;
+}
+
+#imageFormulaire {
+    width: 50%;
+    height: 50%;
+}
+
+/* Page modifier produit */
+
+#modifProduit input[type="number"] {
+    color: white;
+    background-color: #403c3c;
+    border-style: none;
+    width: 15%;
+    border-radius: 10px;
+}
+
+#modifProduit input[type="file"] {
+    color: white;
+    background-color: #403c3c;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+}
+
+#modifProduit textarea {
+    color: white;
+    background-color: #403c3c;
+    border-style: none;
+    resize: none;
+    width: 50%;
+    height: 150px;
+    border-radius: 10px;
+}
+
+/* Page ajouter produit */
+
+#ajoutProduit input[type="number"] {
+    color: white;
+    background-color: #403c3c;
+    border-style: none;
+}
+
+#ajoutProduit input[type="file"] {
+    color: white;
+    background-color: #403c3c;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+}
+
+#ajoutProduit select {
+    color: white;
+    background-color: #403c3c;
+    border-style: none;
+    border-radius: 10px;
+}
+
+#ajoutProduit textarea {
+    color: white;
+    background-color: #403c3c;
+    border-style: none;
+    border-radius: 10px;
+    width: 50%;
+    height: 150px;
+    resize: none;
+}
+
+#stockCouleurs {
+    text-align: left;
+    width: 60%;
+    margin-left: 35%;
+}
+
+#stockCouleurs caption{
+    color: white;
+    margin-top: 3%;
+    margin-left: 18%;
+}
+
+.txtCouleur {
+    text-align: center;
+}
+
+.classQteCouleur {
+    text-align: left;
+}
+
+.classQteCouleur input {
+    width: 30%;
+}
+
+.prix {
+    width: 13%;
+    border-radius: 10px;
+}
+
+/* Page de consultation de l'entreprise */
+
+#entdiv {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    color: rgb(13, 14, 15);
+    display: block;
+}
+
+
+.ent {
+    padding: 40px;
+    width: 50%;
+    border-radius: 10px;
+    background-color: #E3E3E3;
+    margin: 50px auto auto auto;
+    box-sizing: content-box;
+    border: 2px solid #000;
+
+}
+
+.underline {
+    text-decoration: underline;
+    text-align: center;
+}
+
+
+#Blacklogo {
+    width: 50px;
+    height: 50px;
+    float: right;
+    margin-top: 0px;
+}
+
+#equipe {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+.left {
+    text-align: justify;
+}
+
+.font1 {
+    font-size: 40px;
+}

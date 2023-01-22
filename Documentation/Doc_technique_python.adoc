@@ -1,0 +1,75 @@
+= Documentation application Python
+:toc:
+:toc-title: Sommaire
+
+Version de l'application : 5 +
+Date : 14/01/2023 +
+Equipe : 2A-8 +
+Client : VidéoFest +
+Projet : Gestion entrepôt +
+
+<<<
+
+== 1. Structure du code
+=== a) Fichiers
+* appli.py : Application principale qui permet de se connecter aux capteurs et transmettre les données +
+* config.json : Fichier de configuration généré par l'application Java et lu apr le script Python. Sert à configurer l'adresse ip du serveur mqtt, les données à récolter et d'autres informations.
+
+=== b) Fonctionnement
+On commence par redéfinir le comportement du programme lorsqu'il reçoit un signal d'alarme. Ceci est fait en définissant une fonction `handler()` qui sera ensuite spécifié dans `signal(SIGALRM, handler)`. +
+Le fichier config.json créé par l'application Java est ensuite ouvert et son contenu est stocké et formatté en Json pour pouvoir le lire. +
+Les deux dernières fonctions sont ensuite définies : `on_connect()` et `on_message()` +
+`on_connect()` s'occupe d'afficher un message de connexion et son code, puis de s'abonner au topic MQTT avec les informations du fichier de configuration. +
+`on_message()` quant à lui s'occupe de récupérer le dernier message pour le stocker dans une variable globale et si aucun signal d'alarme est en cours il en démarre un avec le délai défini. +
+Lorsque la fonction `handler()` est lancée après le délai, on vérifie si un nouveau message à bien été reçu. Si c'est le cas les nouvelles données sont écrites dans des fichiers textes, un par type de donnée. Chaque donnée est séparée par un espace. Avant de sortir de la fonction, on relance un signla d'alarme. +
+On initialise finalement un client mqtt pour gérer les connexions au serveur et on associe les évènements de connexion au serveur et de réception de message à `on_connect()` et `on_message()`. La dernière instruction est d'ordonner au client de boucler à l'infini, c'est-à-dire de maintenir la connexion indéfiniment.
+
+== 2. Etapes d'installation
+=== a) Prérequis
+* Système d'exploitation Debian/Ubuntu
+* L'utilisateur qui effectue l'installation doit être sudoer
+* Installer les applications dans un répertoire dans lequel on a les droits de créer des nouveaux fichiers
+
+=== b) Installation
+Python 3.6 est la version minimale à installer. + 
+Ouvrir un terminal et exécuter les commandes suivantes afin d'installer Python 3.6 : +
+`sudo apt update` +
+`sudo apt install python3.6` +
+A noter que vous pouvez installer une version plus récente de Python en spécifiant la version comme ceci: +
+`sudo apt install pythonX.X` +
+
+L'application python utilise le module paho-mqtt pour communiquer avec les capteurs, il faut donc l'installer avec : +
+`pip install paho-mqtt` +
+
+Pour récupérer l'application, naviguez vers la dernière release (ou cliquez https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/releases/latest[ici]), et téléchargez le fichier Application.zip . +
+Dézipper le dans votre répertoire. +
+
+== 3. Lancement du Script
+Après avoir lancé l'application Java comme spécifié https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_utilisateur_iot.adoc#3-utiliser-lapplication[ici] et confirmé la configuration, lancer le script Python avec la commande suivante : +
+`python3.6 appli.py` +
+A noter que si vous avez installé une différente version de Python, vous devez spécifier la bonne version comme lorsque vous avez installé Python: +
+`pythonX.X appli.py` 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

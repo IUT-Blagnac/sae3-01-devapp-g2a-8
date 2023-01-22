@@ -29,7 +29,7 @@ ifdef::env-github[]
 endif::[]
 
 // /!\ A MODIFIER !!!
-:baseURL: https://github.com/IUT-Blagnac/sae3-01-template
+:baseURL: https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8
 
 // Tags
 image:{baseURL}/actions/workflows/blank.yml/badge.svg[Bidon] 
@@ -38,69 +38,80 @@ image:{baseURL}/actions/workflows/tests.yml/badge.svg[Tests]
 image:https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg[License: MPL-2.0, link="https://opensource.org/licenses/MPL-2.0"]
 //---------------------------------------------------------------
 
-TIP: Pensez à mettre à jour les infos dans ce fichier pour que les badges pointent sur les résultats effectifs de vos intégrations continue ou sur la bonne licence logicielle.
-
 WARNING: Ce dépôt présente le projet à développer dans le cadre de la SAÉ 3.01 du BUT1 Informatique de l'IUT de Blagnac.
-
-Ce fichier `README.adoc` (dont vous lisez sûrement le rendu HTML automatiquement effectué par GitHUb), fait partie du dépôt initial cloné à partir du lien GitHub classroom qui vous a été donné en cours (https://classroom.github.com/a/OUF7gxEa).
-Vous trouverez le dépôt "template" qui a servi de base ici : https://github.com/IUT-Blagnac/sae3-01-template. En complément du cours Moodle de la SAE 3.01 (cf. <<liensUtiles>>), ce dépôt template vous permet d'accéder à des exemples d'https://github.com/IUT-Blagnac/sae3-01-template/issues[issues], de https://github.com/IUT-Blagnac/sae3-01-template/releases[releases], ou d'autres artefacts à venir.
 
 toc::[]
 
 == Equipe
 
-Projet est réalisé par::
+Projet réalisé par::
 
-- https://github.com/janeDoe[Jane Doe]
-- https://github.com/johnSmith[John Smith]
-...
+- https://github.com/tobilub04[Tobiasz Strzeszewski : Développeur]
+- https://github.com/Sean0203[Sean Escassut : Développeur]
+- https://github.com/hackerB200[Eva Tubia : Scrum Master]
+- https://github.com/walaedinesekoub[Walaedine Sekoub : Product Owner]
 
-Tuteur/tutrice enseignant(e) de l'équipe:: mailto:jean-michel.bruel@univ-tlse2.fr[JMB]
-
-== Contexte général
-
-TIP: Cette partie de votre `README.adoc` peut être supprimée ou mise ailleurs.
-
-=== Dépôt initial
-
-Ce dépôt initial a été créé pour que tous les groupes de 2ème année aient les mêmes informations de départ.
-
-Vous y trouverez des fichiers qui peuvent être supprimés s'ils ne vous sont pas utiles :
-
-- `.gitignore` => un fichier minimaliste des éléments à ne pas pousser en général sur vos dépôts (utiliser la commande `git add -f` pour forcer l'ajout d'un fichier Jar qui ne bougera plus, pour archive par exemple).
-- `.github` => le répertoire qui contient des éléments de gestion de projet :
-** `workflows` => le repertoire qui contient les actions à lancer à chaque push sur votre repo. 
-*** `blank.yml` => un exemple bidon mais dont vous pourrez vérifier l’exécution correcte (1er tag)
-** `ISSUE_TEMPLATE` => le repertoire qui contient quelques templates pour vos issues.
-*** `us.yml` => Exemple de template pour les User Stories
-*** `bug.yml` => Exemple de template pour les issues de bug report
-
-TIP: Adaptez ces fichiers à votre projet et à votre organisation. Et inspirez-vous en pour en ajouter.
-
-[[liensUtiles]]
-=== Liens utiles
-
-- Le https://webetud.iut-blagnac.fr/course/view.php?id=841[cours Moodle] sur la SAE
-- Le dépôt https://github.com/IUT-Blagnac/sae3-01-template[template] qui sert de base à tous les dépôts étudiants.
-- Le lien https://classroom.github.com/a/OUF7gxEa[classroom] si besoin.
-
-TIP: Pensez à utiliser les salons Discord dédiés pour poser vos questions.
+Tutrice enseignante de l'équipe:: 
+- mailto:marie-francoise.canut@univ-tlse2.fr[MFC]
 
 == Réalisations 
 
-TIP: Mettez ici toutes les informations nécessaire à l'utilisation de votre dépôt (comment on installe votre application, où sont les docs, etc.)
+- Release dernière version : https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/releases/tag/5.0[v5]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/milestone/5[Milestone sprint 7]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Produit.pdf[Backlog produit]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%201.pdf[Backlog sprint 3]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%202.pdf[Backlog sprint 4]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%203.pdf[Backlog sprint 5]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%206.pdf[Backlog sprint 6]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%207.pdf[Backlog sprint 7]
 
-== Gestion de projet & Qualité
+== Projet Site Web
 
-Chaque sprint (semaine) vous devrez livrer une nouvelle version de votre application (release).
-Utilisez pour cela les fonctionnalités de GitHub pour les https://docs.github.com/en/repositories/releasing-projects-on-github[Releases].
+=== Contexte général
 
-De plus ce fichier `README.adoc` devra être à jour des informations suivantes :
+VideoFest est une start-up française implantée à Toulouse et créée en 2021 par les cofondateurs Vignal Alexandre, Dourlent Maxime, Fernandez Mickael et Straputicari Luca. Anciennement tournée sur des gammes d’appareils-photos, VideoFest n’a jamais connu une croissance suffisante pour se démarquer et maintenir son existence dans un
+domaine devenu obsolète. Aujourd’hui, les objets technologiques tels que les smartphones ou encore les tablettes implémentent cette fonctionnalité pour une qualité au point. +
+L'entreprise a donc décidé de se reconvertir vers la vente de périphériques informatiques afin de répondre à une forte baisse de son chiffre d’affaires. Afin de faciliter cette vente, ils veulent avoir un nouveau site de e-commerce dédié, ce qui leur permettrait de redorer leur image, augmenter leur visibilité, et créer un avantage concurrentiel.
 
-- Version courante : https://github.com/IUT-Blagnac/sae3-01-template/releases/tag/v0.1.2[v0.1.2]
-- Lien vers la doc technique
-- Lien vers la doc utilisateur
-- Liste des (ou lien vers les) User Stories (ToDo/Ongoing/Done) et % restant
-- Tests unitaires et plans de test
-- Indicateurs de qualité du code (dette technique)
-- ... tout autre élément que vous jugerez utiles pour démontrer la qualité de votre application
+=== Gestion de projet & Qualité
+
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Analyse%20d'Impact.pdf[Droit : Analyse d'impact]
+- https://github.com/orgs/IUT-Blagnac/projects/24[Projet]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_technique_web.adoc[Documentation technique]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_utilisateur_web.adoc[Documentation utilisateur]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/BD/script_BD.sql[Script de création de la BD]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/BD/insert_BD.sql[Script insertion des données dans la BD]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Cahier_de_tests_Site.adoc[Cahier de tests]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/tree/master/Site[Répertoire code du site]
+- http://193.54.227.164/~SAESYS08/[Lien du site web]
+
+== Projet IoT
+
+=== Contexte général
+
+VidéoFest possède plusieurs entrepôts dont certaines données doivent être contrôlées. Il existe déjà un réseau de capteurs dans les entrepôts, qui récupèrent plusieurs informations sur les caractéristiques de l'air, comme la température, l'humidité ou la concentration en CO². L'entreprise souhaite aussi pour des raisons de sécurité avoir accès aux données de détection de présence récupérées par les capteurs. Un capteur envoit les informations au serveur toutes les 10 minutes, mais pour le moment ces données ne sont pas exploitées.
+
+=== Gestion de projet & Qualité
+
+- https://github.com/orgs/IUT-Blagnac/projects/46[Projet]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_technique_iot.adoc[Documentation technique]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Doc_utilisateur_iot.adoc[Documentation utilisateur]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Cahier_de_tests_IoT.adoc[Cahier de tests]
+- https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/tree/master/ApplicationEntrepot/src/application[Répertoire du code de l'appli]
+
+== Évaluations hebdomadaires
+
+NOTE: Les notes ci-dessous sont mises à jour directement par les enseignants responsables de la compétence 5.
+
+ifdef::env-github[]
+image:https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=881427875&format=image[link=https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=881427875&format=image]
+endif::[]
+
+ifndef::env-github[]
+++++
+<iframe width="786" height="430" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=881427875&format=image"></iframe>
+++++
+endif::[]
+
+=== Sprint 3 retour :
+Il manque les liens dans le readme. J'ai les tâches de sprint mais pas les backlogs produis (ils sont seulement en pdf, du coup impossible de lier les tâches aux US du backlog concerné, on perd l'esprit scrum). Les 2 appli sont gérées en même temps, il vaut mieux créer 2 projets distincts.Doc BD ok, il faut démarrer doc user et doc tech pour le site. Rien sur les tests. Release OK.

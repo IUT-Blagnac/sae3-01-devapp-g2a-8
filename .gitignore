@@ -15,8 +15,10 @@
 
 # Intellij
 .idea/
+.settings/
 *.iml
 *.iws
+*.MF
 
 # Mac
 .DS_Store
@@ -34,3 +36,7 @@ bin/
 build/
 /bin1/
 java/build/**
+
+#other
+*.txt
+config.json

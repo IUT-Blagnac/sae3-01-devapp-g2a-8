@@ -1,0 +1,8 @@
+@startuml Client
+:Client: --> (Se connecter)
+:Client: --> (Se déconnecter)
+:Client: --> (Voir ses informations)
+:Client: --> (Modifier ses informations)
+:Client: --> (Modifier mon mot de passe)
+:Client: --> (Supprimer son compte)
+@enduml

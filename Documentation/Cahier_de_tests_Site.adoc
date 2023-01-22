@@ -1,0 +1,172 @@
+= Cahier de Tests - Site web
+:toc:
+:toc-title: Sommaire
+
+Version du site : 4 +
+Date : 14/01/2023 +
+Equipe : 2A-8 +
+Client : VidéoFest +
+Projet : Site web e-commerce + 
+
+<<<
+
+== 1. Description du Projet
+=== a) Equipe
+
+Product Owner : Walaedine +
+Scrum Master : Eva +
+Développeurs : Tobiasz et Sean +
+
+=== b) Contexte du projet
+
+VideoFest est une start-up française implantée à Toulouse et créée en 2021 par les cofondateurs Vignal Alexandre, Dourlent Maxime, Fernandez Mickael et Straputicari Luca. Anciennement tournée sur des gammes d’appareils-photos, VideoFest n’a jamais connu une croissance suffisante pour se démarquer et maintenir son existence dans un domaine devenu obsolète. Aujourd’hui, les objets technologiques tels que les smartphones ou encore les tablettes implémentent cette fonctionnalité pour une qualité au point. +
+L’entreprise a donc décidé de se reconvertir vers la vente de périphériques informatiques afin de répondre à une forte baisse de son chiffre d’affaires. Afin de faciliter cette vente, ils veulent avoir un nouveau site de e-commerce dédié, ce qui leur permettrait de redorer leur image, augmenter leur visibilité, et créer un avantage concurrentiel.
+
+=== c) Objectifs du projet
+
+L'objectif est de créer un site web en accord avec la charte graphique de l'entreprise, qui propose une gamme de périphériques variés qu'il sera possible de commander. +
+VideoFest et ses produits s’adressent à tout type de clients, aussi bien pour des usages professionnels ou particuliers. Pour des clients à l’aise en technologie mais aussi des novices dans le domaine, le site devra donc être accessible et ergonomique. +
+
+
+== 2. Test des fonctionnalités implémentées
+
+=== Sprint 4 (sem 50)
+
+|===
+| Nom test | Préconditions | Conditions de satisfaction | Résultats du test
+
+| Création d'un nouveau compte
+| Ne pas être connecté, être sur la page de création de compte
+| Formulaire de création. Affichage des erreurs s'il y en a : nom, prénom ou mail invalides, mail déjà utilisé pour un autre compte, mot de passe ne respectant pas la norme RGPD, mots de passes différents (vérification du mdp). Insertion dans la BD avec hashage du mdp, variable session contenant l'identifiant et le mode de connexion (admin ou client). Redirection vers l'index.
+| Test passé avec succès 
+
+| Connexion à son compte 
+| Ne pas être connecté, être sur la page de connexion
+| Formulaire de connexion. Affichage des erreurs s'il y en a : compte inexistant ou mauvais mdp. Possibilité de stocker l'adresse mail (login) dans un cookie pendant 20min. Variable session contenant l'identifiant et le mode de connexion (admin ou client). Redirection vers la page voulue ou l'index.
+| Test passé avec succès 
+
+| Déconnexion de son compte 
+| Être connecté, être sur la page de visualisation de compte, cliquer sur "Deconnexion"
+| Variable Session détruite. Redirection vers l'index.
+| Test passé avec succès 
+
+| Visualiser ses informations de compte
+| Être connecté, être sur la page de visualisation de compte
+| Select dans la BD avec l'identifiant de l'utilisateur qui est stocké dans la variable Session. Affichage clair des informations. Si adresse incomplète, pas d'affichage de l'adresse.
+| Test passé avec succès
+
+| Modifier ses informations 
+| Être connecté, être sur la page de visualisation de compte, cliquer sur "Modifier mes informations"
+| Formulaire avec champs préremplis. Affichage des erreurs s'il y en a : nom, prénom ou mail invalides, mail déjà utilisé pour un autre compte. Update dans la BD des bonnes informations, avec l'identifiant de l'utilisateur qui est stocké dans la variable Session. Redirection vers la page de visualisation des informations du compte (modifications visibles).
+| Test passé avec succès
+
+| Modifier son mot de passe
+| Être connecté, être sur la page de visualisation de compte, cliquer sur "Modifier mon mot de passe"
+| Formulaire de modification de mdp. Affichage des erreurs s'il y en a : mauvais mdp, mdp différents, mdp ne correspond pas aux normes RGPD. Hashage du mdp et update dans la BD, avec l'identifiant de l'utilisateur qui est stocké dans la variable Session. Redirection vers la page de visualisation des informations du compte.
+| Test passé avec succès 
+
+| Supprimer son compte
+| Être connecté, être sur la page de visualisation de compte, cliquer sur "Supprimer mon compte"
+| Pop-up de confirmation de suppression, si "Ok" alors suppression de toutes les informations de l'utilisateur (données personnelles et commandes) en faisant un Delete dans la BD, avec avec l'identifiant de l'utilisateur qui est stocké dans la variable Session. Destruction de la session. Redirection vers l'index avec un pop-up qui informe que la suppresion est bien effectuée.
+| Test passé avec succès
+
+| Espace sécurisé
+| Tentative d'accès à une page interdite si pas connecté, ou pas administrateur
+| Redirection vers la page de connexion avec une erreur.
+| Pas encore testé
+
+|===
+
+=== Sprint 5 (sem 1)
+
+|===
+| Nom test | Préconditions | Conditions de satisfaction | Test passé ?
+
+| Visualiser produits par catégorie
+| Avoir cliqué sur le menu et sur "Nos produits"
+| Liens des catégories parentes affichées dans le menu. Affichage des produits correspondants. Bouton voir plus fonctionnel sous chaque produit. Lien vers sous catégories affichées dans le header.
+| Test passé avec succès
+
+| Visualiser produits par sous-catégorie
+| Avoir cliqué sur une catégorie parente dans le menu
+| Lien vers sous catégories affichées dans le header. En cliquant sur un des liens : affichage des produits correspondants, bouton voir plus fonctionnel sous chaque produit.
+| Test passé avec succès
+
+| Rechercher un produit par nom
+| Aucune
+| Barre de recherche dans le header. Si clique sur loupe ou si touhce "Entrée" pressée : affichage des produits correspondants, bouton voir plus fonctionnel sous chaque produit. Si aucun produit correspondant : affichage message explicite.
+| Test passé avec succès
+
+| Visualiser un produit
+| Avoir fait une recherche (par nom ou par catégorie) puis cliqué sur le bouton "Voir plus"
+| Affichage des infos et de l'image du produit, quantité et couleur modifiable, quantité max possible en fonction du stock de la BD, affichage explicite si pas de produit en stock, ou si rupture sur une couleur, bouton "ajouter au panier" fonctionnel.
+| Test passé avec succès
+
+| Mettre un produit dans le panier
+| Etre connecté, avoir cliqué sur le bouton "Ajouter au panier" sur la fiche d'un produit
+| Si pas assez de stock pour l'ajouter au panier : erreur explicite. Sinon : ajoute au panier avec la quantité et la couleur voulue, si jamais le produit est déjà dans le panier, les quantités s'ajoutent.
+| Test passé avec succès
+
+| Modifier la quantité d'un produit dans le panier
+| Etre connecté, avoir cliqué sur le bouton "Ajouter au panier" sur la fiche d'un produit, puis cliqué sur l'icone de panier
+| Affichage des produits dans la variable session, champ quantité éditable, bouton modifier pour enregistrer les modifications, si pas assez de stock message explicie, sinon changement de la quantité. Le prix affiché doit être modifié en fonction de la quantité.
+| Test passé avec succès
+
+| Supprimer un produit dans le panier
+| Etre connecté, avoir cliqué sur le bouton "Ajouter au panier" sur la fiche d'un produit, puis cliqué sur l'icone de panier
+| Icone de poubelle qui supprime le produit de la variable session.
+| Test passé avec succès
+
+|===
+
+=== Sprint 6 (sem 2)
+
+|===
+| Nom test | Préconditions | Conditions de satisfaction | Test passé ?
+
+| Contacter l'entreprise
+| Avoir cliqué sur "Nous contacter" dans le bas de page
+| Formulaire avec nom, prénom, e-mail et message, si formulaire soumis et tous les champs remplis, affichage d'une pop-up qui confirme l'envoi du message
+| Test passé avec succès
+
+| Voir les informations de l'entreprise
+| Avoir cliqué sur "Notre entreprise" dans le bas de page
+| Page avec informations de l'entreprise et photo de l'équipe.
+| Test passé avec succès
+
+| Voir les articles en promotion
+| Avoir cliqué sur le menu, puis sur "Nos produits"
+| Affichage de la catégorie "Promotions" dans le menu, si cliqué affiche seulement les produits en promotions (promotion > 0 dans la BD)
+| Test passé avec succès
+
+| Voir les articles populaires (les plus vendus)
+| Etre sur la page principale du site
+| Affichage des produits les plus vendus : la somme des quantités commandées est supérieure à la moyenne 
+| Test passé avec succès
+
+| Entrer l'adresse de livraison
+| Etre connecté, avoir mis des articles dans le panier, être sur la page panier et avoir cliqué sur "Passer commande"
+| Formulaire d'adresse pré-remplis avec les informations dans la BD, si formulaire soumis update dans la BD des informations. 
+| Test passé avec succès
+
+| Payer et confirmer la commande
+| Etre connecté, avoir cliqué sur "Passer commande" et remplis correctement le formulaire d'adresse de livraison
+| Affichage du montant total de la commande, bouton "Payer" qui renvoie vers une page qui se connecte à la BD et fait les insertions (insertion de la commande et insertion de chaque produit dans la commande). ALert qui confirme l'enregistrement de la commande.
+| Test passé avec succès
+
+| Ajouter un nouveau produit
+| Etre connecté et administrateur, avoir cliqué sur "Ajouter un produit" sur la page de compte
+| Formulaire pour remplir toutes les informations d'un produit et de son stock. Lorsqu'une couleur est cochée, le champ quantité correspondant à cette couleur est éditable. L'insertion du produit et du stock dans la BD est faite si le formulaire est soumis. Une alerte affiche s'il y a eu une erreur ou si le produit est bien ajouté.
+| Attention l'ajout d'une image ne fonctionne pas pour le moment : problème sur le serveur
+
+| Modifier un produit
+| Etre connecté et administrateur, avoir cliqué sur un produit puis sur "Modifier le produit"
+| Formulaire pré-remplis avec toutes les informations d'un produit. La mise à jour du produit dans la BD est faite si le formulaire est soumis.
+| Attention l'ajout d'une image ne fonctionne pas pour le moment : problème sur le serveur
+
+| Supprimer un produit
+| Etre connecté et administrateur, avoir cliqué sur un produit puis sur "Supprimer le produit"
+| Alerte qui demande la confirmation de la suppression à l'utilisateur, puis suppression dans la BD et alerte d'enregistrement de la suppression
+| Attention la suppression ne supprime pas l'image : problème sur le serveur
+
+|===

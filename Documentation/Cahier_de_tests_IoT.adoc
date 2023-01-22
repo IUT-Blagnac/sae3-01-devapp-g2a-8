@@ -1,0 +1,126 @@
+= Cahier de Tests - Application IoT
+:toc:
+:toc-title: Sommaire
+
+Version de l'application : 5 +
+Date : 21/01/2023 +
+Equipe : 2A-8 +
+Client : VidéoFest +
+Projet : Gestion entrepôt + 
+
+<<<
+
+== 1. Description du Projet
+=== a) Equipe
+
+Product Owner : Walaedine +
+Scrum Master : Eva +
+Développeurs : Tobiasz et Sean +
+
+=== b) Contexte du projet
+
+VidéoFest est une entreprise qui s'est récemment reconvertie dans la vente de périphériques en ligne, elle possède plusieurs entrepôts dont certaines données doivent être contrôlées. Il existe déjà un réseau de capteurs dans les entrepôts, qui récupèrent plusieurs informations sur les caractéristiques de l'air, comme la température, l'humidité ou la concentration en CO². L'entreprise souhaite aussi pour des raisons de sécurité avoir accès aux données de détection de présence récupérées par les capteurs. Un capteur envoit les informations au serveur toutes les 10 minutes, mais pour le moment ces données ne sont pas exploitées.
+
+=== c) Objectifs du projet
+
+L'objectif de ce projet est de créer une application en Java et Python, qui permettra de configurer les données que l'on veut consulter, qui se connectera au serveur et récupèrera les données voulues, et affichera ces données de façon lisible pour l'utilisateur. On aura donc une partie IHM en Java qui créera le fichier de configuration des données, puis la partie Python fera la connexion et écrira les données dans un autre fichier. Enfin, Java lira ces données et les affichera sur l'IHM.
+
+== 2. Test des fonctionnalités techniques
+
+=== Sprint 4 (sem 50)
+
+|===
+| Nom test | Préconditions | Conditions de satisfaction | Résultats du test
+
+| Lecture du fichier de configuration (en Json)
+| Fichier `config.json` correctement créé dans le même répertoire avec droit de lecture
+| Ouverture et récupération du contenu en bas niveau, variable contenant le json exploitable
+| Test passé avec succès 
+
+| Connexion au bus MQTT
+| Avoir le droit de se connecter au serveur du fichier de configuration
+| Connexion au bus effectué au serveur et aux capteurs demandés dans le fichier de configuration
+| Test passé avec succès 
+
+| Récupération des données des capteurs
+| Capteurs actifs dans le réseau 
+| Les données demandées dans le fichier de configuration sont bien récupérées et exploitables
+| Test passé avec succès 
+
+| Ecriture des données
+| Droit de création de fichiers sur le répertoire
+| Données écrites dans des fichiers distincts, un fichier par type de données, les valeurs seront séparées par des espaces
+| Test passé avec succès 
+
+| Gestion du temps de rafraichissement
+| Avoir mis un temps raisonnable en minutes (entre 1 et 10) dans le fichier de configuration
+| Signal d'alarme du temps converti en secondes après chaque réception de message  
+| Test passé avec succès 
+
+|===
+
+=== Sprint 5 (sem 1)
+
+|===
+| Nom test | Préconditions | Conditions de satisfaction | Test passé ?
+
+| Lecture fichier de configuration (en Json)
+| Droit de création de fichier dans le répertoire
+| Création ou ouverture du fichier, puis lecture des informations
+| Test passé avec succès
+
+| Interface de l'application 
+| Avoir lancé l'application
+| Affichage des valeurs du fichier json, tous les champs sont éditables et vérifiés avant modification
+| Test passé avec succès
+
+| Ecriture fichier de configuration (en Json)
+| Avoir modifier les données avec l'interface et cliqué sur "Confirmer"
+| Ecriture dans le fichier json des informations de l'interface
+| Test passé avec succès
+
+|===
+
+=== Sprint 6 (sem 2)
+
+|===
+| Nom test | Préconditions | Conditions de satisfaction | Test passé ?
+
+| Affichage de la page de visualisation
+| Avoir bien remplis les champs et cliqué sur "Confirmer"
+| Page visible avec pour l'instant seulement 3 champs non éditables
+| Test passé
+
+| Lecture des données de l'application python
+| Avoir lancé l'application python après avoir cliqué sur "Confirmer"
+| L'affichage de l'interface se met à jour en fonction du temps de rafraichissement voulu, la dernière valeur reçue des capteurs est visible.
+| Test passé
+
+|===
+
+=== Sprint 7 (sem 3)
+
+|===
+| Nom test | Préconditions | Conditions de satisfaction | Test passé ?
+
+| Historisation des données
+| Avoir lancé l'application python après avoir cliqué sur "Confirmer"
+| Les données déjà présentes s'affichent sous forme de graphique, et à chaque nouvelle donnée reçue celle ci s'ajoute au graphique.
+| Test passé avec succès
+
+| Affichage en fonction du choix du type de données
+| Avoir cliqué sur "Confirmer"
+| Seul les champs correspondants au type de données choisis sont affichés. Les autres ne sont pas visibles.
+| Test passé avec succès
+
+| Rafraichissement des données
+| Avoir lancé l'application python après avoir cliqué sur "Confirmer"
+| L'application python récupère les données selon le temps de rafraichissement choisi, et l'interface s'actualise avec la même durée.
+| Test passé avec succès
+
+| Attente de données
+| Avoir lancé l'application python après avoir cliqué sur "Confirmer"
+| Les champs et le graphique sont visibles mais vides s'il n'y a aucune données récupérées.
+| Test passé avec succès
+
+|===
