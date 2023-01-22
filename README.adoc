@@ -56,7 +56,7 @@ Tutrice enseignante de l'équipe::
 
 == Réalisations 
 
-- Release dernière version : https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/releases/tag/4.0[v4]
+- Release dernière version : https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/releases/tag/5.0[v5]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/milestone/5[Milestone sprint 7]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Produit.pdf[Backlog produit]
 - https://github.com/IUT-Blagnac/sae3-01-devapp-g2a-8/blob/master/Documentation/Backlog%20Sprint%201.pdf[Backlog sprint 3]
